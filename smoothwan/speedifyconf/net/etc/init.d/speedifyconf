@@ -1,0 +1,23 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+USE_PROCD=1
+
+
+reload_service()
+{
+        stop "$@"
+        start "$@"
+}
+
+start_service()
+{
+        procd_open_instance
+        procd_set_param command sh /usr/lib/speedifyconf/run.sh start  > /tmp/log/speedifyconfig.log
+        procd_close_instance
+}
+
+stop_service()
+{
+        /usr/bin/killall speedify
+}
