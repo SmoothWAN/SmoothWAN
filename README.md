@@ -5,6 +5,7 @@ Use case: Deploy Speedify to your home network in minutes with few clicks. <br /
 
 Targets: Raspberry Pi 4 and Generic x86_64 <br />
 Most modules were enabled, check config.info* for target specific info. <br />
+Discord discussion channel: https://discord.gg/AxSSjpgwjx
 
 Screenshots: <br />
 ![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
