@@ -23,13 +23,13 @@ No this is not an advertisement, here's my own testing compared to commercial an
   Most of the observations listed were observed with Speedify's log files (comprehensive) and network simulation tools.
 </details>
 
-Targets: Raspberry Pi 4 and Generic x86_64 (+VM)
-Most modules were enabled, check config.info* for target specific info.
-Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.
-Interactive discussion server: https://discord.gg/AxSSjpgwjx
+Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
+Most modules were enabled, check config.info* for target specific info.  
+Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
+Interactive discussion server: https://discord.gg/AxSSjpgwjx  
 
-Build status: Pre-fork feeds release
+Build status: Pre-fork feeds release  
 
-UI Screenshots:
+Screenshots:
 ![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
 ![image](https://user-images.githubusercontent.com/96490382/147124822-ce79e50c-09a5-43ac-8f35-3ddb8b2be882.png)
