@@ -7,6 +7,12 @@ PKGS=/tmp/spdpkgs
 
 config_load speedifyconf
 
+run_speedify (){
+   cd /usr/share/speedify || exit 1
+   sh DisableRpFilter.sh 
+   mkdir -p logs
+   ./speedify -d logs &
+}
 
 parse_apt_url(){
    APT=$(config_get Setup apt)
@@ -32,7 +38,7 @@ parse_apt_url(){
 installall(){
    if [ "$(ping -q -c1 google.com &>/dev/null && echo 0 || echo 1)" = "1" ]; then
         echo "Internet connectivity issue. Stopping installation/update"
-        (cd /usr/share/speedify && ./speedify) &
+        run_speedify
         exit 0
    fi
 
@@ -46,6 +52,7 @@ installall(){
    cd /tmp/spddw/speedify/
    ar x *.deb
    tar -xzf data.tar.gz -C /
+   mkdir -p /usr/share/speedify/logs
    echo "Extracting Speedify UI"
    cd /tmp/spddw/speedifyui/
    ar x *.deb
@@ -73,7 +80,7 @@ if [ "$ACTION" = "update" ]; then
   parse_apt_url
   installall
   killall -KILL speedify
-  (cd /usr/share/speedify && ./speedify) &
+  run_speedify
 else
   if [ "$ACTION" = "stopkill" ]; then
     echo "Killing Speedify"
@@ -92,18 +99,18 @@ else
     if [ "$DWVER" -gt "$CURRVER" ]; then
         installall
         killall -KILL speedify
-        (cd /usr/share/speedify && ./speedify) &
+        run_speedify
         echo "Update finished, running."
         exit 0
     else
         echo "Up to date, running."
         killall -KILL speedify
-        (cd /usr/share/speedify && ./speedify) &
+        run_speedify
         exit 0
     fi
   else
     killall -KILL speedify
-    (cd /usr/share/speedify && ./speedify) &
+    run_speedify
     echo "Running"
  fi
 fi
