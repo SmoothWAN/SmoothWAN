@@ -2,11 +2,19 @@
 
 An easy to use OpenWRT based flavor for Speedify with no CLI requirment.  
 Typical use case: Deploy Speedify to your home network in minutes with few clicks.  
-Quick video tutorial to be uploaded.  
+Quick video tutorial to be uploaded.
+Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
+Most modules were enabled, check config.*.info in buildconfigs.  
+Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
+Interactive discussion server: https://discord.gg/AxSSjpgwjx  
 
+Build status: Pre-fork feeds release  
 
+Screenshots:
+![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
+![image](https://user-images.githubusercontent.com/96490382/147124822-ce79e50c-09a5-43ac-8f35-3ddb8b2be882.png)
 <details> 
-<summary>Why Speedify?</summary>
+<summary>*Why Speedify?</summary>
 No this is not an advertisement, here's my own testing compared to commercial and OSS alternatives at the time of this writing: <br>
 <br>
 - SDWAN-esque: Having one exit IP address like any VPN, it duplicates (mirror) data across WANs for sensitive connections such as VoIP, video calls, and games for "seamless migration" on fault for the speed of the fastest WAN while simulatenously aggregating (splitting) bulk data across WANs per packet for the speed of the combined WANs. (bulk data transfers tolerates hiccups). <br>
@@ -22,14 +30,3 @@ No this is not an advertisement, here's my own testing compared to commercial an
 <br>
   Most of the observations listed were observed with Speedify's log files (comprehensive) and network simulation tools.
 </details>
-
-Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
-Most modules were enabled, check config.*.info in buildconfigs.  
-Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
-Interactive discussion server: https://discord.gg/AxSSjpgwjx  
-
-Build status: Pre-fork feeds release  
-
-Screenshots:
-![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
-![image](https://user-images.githubusercontent.com/96490382/147124822-ce79e50c-09a5-43ac-8f35-3ddb8b2be882.png)
