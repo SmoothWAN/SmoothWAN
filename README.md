@@ -24,7 +24,7 @@ No this is not an advertisement, here's my own testing compared to commercial an
 </details>
 
 Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
-Most modules were enabled, check config.info* for target specific info.  
+Most modules were enabled, check config.*.info in buildconfigs.  
 Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
 Interactive discussion server: https://discord.gg/AxSSjpgwjx  
 

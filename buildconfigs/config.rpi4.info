@@ -438,8 +438,7 @@ CONFIG_GCC_VERSION="8.4.0"
 # CONFIG_GCC_USE_IREMAP is not set
 CONFIG_LIBC="musl"
 CONFIG_TARGET_SUFFIX="musl"
-CONFIG_IB=y
-# CONFIG_IB_STANDALONE is not set
+# CONFIG_IB is not set
 # CONFIG_SDK is not set
 # CONFIG_MAKE_TOOLCHAIN is not set
 CONFIG_IMAGEOPT=y
@@ -460,14 +459,14 @@ CONFIG_TARGET_INIT_CMD="/sbin/init"
 CONFIG_TARGET_INIT_SUPPRESS_STDERR=y
 CONFIG_VERSIONOPT=y
 CONFIG_VERSION_DIST="SmoothWAN"
-CONFIG_VERSION_NUMBER="0.92"
+CONFIG_VERSION_NUMBER="0.93"
 CONFIG_VERSION_CODE=""
 CONFIG_VERSION_REPO="https://downloads.openwrt.org/releases/21.02.1"
-CONFIG_VERSION_HOME_URL=""
+CONFIG_VERSION_HOME_URL="smoothwan.com"
 CONFIG_VERSION_MANUFACTURER=""
 CONFIG_VERSION_MANUFACTURER_URL=""
 CONFIG_VERSION_BUG_URL=""
-CONFIG_VERSION_SUPPORT_URL="http://smoothwan.com"
+CONFIG_VERSION_SUPPORT_URL=""
 CONFIG_VERSION_PRODUCT=""
 CONFIG_VERSION_HWREV=""
 CONFIG_VERSION_FILENAMES=y
@@ -1666,7 +1665,7 @@ CONFIG_PACKAGE_objdump=y
 #
 CONFIG_PACKAGE_libiwinfo-data=y
 CONFIG_PACKAGE_nginx=y
-# CONFIG_PACKAGE_nginx-mod-luci-ssl is not set
+CONFIG_PACKAGE_nginx-mod-luci-ssl=y
 CONFIG_PACKAGE_nginx-util=y
 # end of Extra packages
 
@@ -1754,7 +1753,7 @@ CONFIG_PACKAGE_cypress-nvram-43430-sdio-rpi-zero-w=m
 CONFIG_PACKAGE_cypress-nvram-43455-sdio-rpi-3b-plus=m
 CONFIG_PACKAGE_cypress-nvram-43455-sdio-rpi-4b=m
 CONFIG_PACKAGE_e100-firmware=y
-CONFIG_PACKAGE_edgeport-firmware=m
+CONFIG_PACKAGE_edgeport-firmware=y
 # CONFIG_PACKAGE_eip197-mini-firmware is not set
 # CONFIG_PACKAGE_ibt-firmware is not set
 CONFIG_PACKAGE_iwl3945-firmware=m
@@ -1827,56 +1826,56 @@ CONFIG_PACKAGE_wl18xx-firmware=m
 #
 # Block Devices
 #
-CONFIG_PACKAGE_kmod-aoe=m
-CONFIG_PACKAGE_kmod-ata-ahci=m
-CONFIG_PACKAGE_kmod-ata-artop=m
-CONFIG_PACKAGE_kmod-ata-core=m
-CONFIG_PACKAGE_kmod-ata-marvell-sata=m
-CONFIG_PACKAGE_kmod-ata-nvidia-sata=m
-CONFIG_PACKAGE_kmod-ata-pdc202xx-old=m
-CONFIG_PACKAGE_kmod-ata-piix=m
-CONFIG_PACKAGE_kmod-ata-sil=m
-CONFIG_PACKAGE_kmod-ata-sil24=m
-CONFIG_PACKAGE_kmod-ata-via-sata=m
-CONFIG_PACKAGE_kmod-block2mtd=m
-CONFIG_PACKAGE_kmod-dax=m
-CONFIG_PACKAGE_kmod-dm=m
-CONFIG_PACKAGE_kmod-dm-raid=m
-CONFIG_PACKAGE_kmod-iosched-bfq=m
-CONFIG_PACKAGE_kmod-iscsi-initiator=m
-CONFIG_PACKAGE_kmod-loop=m
-CONFIG_PACKAGE_kmod-md-mod=m
-CONFIG_PACKAGE_kmod-md-linear=m
-CONFIG_PACKAGE_kmod-md-multipath=m
-CONFIG_PACKAGE_kmod-md-raid0=m
-CONFIG_PACKAGE_kmod-md-raid1=m
-CONFIG_PACKAGE_kmod-md-raid10=m
-CONFIG_PACKAGE_kmod-md-raid456=m
-CONFIG_PACKAGE_kmod-nbd=m
-CONFIG_PACKAGE_kmod-scsi-cdrom=m
-CONFIG_PACKAGE_kmod-scsi-core=m
-CONFIG_PACKAGE_kmod-scsi-generic=m
-CONFIG_PACKAGE_kmod-scsi-tape=m
+CONFIG_PACKAGE_kmod-aoe=y
+CONFIG_PACKAGE_kmod-ata-ahci=y
+CONFIG_PACKAGE_kmod-ata-artop=y
+CONFIG_PACKAGE_kmod-ata-core=y
+CONFIG_PACKAGE_kmod-ata-marvell-sata=y
+CONFIG_PACKAGE_kmod-ata-nvidia-sata=y
+CONFIG_PACKAGE_kmod-ata-pdc202xx-old=y
+CONFIG_PACKAGE_kmod-ata-piix=y
+CONFIG_PACKAGE_kmod-ata-sil=y
+CONFIG_PACKAGE_kmod-ata-sil24=y
+CONFIG_PACKAGE_kmod-ata-via-sata=y
+CONFIG_PACKAGE_kmod-block2mtd=y
+CONFIG_PACKAGE_kmod-dax=y
+CONFIG_PACKAGE_kmod-dm=y
+CONFIG_PACKAGE_kmod-dm-raid=y
+CONFIG_PACKAGE_kmod-iosched-bfq=y
+CONFIG_PACKAGE_kmod-iscsi-initiator=y
+CONFIG_PACKAGE_kmod-loop=y
+CONFIG_PACKAGE_kmod-md-mod=y
+CONFIG_PACKAGE_kmod-md-linear=y
+CONFIG_PACKAGE_kmod-md-multipath=y
+CONFIG_PACKAGE_kmod-md-raid0=y
+CONFIG_PACKAGE_kmod-md-raid1=y
+CONFIG_PACKAGE_kmod-md-raid10=y
+CONFIG_PACKAGE_kmod-md-raid456=y
+CONFIG_PACKAGE_kmod-nbd=y
+CONFIG_PACKAGE_kmod-scsi-cdrom=y
+CONFIG_PACKAGE_kmod-scsi-core=y
+CONFIG_PACKAGE_kmod-scsi-generic=y
+CONFIG_PACKAGE_kmod-scsi-tape=y
 # end of Block Devices
 
 #
 # CAN Support
 #
-CONFIG_PACKAGE_kmod-can=m
-CONFIG_PACKAGE_kmod-can-bcm=m
-CONFIG_PACKAGE_kmod-can-c-can=m
-CONFIG_PACKAGE_kmod-can-c-can-pci=m
-CONFIG_PACKAGE_kmod-can-c-can-platform=m
-CONFIG_PACKAGE_kmod-can-gw=m
-CONFIG_PACKAGE_kmod-can-mcp251x=m
-CONFIG_PACKAGE_kmod-can-raw=m
-CONFIG_PACKAGE_kmod-can-slcan=m
-CONFIG_PACKAGE_kmod-can-usb-8dev=m
-CONFIG_PACKAGE_kmod-can-usb-ems=m
-CONFIG_PACKAGE_kmod-can-usb-esd=m
-CONFIG_PACKAGE_kmod-can-usb-kvaser=m
-CONFIG_PACKAGE_kmod-can-usb-peak=m
-CONFIG_PACKAGE_kmod-can-vcan=m
+CONFIG_PACKAGE_kmod-can=y
+CONFIG_PACKAGE_kmod-can-bcm=y
+CONFIG_PACKAGE_kmod-can-c-can=y
+CONFIG_PACKAGE_kmod-can-c-can-pci=y
+CONFIG_PACKAGE_kmod-can-c-can-platform=y
+CONFIG_PACKAGE_kmod-can-gw=y
+CONFIG_PACKAGE_kmod-can-mcp251x=y
+CONFIG_PACKAGE_kmod-can-raw=y
+CONFIG_PACKAGE_kmod-can-slcan=y
+CONFIG_PACKAGE_kmod-can-usb-8dev=y
+CONFIG_PACKAGE_kmod-can-usb-ems=y
+CONFIG_PACKAGE_kmod-can-usb-esd=y
+CONFIG_PACKAGE_kmod-can-usb-kvaser=y
+CONFIG_PACKAGE_kmod-can-usb-peak=y
+CONFIG_PACKAGE_kmod-can-vcan=y
 # end of CAN Support
 
 #
@@ -1887,27 +1886,27 @@ CONFIG_PACKAGE_kmod-crypto-aead=y
 CONFIG_PACKAGE_kmod-crypto-arc4=y
 CONFIG_PACKAGE_kmod-crypto-authenc=y
 CONFIG_PACKAGE_kmod-crypto-cbc=y
-CONFIG_PACKAGE_kmod-crypto-ccm=m
+CONFIG_PACKAGE_kmod-crypto-ccm=y
 CONFIG_PACKAGE_kmod-crypto-cmac=y
-CONFIG_PACKAGE_kmod-crypto-crc32=m
+CONFIG_PACKAGE_kmod-crypto-crc32=y
 CONFIG_PACKAGE_kmod-crypto-crc32c=y
 CONFIG_PACKAGE_kmod-crypto-ctr=y
-CONFIG_PACKAGE_kmod-crypto-cts=m
+CONFIG_PACKAGE_kmod-crypto-cts=y
 CONFIG_PACKAGE_kmod-crypto-deflate=y
 CONFIG_PACKAGE_kmod-crypto-des=y
 CONFIG_PACKAGE_kmod-crypto-ecb=y
 CONFIG_PACKAGE_kmod-crypto-ecdh=y
 CONFIG_PACKAGE_kmod-crypto-echainiv=y
-CONFIG_PACKAGE_kmod-crypto-fcrypt=m
+CONFIG_PACKAGE_kmod-crypto-fcrypt=y
 CONFIG_PACKAGE_kmod-crypto-gcm=y
 CONFIG_PACKAGE_kmod-crypto-gf128=y
 CONFIG_PACKAGE_kmod-crypto-ghash=y
 CONFIG_PACKAGE_kmod-crypto-hash=y
 CONFIG_PACKAGE_kmod-crypto-hmac=y
-CONFIG_PACKAGE_kmod-crypto-hw-geode=m
-CONFIG_PACKAGE_kmod-crypto-hw-hifn-795x=m
-CONFIG_PACKAGE_kmod-crypto-hw-padlock=m
-CONFIG_PACKAGE_kmod-crypto-hw-talitos=m
+CONFIG_PACKAGE_kmod-crypto-hw-geode=y
+CONFIG_PACKAGE_kmod-crypto-hw-hifn-795x=y
+CONFIG_PACKAGE_kmod-crypto-hw-padlock=y
+CONFIG_PACKAGE_kmod-crypto-hw-talitos=y
 CONFIG_PACKAGE_kmod-crypto-kpp=y
 CONFIG_PACKAGE_kmod-crypto-lib-blake2s=y
 CONFIG_PACKAGE_kmod-crypto-lib-chacha20=y
@@ -1915,71 +1914,71 @@ CONFIG_PACKAGE_kmod-crypto-lib-chacha20poly1305=y
 CONFIG_PACKAGE_kmod-crypto-lib-curve25519=y
 CONFIG_PACKAGE_kmod-crypto-lib-poly1305=y
 CONFIG_PACKAGE_kmod-crypto-manager=y
-CONFIG_PACKAGE_kmod-crypto-md4=m
+CONFIG_PACKAGE_kmod-crypto-md4=y
 CONFIG_PACKAGE_kmod-crypto-md5=y
-CONFIG_PACKAGE_kmod-crypto-michael-mic=m
-CONFIG_PACKAGE_kmod-crypto-misc=m
+CONFIG_PACKAGE_kmod-crypto-michael-mic=y
+CONFIG_PACKAGE_kmod-crypto-misc=y
 CONFIG_PACKAGE_kmod-crypto-null=y
-CONFIG_PACKAGE_kmod-crypto-pcbc=m
+CONFIG_PACKAGE_kmod-crypto-pcbc=y
 CONFIG_PACKAGE_kmod-crypto-pcompress=y
-CONFIG_PACKAGE_kmod-crypto-rmd160=m
+CONFIG_PACKAGE_kmod-crypto-rmd160=y
 CONFIG_PACKAGE_kmod-crypto-rng=y
 CONFIG_PACKAGE_kmod-crypto-seqiv=y
 CONFIG_PACKAGE_kmod-crypto-sha1=y
 CONFIG_PACKAGE_kmod-crypto-sha256=y
-CONFIG_PACKAGE_kmod-crypto-sha512=m
-CONFIG_PACKAGE_kmod-crypto-test=m
-CONFIG_PACKAGE_kmod-crypto-user=m
-CONFIG_PACKAGE_kmod-crypto-wq=m
-CONFIG_PACKAGE_kmod-crypto-xcbc=m
-CONFIG_PACKAGE_kmod-crypto-xts=m
-CONFIG_PACKAGE_kmod-cryptodev=m
+CONFIG_PACKAGE_kmod-crypto-sha512=y
+CONFIG_PACKAGE_kmod-crypto-test=y
+CONFIG_PACKAGE_kmod-crypto-user=y
+CONFIG_PACKAGE_kmod-crypto-wq=y
+CONFIG_PACKAGE_kmod-crypto-xcbc=y
+CONFIG_PACKAGE_kmod-crypto-xts=y
+CONFIG_PACKAGE_kmod-cryptodev=y
 # end of Cryptographic API modules
 
 #
 # Filesystems
 #
-# CONFIG_PACKAGE_kmod-fs-afs is not set
-CONFIG_PACKAGE_kmod-fs-autofs4=m
-CONFIG_PACKAGE_kmod-fs-btrfs=m
-CONFIG_PACKAGE_kmod-fs-cifs=m
-CONFIG_PACKAGE_kmod-fs-configfs=m
-CONFIG_PACKAGE_kmod-fs-cramfs=m
-CONFIG_PACKAGE_kmod-fs-exfat=m
-CONFIG_PACKAGE_kmod-fs-exportfs=m
-CONFIG_PACKAGE_kmod-fs-ext4=m
-CONFIG_PACKAGE_kmod-fs-f2fs=m
-CONFIG_PACKAGE_kmod-fs-fscache=m
-CONFIG_PACKAGE_kmod-fs-hfs=m
-CONFIG_PACKAGE_kmod-fs-hfsplus=m
-CONFIG_PACKAGE_kmod-fs-isofs=m
-CONFIG_PACKAGE_kmod-fs-jfs=m
-CONFIG_PACKAGE_kmod-fs-ksmbd=m
+CONFIG_PACKAGE_kmod-fs-afs=y
+CONFIG_PACKAGE_kmod-fs-autofs4=y
+CONFIG_PACKAGE_kmod-fs-btrfs=y
+CONFIG_PACKAGE_kmod-fs-cifs=y
+CONFIG_PACKAGE_kmod-fs-configfs=y
+CONFIG_PACKAGE_kmod-fs-cramfs=y
+CONFIG_PACKAGE_kmod-fs-exfat=y
+CONFIG_PACKAGE_kmod-fs-exportfs=y
+CONFIG_PACKAGE_kmod-fs-ext4=y
+CONFIG_PACKAGE_kmod-fs-f2fs=y
+CONFIG_PACKAGE_kmod-fs-fscache=y
+CONFIG_PACKAGE_kmod-fs-hfs=y
+CONFIG_PACKAGE_kmod-fs-hfsplus=y
+CONFIG_PACKAGE_kmod-fs-isofs=y
+CONFIG_PACKAGE_kmod-fs-jfs=y
+CONFIG_PACKAGE_kmod-fs-ksmbd=y
 CONFIG_KSMBD_SMB_INSECURE_SERVER=y
-CONFIG_PACKAGE_kmod-fs-minix=m
-CONFIG_PACKAGE_kmod-fs-msdos=m
-CONFIG_PACKAGE_kmod-fs-nfs=m
-CONFIG_PACKAGE_kmod-fs-nfs-common=m
-CONFIG_PACKAGE_kmod-fs-nfs-common-rpcsec=m
-CONFIG_PACKAGE_kmod-fs-nfs-v3=m
-CONFIG_PACKAGE_kmod-fs-nfs-v4=m
-CONFIG_PACKAGE_kmod-fs-nfsd=m
-CONFIG_PACKAGE_kmod-fs-ntfs=m
-CONFIG_PACKAGE_kmod-fs-reiserfs=m
-CONFIG_PACKAGE_kmod-fs-squashfs=m
-CONFIG_PACKAGE_kmod-fs-udf=m
+CONFIG_PACKAGE_kmod-fs-minix=y
+CONFIG_PACKAGE_kmod-fs-msdos=y
+CONFIG_PACKAGE_kmod-fs-nfs=y
+CONFIG_PACKAGE_kmod-fs-nfs-common=y
+CONFIG_PACKAGE_kmod-fs-nfs-common-rpcsec=y
+CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+CONFIG_PACKAGE_kmod-fs-nfsd=y
+CONFIG_PACKAGE_kmod-fs-ntfs=y
+CONFIG_PACKAGE_kmod-fs-reiserfs=y
+CONFIG_PACKAGE_kmod-fs-squashfs=y
+CONFIG_PACKAGE_kmod-fs-udf=y
 CONFIG_PACKAGE_kmod-fs-vfat=y
-CONFIG_PACKAGE_kmod-fs-xfs=m
-CONFIG_PACKAGE_kmod-fuse=m
+CONFIG_PACKAGE_kmod-fs-xfs=y
+CONFIG_PACKAGE_kmod-fuse=y
 # end of Filesystems
 
 #
 # FireWire support
 #
-CONFIG_PACKAGE_kmod-firewire=m
-CONFIG_PACKAGE_kmod-firewire-net=m
-CONFIG_PACKAGE_kmod-firewire-ohci=m
-CONFIG_PACKAGE_kmod-firewire-sbp2=m
+CONFIG_PACKAGE_kmod-firewire=y
+CONFIG_PACKAGE_kmod-firewire-net=y
+CONFIG_PACKAGE_kmod-firewire-ohci=y
+CONFIG_PACKAGE_kmod-firewire-sbp2=y
 # end of FireWire support
 
 #
@@ -2007,8 +2006,8 @@ CONFIG_PACKAGE_kmod-hwmon-lm95241=m
 CONFIG_PACKAGE_kmod-hwmon-ltc4151=m
 CONFIG_PACKAGE_kmod-hwmon-mcp3021=m
 CONFIG_PACKAGE_kmod-hwmon-pwmfan=m
-CONFIG_PACKAGE_kmod-hwmon-raspberrypi=m
-CONFIG_PACKAGE_kmod-hwmon-rpi-poe-fan=m
+CONFIG_PACKAGE_kmod-hwmon-raspberrypi=y
+CONFIG_PACKAGE_kmod-hwmon-rpi-poe-fan=y
 CONFIG_PACKAGE_kmod-hwmon-sch5627=m
 CONFIG_PACKAGE_kmod-hwmon-sht21=m
 CONFIG_PACKAGE_kmod-hwmon-tmp102=m
@@ -2028,50 +2027,50 @@ CONFIG_PACKAGE_kmod-i2c-algo-pca=m
 CONFIG_PACKAGE_kmod-i2c-algo-pcf=m
 CONFIG_PACKAGE_kmod-i2c-bcm2835=m
 CONFIG_PACKAGE_kmod-i2c-core=y
-CONFIG_PACKAGE_kmod-i2c-gpio=m
-CONFIG_PACKAGE_kmod-i2c-mux=m
-CONFIG_PACKAGE_kmod-i2c-mux-gpio=m
+CONFIG_PACKAGE_kmod-i2c-gpio=y
+CONFIG_PACKAGE_kmod-i2c-mux=y
+CONFIG_PACKAGE_kmod-i2c-mux-gpio=y
 CONFIG_PACKAGE_kmod-i2c-mux-pca9541=m
 CONFIG_PACKAGE_kmod-i2c-mux-pca954x=m
 CONFIG_PACKAGE_kmod-i2c-pxa=m
 CONFIG_PACKAGE_kmod-i2c-smbus=m
-CONFIG_PACKAGE_kmod-i2c-tiny-usb=m
+CONFIG_PACKAGE_kmod-i2c-tiny-usb=y
 # end of I2C support
 
 #
 # Industrial I/O Modules
 #
-CONFIG_PACKAGE_kmod-iio-ad799x=m
-CONFIG_PACKAGE_kmod-iio-am2315=m
-CONFIG_PACKAGE_kmod-iio-bh1750=m
-CONFIG_PACKAGE_kmod-iio-bme680=m
-CONFIG_PACKAGE_kmod-iio-bme680-i2c=m
-CONFIG_PACKAGE_kmod-iio-bme680-spi=m
-CONFIG_PACKAGE_kmod-iio-bmp280=m
-CONFIG_PACKAGE_kmod-iio-bmp280-i2c=m
-CONFIG_PACKAGE_kmod-iio-bmp280-spi=m
-CONFIG_PACKAGE_kmod-iio-ccs811=m
-CONFIG_PACKAGE_kmod-iio-core=m
-CONFIG_PACKAGE_kmod-iio-dht11=m
-CONFIG_PACKAGE_kmod-iio-fxas21002c=m
-CONFIG_PACKAGE_kmod-iio-fxas21002c-i2c=m
-CONFIG_PACKAGE_kmod-iio-fxas21002c-spi=m
-CONFIG_PACKAGE_kmod-iio-fxos8700=m
-CONFIG_PACKAGE_kmod-iio-fxos8700-i2c=m
-CONFIG_PACKAGE_kmod-iio-fxos8700-spi=m
-CONFIG_PACKAGE_kmod-iio-hmc5843=m
-CONFIG_PACKAGE_kmod-iio-htu21=m
-CONFIG_PACKAGE_kmod-iio-kfifo-buf=m
-CONFIG_PACKAGE_kmod-iio-lsm6dsx=m
-CONFIG_PACKAGE_kmod-iio-lsm6dsx-i2c=m
-CONFIG_PACKAGE_kmod-iio-lsm6dsx-spi=m
-CONFIG_PACKAGE_kmod-iio-si7020=m
-CONFIG_PACKAGE_kmod-iio-sps30=m
-CONFIG_PACKAGE_kmod-iio-st_accel=m
-CONFIG_PACKAGE_kmod-iio-st_accel-i2c=m
-CONFIG_PACKAGE_kmod-iio-st_accel-spi=m
-CONFIG_PACKAGE_kmod-iio-tsl4531=m
-CONFIG_PACKAGE_kmod-industrialio-triggered-buffer=m
+CONFIG_PACKAGE_kmod-iio-ad799x=y
+CONFIG_PACKAGE_kmod-iio-am2315=y
+CONFIG_PACKAGE_kmod-iio-bh1750=y
+CONFIG_PACKAGE_kmod-iio-bme680=y
+CONFIG_PACKAGE_kmod-iio-bme680-i2c=y
+CONFIG_PACKAGE_kmod-iio-bme680-spi=y
+CONFIG_PACKAGE_kmod-iio-bmp280=y
+CONFIG_PACKAGE_kmod-iio-bmp280-i2c=y
+CONFIG_PACKAGE_kmod-iio-bmp280-spi=y
+CONFIG_PACKAGE_kmod-iio-ccs811=y
+CONFIG_PACKAGE_kmod-iio-core=y
+CONFIG_PACKAGE_kmod-iio-dht11=y
+CONFIG_PACKAGE_kmod-iio-fxas21002c=y
+CONFIG_PACKAGE_kmod-iio-fxas21002c-i2c=y
+CONFIG_PACKAGE_kmod-iio-fxas21002c-spi=y
+CONFIG_PACKAGE_kmod-iio-fxos8700=y
+CONFIG_PACKAGE_kmod-iio-fxos8700-i2c=y
+CONFIG_PACKAGE_kmod-iio-fxos8700-spi=y
+CONFIG_PACKAGE_kmod-iio-hmc5843=y
+CONFIG_PACKAGE_kmod-iio-htu21=y
+CONFIG_PACKAGE_kmod-iio-kfifo-buf=y
+CONFIG_PACKAGE_kmod-iio-lsm6dsx=y
+CONFIG_PACKAGE_kmod-iio-lsm6dsx-i2c=y
+CONFIG_PACKAGE_kmod-iio-lsm6dsx-spi=y
+CONFIG_PACKAGE_kmod-iio-si7020=y
+CONFIG_PACKAGE_kmod-iio-sps30=y
+CONFIG_PACKAGE_kmod-iio-st_accel=y
+CONFIG_PACKAGE_kmod-iio-st_accel-i2c=y
+CONFIG_PACKAGE_kmod-iio-st_accel-spi=y
+CONFIG_PACKAGE_kmod-iio-tsl4531=y
+CONFIG_PACKAGE_kmod-industrialio-triggered-buffer=y
 # end of Industrial I/O Modules
 
 #
@@ -2081,142 +2080,142 @@ CONFIG_PACKAGE_kmod-hid=y
 CONFIG_PACKAGE_kmod-hid-generic=y
 CONFIG_PACKAGE_kmod-input-core=y
 CONFIG_PACKAGE_kmod-input-evdev=y
-CONFIG_PACKAGE_kmod-input-gpio-encoder=m
-CONFIG_PACKAGE_kmod-input-gpio-keys=m
-CONFIG_PACKAGE_kmod-input-gpio-keys-polled=m
-CONFIG_PACKAGE_kmod-input-joydev=m
-CONFIG_PACKAGE_kmod-input-matrixkmap=m
-CONFIG_PACKAGE_kmod-input-polldev=m
-CONFIG_PACKAGE_kmod-input-touchscreen-ads7846=m
-CONFIG_PACKAGE_kmod-input-uinput=m
+CONFIG_PACKAGE_kmod-input-gpio-encoder=y
+CONFIG_PACKAGE_kmod-input-gpio-keys=y
+CONFIG_PACKAGE_kmod-input-gpio-keys-polled=y
+CONFIG_PACKAGE_kmod-input-joydev=y
+CONFIG_PACKAGE_kmod-input-matrixkmap=y
+CONFIG_PACKAGE_kmod-input-polldev=y
+CONFIG_PACKAGE_kmod-input-touchscreen-ads7846=y
+CONFIG_PACKAGE_kmod-input-uinput=y
 # end of Input modules
 
 #
 # LED modules
 #
-CONFIG_PACKAGE_kmod-leds-gpio=m
-CONFIG_PACKAGE_kmod-leds-pca963x=m
-CONFIG_PACKAGE_kmod-ledtrig-activity=m
-CONFIG_PACKAGE_kmod-ledtrig-gpio=m
-CONFIG_PACKAGE_kmod-ledtrig-oneshot=m
-CONFIG_PACKAGE_kmod-ledtrig-transient=m
+CONFIG_PACKAGE_kmod-leds-gpio=y
+CONFIG_PACKAGE_kmod-leds-pca963x=y
+CONFIG_PACKAGE_kmod-ledtrig-activity=y
+CONFIG_PACKAGE_kmod-ledtrig-gpio=y
+CONFIG_PACKAGE_kmod-ledtrig-oneshot=y
+CONFIG_PACKAGE_kmod-ledtrig-transient=y
 # end of LED modules
 
 #
 # Libraries
 #
-CONFIG_PACKAGE_kmod-asn1-decoder=m
+CONFIG_PACKAGE_kmod-asn1-decoder=y
 CONFIG_PACKAGE_kmod-lib-cordic=m
 CONFIG_PACKAGE_kmod-lib-crc-ccitt=y
-CONFIG_PACKAGE_kmod-lib-crc-itu-t=m
+CONFIG_PACKAGE_kmod-lib-crc-itu-t=y
 CONFIG_PACKAGE_kmod-lib-crc16=y
 CONFIG_PACKAGE_kmod-lib-crc32c=y
 CONFIG_PACKAGE_kmod-lib-crc7=m
-CONFIG_PACKAGE_kmod-lib-crc8=m
-CONFIG_PACKAGE_kmod-lib-lz4=m
+CONFIG_PACKAGE_kmod-lib-crc8=y
+CONFIG_PACKAGE_kmod-lib-lz4=y
 CONFIG_PACKAGE_kmod-lib-lzo=y
-CONFIG_PACKAGE_kmod-lib-raid6=m
-CONFIG_PACKAGE_kmod-lib-textsearch=m
-CONFIG_PACKAGE_kmod-lib-xor=m
+CONFIG_PACKAGE_kmod-lib-raid6=y
+CONFIG_PACKAGE_kmod-lib-textsearch=y
+CONFIG_PACKAGE_kmod-lib-xor=y
 CONFIG_PACKAGE_kmod-lib-zlib-deflate=y
 CONFIG_PACKAGE_kmod-lib-zlib-inflate=y
-CONFIG_PACKAGE_kmod-lib-zstd=m
+CONFIG_PACKAGE_kmod-lib-zstd=y
 # end of Libraries
 
 #
 # Native Language Support
 #
 CONFIG_PACKAGE_kmod-nls-base=y
-CONFIG_PACKAGE_kmod-nls-cp1250=m
-CONFIG_PACKAGE_kmod-nls-cp1251=m
+CONFIG_PACKAGE_kmod-nls-cp1250=y
+CONFIG_PACKAGE_kmod-nls-cp1251=y
 CONFIG_PACKAGE_kmod-nls-cp437=y
-CONFIG_PACKAGE_kmod-nls-cp775=m
-CONFIG_PACKAGE_kmod-nls-cp850=m
-CONFIG_PACKAGE_kmod-nls-cp852=m
-CONFIG_PACKAGE_kmod-nls-cp862=m
-CONFIG_PACKAGE_kmod-nls-cp864=m
-CONFIG_PACKAGE_kmod-nls-cp866=m
-CONFIG_PACKAGE_kmod-nls-cp932=m
-CONFIG_PACKAGE_kmod-nls-cp936=m
-CONFIG_PACKAGE_kmod-nls-cp950=m
+CONFIG_PACKAGE_kmod-nls-cp775=y
+CONFIG_PACKAGE_kmod-nls-cp850=y
+CONFIG_PACKAGE_kmod-nls-cp852=y
+CONFIG_PACKAGE_kmod-nls-cp862=y
+CONFIG_PACKAGE_kmod-nls-cp864=y
+CONFIG_PACKAGE_kmod-nls-cp866=y
+CONFIG_PACKAGE_kmod-nls-cp932=y
+CONFIG_PACKAGE_kmod-nls-cp936=y
+CONFIG_PACKAGE_kmod-nls-cp950=y
 CONFIG_PACKAGE_kmod-nls-iso8859-1=y
-CONFIG_PACKAGE_kmod-nls-iso8859-13=m
-CONFIG_PACKAGE_kmod-nls-iso8859-15=m
-CONFIG_PACKAGE_kmod-nls-iso8859-2=m
-CONFIG_PACKAGE_kmod-nls-iso8859-6=m
-CONFIG_PACKAGE_kmod-nls-iso8859-8=m
-CONFIG_PACKAGE_kmod-nls-koi8r=m
+CONFIG_PACKAGE_kmod-nls-iso8859-13=y
+CONFIG_PACKAGE_kmod-nls-iso8859-15=y
+CONFIG_PACKAGE_kmod-nls-iso8859-2=y
+CONFIG_PACKAGE_kmod-nls-iso8859-6=y
+CONFIG_PACKAGE_kmod-nls-iso8859-8=y
+CONFIG_PACKAGE_kmod-nls-koi8r=y
 CONFIG_PACKAGE_kmod-nls-utf8=y
 # end of Native Language Support
 
 #
 # Netfilter Extensions
 #
-CONFIG_PACKAGE_kmod-arptables=m
+CONFIG_PACKAGE_kmod-arptables=y
 CONFIG_PACKAGE_kmod-br-netfilter=y
-CONFIG_PACKAGE_kmod-ebtables=m
-CONFIG_PACKAGE_kmod-ebtables-ipv4=m
-CONFIG_PACKAGE_kmod-ebtables-ipv6=m
-CONFIG_PACKAGE_kmod-ebtables-watchers=m
+CONFIG_PACKAGE_kmod-ebtables=y
+CONFIG_PACKAGE_kmod-ebtables-ipv4=y
+CONFIG_PACKAGE_kmod-ebtables-ipv6=y
+CONFIG_PACKAGE_kmod-ebtables-watchers=y
 CONFIG_PACKAGE_kmod-ip6tables=y
-CONFIG_PACKAGE_kmod-ip6tables-extra=m
-CONFIG_PACKAGE_kmod-ipt-checksum=m
-CONFIG_PACKAGE_kmod-ipt-cluster=m
-CONFIG_PACKAGE_kmod-ipt-clusterip=m
+CONFIG_PACKAGE_kmod-ip6tables-extra=y
+CONFIG_PACKAGE_kmod-ipt-checksum=y
+CONFIG_PACKAGE_kmod-ipt-cluster=y
+CONFIG_PACKAGE_kmod-ipt-clusterip=y
 CONFIG_PACKAGE_kmod-ipt-conntrack=y
 CONFIG_PACKAGE_kmod-ipt-conntrack-extra=y
-CONFIG_PACKAGE_kmod-ipt-conntrack-label=m
+CONFIG_PACKAGE_kmod-ipt-conntrack-label=y
 CONFIG_PACKAGE_kmod-ipt-core=y
-CONFIG_PACKAGE_kmod-ipt-debug=m
-CONFIG_PACKAGE_kmod-ipt-extra=m
-CONFIG_PACKAGE_kmod-ipt-filter=m
-CONFIG_PACKAGE_kmod-ipt-hashlimit=m
+CONFIG_PACKAGE_kmod-ipt-debug=y
+CONFIG_PACKAGE_kmod-ipt-extra=y
+CONFIG_PACKAGE_kmod-ipt-filter=y
+CONFIG_PACKAGE_kmod-ipt-hashlimit=y
 CONFIG_PACKAGE_kmod-ipt-ipopt=y
-CONFIG_PACKAGE_kmod-ipt-iprange=m
-CONFIG_PACKAGE_kmod-ipt-ipsec=m
+CONFIG_PACKAGE_kmod-ipt-iprange=y
+CONFIG_PACKAGE_kmod-ipt-ipsec=y
 CONFIG_PACKAGE_kmod-ipt-ipset=y
 CONFIG_PACKAGE_kmod-ipt-led=y
 CONFIG_PACKAGE_kmod-ipt-nat=y
-CONFIG_PACKAGE_kmod-ipt-nat-extra=m
-CONFIG_PACKAGE_kmod-ipt-nat6=m
-CONFIG_PACKAGE_kmod-ipt-nflog=m
-CONFIG_PACKAGE_kmod-ipt-nfqueue=m
+CONFIG_PACKAGE_kmod-ipt-nat-extra=y
+CONFIG_PACKAGE_kmod-ipt-nat6=y
+CONFIG_PACKAGE_kmod-ipt-nflog=y
+CONFIG_PACKAGE_kmod-ipt-nfqueue=y
 CONFIG_PACKAGE_kmod-ipt-offload=y
-CONFIG_PACKAGE_kmod-ipt-physdev=m
+CONFIG_PACKAGE_kmod-ipt-physdev=y
 CONFIG_PACKAGE_kmod-ipt-raw=y
-CONFIG_PACKAGE_kmod-ipt-raw6=m
-CONFIG_PACKAGE_kmod-ipt-rpfilter=m
-CONFIG_PACKAGE_kmod-ipt-tee=m
-CONFIG_PACKAGE_kmod-ipt-tproxy=m
-CONFIG_PACKAGE_kmod-ipt-u32=m
-CONFIG_PACKAGE_kmod-ipt-ulog=m
+CONFIG_PACKAGE_kmod-ipt-raw6=y
+CONFIG_PACKAGE_kmod-ipt-rpfilter=y
+CONFIG_PACKAGE_kmod-ipt-tee=y
+CONFIG_PACKAGE_kmod-ipt-tproxy=y
+CONFIG_PACKAGE_kmod-ipt-u32=y
+CONFIG_PACKAGE_kmod-ipt-ulog=y
 CONFIG_PACKAGE_kmod-nf-conntrack=y
 CONFIG_PACKAGE_kmod-nf-conntrack-netlink=y
 CONFIG_PACKAGE_kmod-nf-conntrack6=y
 CONFIG_PACKAGE_kmod-nf-flow=y
 CONFIG_PACKAGE_kmod-nf-ipt=y
 CONFIG_PACKAGE_kmod-nf-ipt6=y
-CONFIG_PACKAGE_kmod-nf-ipvs=m
-CONFIG_PACKAGE_kmod-nf-ipvs-ftp=m
-CONFIG_PACKAGE_kmod-nf-ipvs-sip=m
+CONFIG_PACKAGE_kmod-nf-ipvs=y
+CONFIG_PACKAGE_kmod-nf-ipvs-ftp=y
+CONFIG_PACKAGE_kmod-nf-ipvs-sip=y
 CONFIG_PACKAGE_kmod-nf-nat=y
-CONFIG_PACKAGE_kmod-nf-nat6=m
-CONFIG_PACKAGE_kmod-nf-nathelper=m
-CONFIG_PACKAGE_kmod-nf-nathelper-extra=m
+CONFIG_PACKAGE_kmod-nf-nat6=y
+CONFIG_PACKAGE_kmod-nf-nathelper=y
+CONFIG_PACKAGE_kmod-nf-nathelper-extra=y
 CONFIG_PACKAGE_kmod-nf-reject=y
 CONFIG_PACKAGE_kmod-nf-reject6=y
 CONFIG_PACKAGE_kmod-nfnetlink=y
-CONFIG_PACKAGE_kmod-nfnetlink-log=m
-CONFIG_PACKAGE_kmod-nfnetlink-queue=m
-CONFIG_PACKAGE_kmod-nft-arp=m
-CONFIG_PACKAGE_kmod-nft-bridge=m
-CONFIG_PACKAGE_kmod-nft-core=m
+CONFIG_PACKAGE_kmod-nfnetlink-log=y
+CONFIG_PACKAGE_kmod-nfnetlink-queue=y
+CONFIG_PACKAGE_kmod-nft-arp=y
+CONFIG_PACKAGE_kmod-nft-bridge=y
+CONFIG_PACKAGE_kmod-nft-core=y
 CONFIG_PACKAGE_kmod-nft-fib=m
-CONFIG_PACKAGE_kmod-nft-nat=m
-CONFIG_PACKAGE_kmod-nft-nat6=m
-CONFIG_PACKAGE_kmod-nft-netdev=m
-CONFIG_PACKAGE_kmod-nft-offload=m
-CONFIG_PACKAGE_kmod-nft-queue=m
+CONFIG_PACKAGE_kmod-nft-nat=y
+CONFIG_PACKAGE_kmod-nft-nat6=y
+CONFIG_PACKAGE_kmod-nft-netdev=y
+CONFIG_PACKAGE_kmod-nft-offload=y
+CONFIG_PACKAGE_kmod-nft-queue=y
 # end of Netfilter Extensions
 
 #
@@ -2343,6 +2342,7 @@ CONFIG_PACKAGE_kmod-pppoe=y
 CONFIG_PACKAGE_kmod-pppol2tp=y
 CONFIG_PACKAGE_kmod-pppox=y
 CONFIG_PACKAGE_kmod-pptp=y
+CONFIG_PACKAGE_kmod-rxrpc=y
 CONFIG_PACKAGE_kmod-sched=y
 CONFIG_PACKAGE_kmod-sched-act-vlan=y
 CONFIG_PACKAGE_kmod-sched-bpf=y
@@ -2407,11 +2407,11 @@ CONFIG_PACKAGE_kmod-pps=y
 CONFIG_PACKAGE_kmod-pps-gpio=m
 CONFIG_PACKAGE_kmod-pps-ldisc=m
 CONFIG_PACKAGE_kmod-ptp=y
-CONFIG_PACKAGE_kmod-pwm-bcm2835=m
+CONFIG_PACKAGE_kmod-pwm-bcm2835=y
 CONFIG_PACKAGE_kmod-random-core=y
 CONFIG_PACKAGE_kmod-regmap-core=y
 CONFIG_PACKAGE_kmod-regmap-i2c=y
-CONFIG_PACKAGE_kmod-regmap-spi=m
+CONFIG_PACKAGE_kmod-regmap-spi=y
 # CONFIG_PACKAGE_kmod-rtc-ds1307 is not set
 # CONFIG_PACKAGE_kmod-rtc-ds1374 is not set
 # CONFIG_PACKAGE_kmod-rtc-ds1672 is not set
@@ -2450,9 +2450,9 @@ CONFIG_PACKAGE_kmod-zram=y
 CONFIG_PACKAGE_kmod-mmc-spi=m
 CONFIG_PACKAGE_kmod-spi-bcm2835=m
 CONFIG_PACKAGE_kmod-spi-bcm2835-aux=m
-CONFIG_PACKAGE_kmod-spi-bitbang=m
-CONFIG_PACKAGE_kmod-spi-dev=m
-CONFIG_PACKAGE_kmod-spi-gpio=m
+CONFIG_PACKAGE_kmod-spi-bitbang=y
+CONFIG_PACKAGE_kmod-spi-dev=y
+CONFIG_PACKAGE_kmod-spi-gpio=y
 # end of SPI Support
 
 #
@@ -2522,118 +2522,118 @@ CONFIG_PACKAGE_kmod-sound-soc-rpi-simple-soundcard=m
 CONFIG_PACKAGE_kmod-sound-soc-rpi-wm8804-soundcard=m
 CONFIG_PACKAGE_kmod-sound-soc-spdif=m
 CONFIG_PACKAGE_kmod-sound-via82xx=m
-CONFIG_PACKAGE_kmod-usb-audio=m
+CONFIG_PACKAGE_kmod-usb-audio=y
 # end of Sound Support
 
 #
 # USB Support
 #
-CONFIG_PACKAGE_kmod-chaoskey=m
-CONFIG_PACKAGE_kmod-usb-acm=m
-CONFIG_PACKAGE_kmod-usb-atm=m
-CONFIG_PACKAGE_kmod-usb-atm-cxacru=m
-CONFIG_PACKAGE_kmod-usb-atm-speedtouch=m
-CONFIG_PACKAGE_kmod-usb-atm-ueagle=m
-CONFIG_PACKAGE_kmod-usb-cm109=m
+CONFIG_PACKAGE_kmod-chaoskey=y
+CONFIG_PACKAGE_kmod-usb-acm=y
+CONFIG_PACKAGE_kmod-usb-atm=y
+CONFIG_PACKAGE_kmod-usb-atm-cxacru=y
+CONFIG_PACKAGE_kmod-usb-atm-speedtouch=y
+CONFIG_PACKAGE_kmod-usb-atm-ueagle=y
+CONFIG_PACKAGE_kmod-usb-cm109=y
 CONFIG_PACKAGE_kmod-usb-core=y
-CONFIG_PACKAGE_kmod-usb-dwc2=m
-CONFIG_PACKAGE_kmod-usb-dwc3=m
-CONFIG_PACKAGE_kmod-usb-ehci=m
-CONFIG_PACKAGE_kmod-usb-gadget=m
-CONFIG_PACKAGE_kmod-usb-gadget-cdc-composite=m
-CONFIG_PACKAGE_kmod-usb-gadget-ehci-debug=m
-CONFIG_PACKAGE_kmod-usb-gadget-eth=m
-CONFIG_PACKAGE_kmod-usb-gadget-hid=m
-CONFIG_PACKAGE_kmod-usb-gadget-mass-storage=m
-CONFIG_PACKAGE_kmod-usb-gadget-serial=m
+# CONFIG_PACKAGE_kmod-usb-dwc2 is not set
+# CONFIG_PACKAGE_kmod-usb-dwc3 is not set
+CONFIG_PACKAGE_kmod-usb-ehci=y
+CONFIG_PACKAGE_kmod-usb-gadget=y
+CONFIG_PACKAGE_kmod-usb-gadget-cdc-composite=y
+# CONFIG_PACKAGE_kmod-usb-gadget-ehci-debug is not set
+CONFIG_PACKAGE_kmod-usb-gadget-eth=y
+CONFIG_PACKAGE_kmod-usb-gadget-hid=y
+CONFIG_PACKAGE_kmod-usb-gadget-mass-storage=y
+CONFIG_PACKAGE_kmod-usb-gadget-serial=y
 CONFIG_PACKAGE_kmod-usb-hid=y
-CONFIG_PACKAGE_kmod-usb-hid-cp2112=m
-CONFIG_PACKAGE_kmod-usb-ledtrig-usbport=m
-CONFIG_PACKAGE_kmod-usb-lib-composite=m
+CONFIG_PACKAGE_kmod-usb-hid-cp2112=y
+CONFIG_PACKAGE_kmod-usb-ledtrig-usbport=y
+CONFIG_PACKAGE_kmod-usb-lib-composite=y
 CONFIG_PACKAGE_kmod-usb-net=y
-CONFIG_PACKAGE_kmod-usb-net-aqc111=m
-CONFIG_PACKAGE_kmod-usb-net-asix=m
-CONFIG_PACKAGE_kmod-usb-net-asix-ax88179=m
-CONFIG_PACKAGE_kmod-usb-net-cdc-eem=m
-CONFIG_PACKAGE_kmod-usb-net-cdc-ether=m
-CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=m
+CONFIG_PACKAGE_kmod-usb-net-aqc111=y
+CONFIG_PACKAGE_kmod-usb-net-asix=y
+CONFIG_PACKAGE_kmod-usb-net-asix-ax88179=y
+CONFIG_PACKAGE_kmod-usb-net-cdc-eem=y
+CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
+CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=y
 CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=y
-CONFIG_PACKAGE_kmod-usb-net-cdc-subset=m
-CONFIG_PACKAGE_kmod-usb-net-dm9601-ether=m
-CONFIG_PACKAGE_kmod-usb-net-hso=m
+CONFIG_PACKAGE_kmod-usb-net-cdc-subset=y
+CONFIG_PACKAGE_kmod-usb-net-dm9601-ether=y
+CONFIG_PACKAGE_kmod-usb-net-hso=y
 CONFIG_PACKAGE_kmod-usb-net-huawei-cdc-ncm=y
-CONFIG_PACKAGE_kmod-usb-net-ipheth=m
-CONFIG_PACKAGE_kmod-usb-net-kalmia=m
-CONFIG_PACKAGE_kmod-usb-net-kaweth=m
-CONFIG_PACKAGE_kmod-usb-net-mcs7830=m
-CONFIG_PACKAGE_kmod-usb-net-pegasus=m
-CONFIG_PACKAGE_kmod-usb-net-pl=m
+CONFIG_PACKAGE_kmod-usb-net-ipheth=y
+CONFIG_PACKAGE_kmod-usb-net-kalmia=y
+CONFIG_PACKAGE_kmod-usb-net-kaweth=y
+CONFIG_PACKAGE_kmod-usb-net-mcs7830=y
+CONFIG_PACKAGE_kmod-usb-net-pegasus=y
+CONFIG_PACKAGE_kmod-usb-net-pl=y
 CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=y
-CONFIG_PACKAGE_kmod-usb-net-rndis=m
-CONFIG_PACKAGE_kmod-usb-net-rtl8150=m
-CONFIG_PACKAGE_kmod-usb-net-rtl8152=m
-CONFIG_PACKAGE_kmod-usb-net-sierrawireless=m
-CONFIG_PACKAGE_kmod-usb-net-smsc95xx=m
-CONFIG_PACKAGE_kmod-usb-net-sr9700=m
-CONFIG_PACKAGE_kmod-usb-net2280=m
-CONFIG_PACKAGE_kmod-usb-ohci=m
-CONFIG_PACKAGE_kmod-usb-ohci-pci=m
-CONFIG_PACKAGE_kmod-usb-printer=m
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
+CONFIG_PACKAGE_kmod-usb-net-rtl8150=y
+CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
+CONFIG_PACKAGE_kmod-usb-net-sierrawireless=y
+CONFIG_PACKAGE_kmod-usb-net-smsc95xx=y
+CONFIG_PACKAGE_kmod-usb-net-sr9700=y
+CONFIG_PACKAGE_kmod-usb-net2280=y
+CONFIG_PACKAGE_kmod-usb-ohci=y
+CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+CONFIG_PACKAGE_kmod-usb-printer=y
 CONFIG_PACKAGE_kmod-usb-serial=y
-CONFIG_PACKAGE_kmod-usb-serial-ark3116=m
-CONFIG_PACKAGE_kmod-usb-serial-belkin=m
-CONFIG_PACKAGE_kmod-usb-serial-ch341=m
-CONFIG_PACKAGE_kmod-usb-serial-cp210x=m
-CONFIG_PACKAGE_kmod-usb-serial-cypress-m8=m
-CONFIG_PACKAGE_kmod-usb-serial-edgeport=m
-CONFIG_PACKAGE_kmod-usb-serial-ftdi=m
-CONFIG_PACKAGE_kmod-usb-serial-garmin=m
-CONFIG_PACKAGE_kmod-usb-serial-ipw=m
-CONFIG_PACKAGE_kmod-usb-serial-keyspan=m
-CONFIG_PACKAGE_kmod-usb-serial-mct=m
-CONFIG_PACKAGE_kmod-usb-serial-mos7720=m
-CONFIG_PACKAGE_kmod-usb-serial-mos7840=m
+CONFIG_PACKAGE_kmod-usb-serial-ark3116=y
+CONFIG_PACKAGE_kmod-usb-serial-belkin=y
+CONFIG_PACKAGE_kmod-usb-serial-ch341=y
+CONFIG_PACKAGE_kmod-usb-serial-cp210x=y
+CONFIG_PACKAGE_kmod-usb-serial-cypress-m8=y
+CONFIG_PACKAGE_kmod-usb-serial-edgeport=y
+CONFIG_PACKAGE_kmod-usb-serial-ftdi=y
+CONFIG_PACKAGE_kmod-usb-serial-garmin=y
+CONFIG_PACKAGE_kmod-usb-serial-ipw=y
+CONFIG_PACKAGE_kmod-usb-serial-keyspan=y
+CONFIG_PACKAGE_kmod-usb-serial-mct=y
+CONFIG_PACKAGE_kmod-usb-serial-mos7720=y
+CONFIG_PACKAGE_kmod-usb-serial-mos7840=y
 CONFIG_PACKAGE_kmod-usb-serial-option=y
-CONFIG_PACKAGE_kmod-usb-serial-oti6858=m
-CONFIG_PACKAGE_kmod-usb-serial-pl2303=m
-CONFIG_PACKAGE_kmod-usb-serial-qualcomm=m
-CONFIG_PACKAGE_kmod-usb-serial-sierrawireless=m
-CONFIG_PACKAGE_kmod-usb-serial-simple=m
-CONFIG_PACKAGE_kmod-usb-serial-ti-usb=m
-CONFIG_PACKAGE_kmod-usb-serial-visor=m
+CONFIG_PACKAGE_kmod-usb-serial-oti6858=y
+CONFIG_PACKAGE_kmod-usb-serial-pl2303=y
+CONFIG_PACKAGE_kmod-usb-serial-qualcomm=y
+CONFIG_PACKAGE_kmod-usb-serial-sierrawireless=y
+CONFIG_PACKAGE_kmod-usb-serial-simple=y
+CONFIG_PACKAGE_kmod-usb-serial-ti-usb=y
+CONFIG_PACKAGE_kmod-usb-serial-visor=y
 CONFIG_PACKAGE_kmod-usb-serial-wwan=y
-CONFIG_PACKAGE_kmod-usb-storage=m
-CONFIG_PACKAGE_kmod-usb-storage-extras=m
-CONFIG_PACKAGE_kmod-usb-storage-uas=m
-CONFIG_PACKAGE_kmod-usb-test=m
-CONFIG_PACKAGE_kmod-usb-uhci=m
+CONFIG_PACKAGE_kmod-usb-storage=y
+CONFIG_PACKAGE_kmod-usb-storage-extras=y
+CONFIG_PACKAGE_kmod-usb-storage-uas=y
+# CONFIG_PACKAGE_kmod-usb-test is not set
+CONFIG_PACKAGE_kmod-usb-uhci=y
 CONFIG_PACKAGE_kmod-usb-wdm=y
-CONFIG_PACKAGE_kmod-usb-yealink=m
-CONFIG_PACKAGE_kmod-usb2=m
-CONFIG_PACKAGE_kmod-usb2-pci=m
-CONFIG_PACKAGE_kmod-usb3=m
-CONFIG_PACKAGE_kmod-usbip=m
-CONFIG_PACKAGE_kmod-usbip-client=m
-CONFIG_PACKAGE_kmod-usbip-server=m
-CONFIG_PACKAGE_kmod-usbmon=m
+CONFIG_PACKAGE_kmod-usb-yealink=y
+CONFIG_PACKAGE_kmod-usb2=y
+CONFIG_PACKAGE_kmod-usb2-pci=y
+CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-usbip=y
+CONFIG_PACKAGE_kmod-usbip-client=y
+CONFIG_PACKAGE_kmod-usbip-server=y
+CONFIG_PACKAGE_kmod-usbmon=y
 # end of USB Support
 
 #
 # Video Support
 #
-CONFIG_PACKAGE_kmod-backlight=m
+CONFIG_PACKAGE_kmod-backlight=y
 CONFIG_PACKAGE_kmod-backlight-pwm=m
 CONFIG_PACKAGE_kmod-drm=m
 CONFIG_PACKAGE_kmod-drm-kms-helper=m
 CONFIG_PACKAGE_kmod-drm-ttm=m
-CONFIG_PACKAGE_kmod-fb=m
+CONFIG_PACKAGE_kmod-fb=y
 CONFIG_PACKAGE_kmod-fb-cfb-copyarea=m
 CONFIG_PACKAGE_kmod-fb-cfb-fillrect=m
 CONFIG_PACKAGE_kmod-fb-cfb-imgblt=m
-CONFIG_PACKAGE_kmod-fb-sys-fops=m
-CONFIG_PACKAGE_kmod-fb-sys-ram=m
-CONFIG_PACKAGE_kmod-fb-tft=m
-CONFIG_PACKAGE_kmod-fb-tft-ili9486=m
+CONFIG_PACKAGE_kmod-fb-sys-fops=y
+CONFIG_PACKAGE_kmod-fb-sys-ram=y
+CONFIG_PACKAGE_kmod-fb-tft=y
+CONFIG_PACKAGE_kmod-fb-tft-ili9486=y
 CONFIG_PACKAGE_kmod-video-core=m
 CONFIG_PACKAGE_kmod-camera-bcm2835=m
 CONFIG_PACKAGE_kmod-drm-vc4=m
@@ -2692,16 +2692,16 @@ CONFIG_PACKAGE_kmod-video-videobuf2=m
 #
 # W1 support
 #
-CONFIG_PACKAGE_kmod-w1=m
-CONFIG_PACKAGE_kmod-w1-master-ds2482=m
-CONFIG_PACKAGE_kmod-w1-master-ds2490=m
-CONFIG_PACKAGE_kmod-w1-master-gpio=m
-CONFIG_PACKAGE_kmod-w1-slave-ds2413=m
-CONFIG_PACKAGE_kmod-w1-slave-ds2431=m
-CONFIG_PACKAGE_kmod-w1-slave-ds2433=m
-CONFIG_PACKAGE_kmod-w1-slave-ds2760=m
-CONFIG_PACKAGE_kmod-w1-slave-smem=m
-CONFIG_PACKAGE_kmod-w1-slave-therm=m
+CONFIG_PACKAGE_kmod-w1=y
+CONFIG_PACKAGE_kmod-w1-master-ds2482=y
+CONFIG_PACKAGE_kmod-w1-master-ds2490=y
+CONFIG_PACKAGE_kmod-w1-master-gpio=y
+CONFIG_PACKAGE_kmod-w1-slave-ds2413=y
+CONFIG_PACKAGE_kmod-w1-slave-ds2431=y
+CONFIG_PACKAGE_kmod-w1-slave-ds2433=y
+CONFIG_PACKAGE_kmod-w1-slave-ds2760=y
+CONFIG_PACKAGE_kmod-w1-slave-smem=y
+CONFIG_PACKAGE_kmod-w1-slave-therm=y
 # end of W1 support
 
 #
@@ -2801,6 +2801,7 @@ CONFIG_PACKAGE_kmod-mac80211-hwsim=m
 CONFIG_PACKAGE_kmod-mt76=m
 CONFIG_PACKAGE_kmod-mt76-connac=m
 CONFIG_PACKAGE_kmod-mt76-core=m
+CONFIG_PACKAGE_kmod-mt76-sdio=m
 CONFIG_PACKAGE_kmod-mt76-usb=m
 CONFIG_PACKAGE_kmod-mt7601u=m
 CONFIG_PACKAGE_kmod-mt7603=m
@@ -2822,6 +2823,7 @@ CONFIG_PACKAGE_kmod-mt76x2-common=m
 CONFIG_PACKAGE_kmod-mt76x2u=m
 CONFIG_PACKAGE_kmod-mt7915e=m
 CONFIG_PACKAGE_kmod-mt7921e=m
+CONFIG_PACKAGE_kmod-mt7921s=m
 CONFIG_PACKAGE_kmod-mwifiex-pcie=m
 CONFIG_PACKAGE_kmod-mwifiex-sdio=m
 CONFIG_PACKAGE_kmod-mwl8k=m
@@ -2872,6 +2874,8 @@ CONFIG_PACKAGE_kmod-wl18xx=m
 CONFIG_PACKAGE_kmod-wlcore=m
 CONFIG_PACKAGE_kmod-zd1211rw=m
 # end of Wireless Drivers
+
+CONFIG_PACKAGE_kmod-mt7921-common=m
 # end of Kernel modules
 
 #
@@ -2918,128 +2922,7 @@ CONFIG_PACKAGE_lua=y
 #
 # Perl
 #
-CONFIG_PACKAGE_perl=y
-
-#
-# Configuration
-#
-# CONFIG_PERL_THREADS is not set
-# CONFIG_PERL_TESTS is not set
-CONFIG_PERL_NOCOMMENT=y
-# end of Configuration
-
-# CONFIG_PACKAGE_perl-parse-yapp is not set
-# CONFIG_PACKAGE_perlbase-anydbm-file is not set
-# CONFIG_PACKAGE_perlbase-app is not set
-# CONFIG_PACKAGE_perlbase-archive is not set
-# CONFIG_PACKAGE_perlbase-arybase is not set
-# CONFIG_PACKAGE_perlbase-attribute is not set
-# CONFIG_PACKAGE_perlbase-attributes is not set
-# CONFIG_PACKAGE_perlbase-autodie is not set
-# CONFIG_PACKAGE_perlbase-autoloader is not set
-# CONFIG_PACKAGE_perlbase-autosplit is not set
-# CONFIG_PACKAGE_perlbase-autouse is not set
-# CONFIG_PACKAGE_perlbase-b is not set
-CONFIG_PACKAGE_perlbase-base=y
-# CONFIG_PACKAGE_perlbase-benchmark is not set
-# CONFIG_PACKAGE_perlbase-bigint is not set
-# CONFIG_PACKAGE_perlbase-bignum is not set
-# CONFIG_PACKAGE_perlbase-blib is not set
-CONFIG_PACKAGE_perlbase-bytes=y
-# CONFIG_PACKAGE_perlbase-charnames is not set
-CONFIG_PACKAGE_perlbase-class=y
-# CONFIG_PACKAGE_perlbase-compress is not set
-CONFIG_PACKAGE_perlbase-config=y
-# CONFIG_PACKAGE_perlbase-cpan is not set
-CONFIG_PACKAGE_perlbase-cwd=y
-# CONFIG_PACKAGE_perlbase-data is not set
-# CONFIG_PACKAGE_perlbase-db is not set
-# CONFIG_PACKAGE_perlbase-db-file is not set
-# CONFIG_PACKAGE_perlbase-dbm-filter is not set
-# CONFIG_PACKAGE_perlbase-devel is not set
-# CONFIG_PACKAGE_perlbase-diagnostics is not set
-# CONFIG_PACKAGE_perlbase-digest is not set
-# CONFIG_PACKAGE_perlbase-dirhandle is not set
-# CONFIG_PACKAGE_perlbase-dumpvalue is not set
-# CONFIG_PACKAGE_perlbase-dumpvar is not set
-# CONFIG_PACKAGE_perlbase-dynaloader is not set
-# CONFIG_PACKAGE_perlbase-encode is not set
-# CONFIG_PACKAGE_perlbase-encoding is not set
-# CONFIG_PACKAGE_perlbase-english is not set
-# CONFIG_PACKAGE_perlbase-env is not set
-CONFIG_PACKAGE_perlbase-errno=y
-CONFIG_PACKAGE_perlbase-essential=y
-# CONFIG_PACKAGE_perlbase-experimental is not set
-# CONFIG_PACKAGE_perlbase-extutils is not set
-# CONFIG_PACKAGE_perlbase-fatal is not set
-CONFIG_PACKAGE_perlbase-fcntl=y
-# CONFIG_PACKAGE_perlbase-feature is not set
-# CONFIG_PACKAGE_perlbase-fields is not set
-CONFIG_PACKAGE_perlbase-file=y
-# CONFIG_PACKAGE_perlbase-filecache is not set
-CONFIG_PACKAGE_perlbase-filehandle=y
-# CONFIG_PACKAGE_perlbase-filetest is not set
-# CONFIG_PACKAGE_perlbase-filter is not set
-# CONFIG_PACKAGE_perlbase-findbin is not set
-# CONFIG_PACKAGE_perlbase-gdbm-file is not set
-# CONFIG_PACKAGE_perlbase-getopt is not set
-# CONFIG_PACKAGE_perlbase-hash is not set
-# CONFIG_PACKAGE_perlbase-http-tiny is not set
-CONFIG_PACKAGE_perlbase-i18n=y
-# CONFIG_PACKAGE_perlbase-if is not set
-CONFIG_PACKAGE_perlbase-integer=y
-CONFIG_PACKAGE_perlbase-io=y
-# CONFIG_PACKAGE_perlbase-ipc is not set
-# CONFIG_PACKAGE_perlbase-json-pp is not set
-# CONFIG_PACKAGE_perlbase-less is not set
-CONFIG_PACKAGE_perlbase-list=y
-CONFIG_PACKAGE_perlbase-locale=y
-# CONFIG_PACKAGE_perlbase-math is not set
-# CONFIG_PACKAGE_perlbase-memoize is not set
-# CONFIG_PACKAGE_perlbase-meta-notation is not set
-# CONFIG_PACKAGE_perlbase-mime is not set
-# CONFIG_PACKAGE_perlbase-module is not set
-# CONFIG_PACKAGE_perlbase-mro is not set
-# CONFIG_PACKAGE_perlbase-net is not set
-# CONFIG_PACKAGE_perlbase-next is not set
-# CONFIG_PACKAGE_perlbase-o is not set
-# CONFIG_PACKAGE_perlbase-opcode is not set
-# CONFIG_PACKAGE_perlbase-open is not set
-# CONFIG_PACKAGE_perlbase-ops is not set
-# CONFIG_PACKAGE_perlbase-ostype is not set
-CONFIG_PACKAGE_perlbase-params=y
-# CONFIG_PACKAGE_perlbase-perl5db is not set
-# CONFIG_PACKAGE_perlbase-perlio is not set
-# CONFIG_PACKAGE_perlbase-pod is not set
-CONFIG_PACKAGE_perlbase-posix=y
-CONFIG_PACKAGE_perlbase-re=y
-# CONFIG_PACKAGE_perlbase-safe is not set
-CONFIG_PACKAGE_perlbase-scalar=y
-# CONFIG_PACKAGE_perlbase-sdbm-file is not set
-# CONFIG_PACKAGE_perlbase-search is not set
-CONFIG_PACKAGE_perlbase-selectsaver=y
-# CONFIG_PACKAGE_perlbase-selfloader is not set
-# CONFIG_PACKAGE_perlbase-sigtrap is not set
-CONFIG_PACKAGE_perlbase-socket=y
-# CONFIG_PACKAGE_perlbase-sort is not set
-# CONFIG_PACKAGE_perlbase-storable is not set
-CONFIG_PACKAGE_perlbase-symbol=y
-# CONFIG_PACKAGE_perlbase-sys is not set
-# CONFIG_PACKAGE_perlbase-tap is not set
-# CONFIG_PACKAGE_perlbase-term is not set
-# CONFIG_PACKAGE_perlbase-test is not set
-# CONFIG_PACKAGE_perlbase-text is not set
-# CONFIG_PACKAGE_perlbase-thread is not set
-# CONFIG_PACKAGE_perlbase-threads is not set
-CONFIG_PACKAGE_perlbase-tie=y
-# CONFIG_PACKAGE_perlbase-time is not set
-# CONFIG_PACKAGE_perlbase-unicode is not set
-CONFIG_PACKAGE_perlbase-unicore=y
-# CONFIG_PACKAGE_perlbase-universal is not set
-# CONFIG_PACKAGE_perlbase-user is not set
-CONFIG_PACKAGE_perlbase-utf8=y
-# CONFIG_PACKAGE_perlbase-version is not set
-CONFIG_PACKAGE_perlbase-xsloader=y
+# CONFIG_PACKAGE_perl is not set
 # end of Perl
 
 #
@@ -3228,7 +3111,7 @@ CONFIG_OPENSSL_ENGINE=y
 # CONFIG_OPENSSL_ENGINE_BUILTIN is not set
 # CONFIG_OPENSSL_WITH_GOST is not set
 # CONFIG_PACKAGE_libopenssl-afalg is not set
-# CONFIG_PACKAGE_libopenssl-conf is not set
+CONFIG_PACKAGE_libopenssl-conf=y
 # CONFIG_PACKAGE_libopenssl-devcrypto is not set
 CONFIG_PACKAGE_libwolfssl=y
 CONFIG_WOLFSSL_HAS_AES_CCM=y
@@ -3537,7 +3420,7 @@ CONFIG_PACKAGE_luci=y
 # CONFIG_PACKAGE_luci-lib-docker is not set
 CONFIG_PACKAGE_luci-nginx=y
 # CONFIG_PACKAGE_luci-ssl is not set
-# CONFIG_PACKAGE_luci-ssl-nginx is not set
+CONFIG_PACKAGE_luci-ssl-nginx=y
 # CONFIG_PACKAGE_luci-ssl-openssl is not set
 # end of 1. Collections
 
@@ -4726,6 +4609,7 @@ CONFIG_PACKAGE_pppoe-discovery=y
 CONFIG_PACKAGE_pppossh=y
 # CONFIG_PACKAGE_pppstats is not set
 CONFIG_PACKAGE_proto-bonding=y
+# CONFIG_PACKAGE_rpcapd is not set
 # CONFIG_PACKAGE_rssileds is not set
 # CONFIG_PACKAGE_samba4-admin is not set
 # CONFIG_PACKAGE_samba4-client is not set
@@ -4982,8 +4866,8 @@ CONFIG_PACKAGE_jshn=y
 # CONFIG_PACKAGE_kmod is not set
 CONFIG_PACKAGE_libjson-script=y
 # CONFIG_PACKAGE_libxml2-utils is not set
-CONFIG_PACKAGE_lm-sensors=y
-CONFIG_PACKAGE_lm-sensors-detect=y
+# CONFIG_PACKAGE_lm-sensors is not set
+# CONFIG_PACKAGE_lm-sensors-detect is not set
 # CONFIG_PACKAGE_logger is not set
 # CONFIG_PACKAGE_look is not set
 # CONFIG_PACKAGE_losetup is not set
@@ -5038,7 +4922,7 @@ CONFIG_PACKAGE_lxc-templates=y
 # CONFIG_PACKAGE_mount-utils is not set
 # CONFIG_PACKAGE_namei is not set
 # CONFIG_PACKAGE_nsenter is not set
-# CONFIG_PACKAGE_openssl-util is not set
+CONFIG_PACKAGE_openssl-util=y
 CONFIG_PACKAGE_pciids=y
 CONFIG_PACKAGE_pciutils=y
 # CONFIG_PACKAGE_policycoreutils is not set
