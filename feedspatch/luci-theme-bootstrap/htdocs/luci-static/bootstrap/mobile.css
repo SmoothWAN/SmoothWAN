@@ -2,6 +2,10 @@ header h3 a, header .brand {
 	display:none !important;
 }
 
+.iframe-embed-responsive-16by9 {
+    padding-bottom: 150%;
+}
+
 @media screen and (max-device-width: 600px) {
 	.tabs, .cbi-tabmenu {
 		background: linear-gradient(var(--background-color-high) 20%, var(--border-color-medium) 100%);
