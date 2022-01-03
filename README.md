@@ -8,7 +8,11 @@ Most modules were enabled, check config.*.info in buildconfigs.
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
 Interactive discussion server: https://discord.gg/AxSSjpgwjx  
- 
+
+<details> 
+<summary>MACVLAN Example</summary>
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/macvlan.svg">
+</details> <br>
 
 Screenshots:
 ![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
