@@ -34,4 +34,7 @@ Screenshots:
   Most of the observations listed were observed with Speedify's log files (comprehensive) and network simulation tools.
 </details> <br>
 
+**Credits:**  
+-Sagar Behere for Speedify UI WebSocket "hack": https://sagar.se/2020/12/20/speedify-remote-access-to-localhost-bound-server/  
+
 [Buy me a ☕](https://www.paypal.com/paypalme/talalmsb/1)
