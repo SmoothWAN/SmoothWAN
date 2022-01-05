@@ -1,5 +1,5 @@
 ## Custom OpenWRT build for Speedify
-
+WIP
 An easy to use OpenWRT based flavor for Speedify with no CLI requirment.  
 Typical use case: Deploy Speedify to your home network in minutes with few clicks.  
 
@@ -8,16 +8,6 @@ Most modules were enabled, check config.*.info in buildconfigs.
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
 Interactive discussion server: https://discord.gg/AxSSjpgwjx  
-
-<details> 
-<summary>MACVLAN Example</summary>
-<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/macvlan.svg">
-</details> <br>
-
-Screenshots:
-![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
-![image](https://user-images.githubusercontent.com/96490382/147124822-ce79e50c-09a5-43ac-8f35-3ddb8b2be882.png)
-
 <details> 
 <summary>Why Speedify?</summary>
 - SDWAN-esque: Having one exit IP address like any VPN, sessions are uninterrupted and it duplicates (mirror) data across WANs for sensitive connections such as VoIP, video calls, and games for "seamless migration" on fault for the speed of the fastest WAN while simulatenously aggregating (splitting) bulk data across WANs per packet for the speed of the combined WANs. (bulk data transfers tolerates hiccups). <br>
@@ -32,7 +22,16 @@ Screenshots:
 - Switching critical settings such as protocols, modes, and adding new WANs without measurable disruption other than latency variation on the aggregation channel. <br>
 <br>
   Most of the observations listed were observed with Speedify's log files (comprehensive) and network simulation tools.
+</details>
+
+<details> 
+<summary>MACVLAN Example</summary>
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/macvlan.svg">
 </details> <br>
+
+Screenshots:
+![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
+![image](https://user-images.githubusercontent.com/96490382/147124822-ce79e50c-09a5-43ac-8f35-3ddb8b2be882.png)
 
 **Credits:**  
 -Sagar Behere for Speedify UI WebSocket "hack": https://sagar.se/2020/12/20/speedify-remote-access-to-localhost-bound-server/  
