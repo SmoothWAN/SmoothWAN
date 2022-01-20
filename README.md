@@ -1,9 +1,9 @@
 ## Custom OpenWRT build for Speedify
 An easy to use OpenWRT based flavor for Speedify with no CLI requirment.  
-Typical use case: Deploy Speedify to your home network in minutes with few clicks and can be setup from a smartphone only.
+Typical use case: Deploy Speedify to your home network in minutes with few clicks and can be setup from a smartphone.
 
 Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
-Most modules were enabled, check config.*.info in buildconfigs.   
+Most modules were enabled, check build.sh in devconfigs.   
 2x USB ethernet adapters and 2x tethering interfaces are automatically configured for quick plug and play on first boot (DHCP)   
 
 
