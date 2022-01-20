@@ -1,0 +1,12 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#Set Pi CPU to performance for stability
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#Run usbmudx for iOS tethering
+usbmuxd
+#Run iperf3 server
+iperf3 -s &
+
+exit 0
+

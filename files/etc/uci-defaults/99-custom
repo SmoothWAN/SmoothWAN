@@ -3,6 +3,11 @@ set network.lan.ipaddr='192.168.3.1'
 commit network
 set wireless.@wifi-device[0].disabled='0'
 set wireless.@wifi-iface[0].ssid='SmoothWanSetup'
+set wireless.@wifi-device[0].channel='11'
+set wireless.@wifi-device[0].hwmode='11g'
+set wireless.@wifi-device[0].htmod='HT20'
+set wireless.@wifi-device[0].country='US'
+set wireless.@wifi-device[0].short_gi_40='0'
 commit wireless
 set system.@system[-1].hostname='SmoothWAN'
 add system led
@@ -20,10 +25,30 @@ add_list dhcp.cfg01411c.server='8.8.8.8'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
+add_list firewall.cfg03dc81.network='AUTOUSB0'
+add_list firewall.cfg03dc81.network='AUTOUSB1'
+add_list firewall.cfg03dc81.network='AUTOETH1'
+add_list firewall.cfg03dc81.network='AUTOETH2'
 commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
+set network.AUTOUSB0=interface
+set network.AUTOUSB0.proto='dhcp'
+set network.AUTOUSB0.device='USB0'
+set network.AUTOUSB0.metric='100'
+set network.AUTOUSB1=interface
+set network.AUTOUSB1.proto='dhcp'
+set network.AUTOUSB1.device='usb1'
+set network.AUTOUSB1.metric='101'
+set network.AUTOETH1=interface
+set network.AUTOETH1.proto='dhcp'
+set network.AUTOETH1.device='eth1'
+set network.AUTOETH1.metric='110'
+set network.AUTOETH2=interface
+set network.AUTOETH2.proto='dhcp'
+set network.AUTOETH2.device='eth2'
+set network.AUTOETH2.metric='111'
 commit network
 EOI
 

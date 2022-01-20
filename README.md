@@ -1,16 +1,17 @@
 ## Custom OpenWRT build for Speedify
-WIP
 An easy to use OpenWRT based flavor for Speedify with no CLI requirment.  
-Typical use case: Deploy Speedify to your home network in minutes with few clicks.  
+Typical use case: Deploy Speedify to your home network in minutes with few clicks and can be setup from a smartphone only.
 
 Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
-Most modules were enabled, check config.*.info in buildconfigs. 
+Most modules were enabled, check config.*.info in buildconfigs.   
+2x USB ethernet adapters and 2x tethering interfaces are automatically configured for quick plug and play on first boot (DHCP)   
+
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
 Interactive discussion server: https://discord.gg/AxSSjpgwjx  
 <details> 
 <summary>Why Speedify?</summary>
-- SDWAN-esque: Having one exit IP address like any VPN, sessions are uninterrupted and it duplicates (mirror) data across WANs for sensitive connections such as VoIP, video calls, and games for "seamless migration" on fault for the speed of the fastest WAN while simulatenously aggregating (splitting) bulk data across WANs per packet for the speed of the combined WANs. (bulk data transfers tolerates hiccups). <br>
+- SDWAN-esque: Having one exit IP address like any VPN, sessions are uninterrupted. Data is duplicated (mirrored) across WANs for sensitive connections such as VoIP, video calls, and games for "seamless migration" on fault for the speed of the fastest WAN while simulatenously aggregating (splitting) bulk data across WANs per packet for the speed of the combined WANs. (bulk data transfers tolerates hiccups). <br>
 - Per-WAN rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. (e.g increases faulty WAN action intervals between repetitive failures)<br>
 - Per-WAN VPN transport protocol for best performance in Auto mode; Protocols: HTTPS(web browsing disguise), UDP, TCP, TCP Multi.<br>
 - "TCP Multiple" transport protocol feature, A.K.A parallel transfer channels in other software, allows maximum speed to be achieved on high latency, lossy, and far VPN region servers with commonly used TCP congestion controllers. <br>
@@ -27,7 +28,15 @@ Interactive discussion server: https://discord.gg/AxSSjpgwjx
 <details> 
 <summary>MACVLAN Example</summary>
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/macvlan.svg">
-</details> <br>
+</details>
+
+<details>
+  <summary>Build using OpenWRT's imagebuilder</summary>
+    - Grab your imagebuilder device target archive from: https://downloads.openwrt.org/releases/21.02.1/targets/ <br>
+    - Copy files, packages, and the corresponding build.sh and .config from devconfigs folder for your device to imagebuilder root. <br>
+    - Run "sh build.sh" <br>
+    - Images will be located in bin/<device target>
+</details>
 
 Screenshots:
 ![image](https://user-images.githubusercontent.com/96490382/147124839-fdbf295e-932a-4a6f-87a7-a322605579c9.png)
@@ -35,5 +44,7 @@ Screenshots:
 
 **Credits:**  
 -Sagar Behere for Speedify UI WebSocket "hack": https://sagar.se/2020/12/20/speedify-remote-access-to-localhost-bound-server/  
+-Testers at Discord (TBD)
 
 [Buy me a ☕](https://www.paypal.com/paypalme/talalmsb/1)
+

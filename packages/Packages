@@ -1,0 +1,32 @@
+Package: luci-app-speedifyconf
+Version: 1.0
+Depends: libc, speedifyconf, libuci20130104
+Source: smoothwan/luci-app-speedifyconf
+SourceName: luci-app-speedifyconf
+License: BSD
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1639569377
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 1515
+Filename: luci-app-speedifyconf_1.0_all.ipk
+Size: 2362
+SHA256sum: ffef1add3f7243b267f702e36546319e569e3152309fcfe71b57a9fc1c10454a
+Description:  LuCI luci-app-speedifyconf app
+
+Package: speedifyconf
+Version: 1-3
+Depends: libc
+Source: smoothwan/speedifyconf
+SourceName: speedifyconf
+Section: net
+SourceDateEpoch: 1639569377
+Maintainer: TALMASH
+Architecture: all
+Installed-Size: 1593
+Filename: speedifyconf_1-3_all.ipk
+Size: 2366
+SHA256sum: 85d7fb6cf21d6e2a3203c7e9fc784e9d823604435339dadb905e9dd3fbba69b0
+Description:  Install and configure Speedify from LuCI/WebUI.
+
