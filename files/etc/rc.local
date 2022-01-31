@@ -3,10 +3,25 @@
 
 #Set Pi CPU to performance for stability
 echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-#Run usbmudx for iOS tethering
+#Run usbmuxd for iOS tethering
 usbmuxd
 #Run iperf3 server
 iperf3 -s &
 
-exit 0
+#Tunables
+#IRQ for ETH0 to CPU1 on 64 bit kernel
+echo 2 > /proc/irq/31/smp_affinity
+echo 2 > /proc/irq/32/smp_affinity
+#Recieve and Transmit steering eth0
+echo c > /sys/class/net/eth0/queues/rx-0/rps_cpus
+echo c > /sys/class/net/eth0/queues/tx-0/xps_cpus
+echo c > /sys/class/net/eth0/queues/tx-1/xps_cpus
+echo c > /sys/class/net/eth0/queues/tx-2/xps_cpus
+echo c > /sys/class/net/eth0/queues/tx-3/xps_cpus
+echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
+#Checksum offload
+/usr/sbin/ethtool -K eth0 rx-checksum on
+/usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
 
+
+exit 0
