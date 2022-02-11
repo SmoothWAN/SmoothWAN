@@ -4,7 +4,7 @@ Typical use case: Deploy Speedify to your home network in minutes with few click
 
 Targets: Raspberry Pi 4 and Generic x86_64 (+VM)  
 Most modules were enabled, check build.sh in devconfigs.   
-2x USB ethernet adapters and 2x tethering interfaces are automatically configured for quick plug and play on first boot (DHCP)   
+Features one-click setup, Multi-WAN interface setup for USB ethernet and Cellular USB dongles (RDNIS), as well as apps: Pi-hole (LXC) and Tailscale (remote LAN access)
 
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations, and issues tab for SmoothWAN specifics.  
