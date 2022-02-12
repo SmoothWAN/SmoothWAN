@@ -32,6 +32,7 @@ Interactive discussion server at Discord linked top. <br>
 <summary>Basic Setup for the Raspberry Pi 4 using a smartphone</summary>
 - Download the file from the sidebar and follow the instructions to setup the microSD card. <br>
 - Connect as follows, the MAC address is printed on each device, usually at the back, note it down: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/usb.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
 - The Raspberry Pi 4 is now broadcasting as an access point for easy configuration, connect to "SmoothWAN Setup": <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.png" width="300"/> <br>
