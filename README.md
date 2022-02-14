@@ -1,10 +1,11 @@
 [![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx) 
 ## A Speedify Router using OpenWRT
 An easy to use OpenWRT based flavor for Speedify. <br>
+Not affiliated with Speedify/Connectify. <br>
 <br>
 Typical use case: 
-- Access to internet that is reliable with usuable speeds in a rural area by using at least 2 connections, preferably a combination of wired and wireless.
 - Deploy Speedify to your home network covering all connected devices.
+- Access to internet that is reliable with usable speeds in a rural area by using at least 2 connections, preferably a combination of wired and wireless.
 
 Targets: Raspberry Pi 4 and Generic x86_64 (and virtual machines) <br> <br>
 Additional Features: 
@@ -62,18 +63,16 @@ Interactive discussion server at Discord linked top. <br>
 
 <details> 
 <summary>Why Speedify?</summary>
-- SDWAN-esque: Having one exit IP address like any VPN, sessions are uninterrupted. Data is duplicated (mirrored) across WANs for sensitive connections such as VoIP, video calls, and games for "seamless migration" on fault for the speed of the fastest WAN while simulatenously aggregating (splitting) bulk data across WANs per packet for the speed of the combined WANs as bulk data transfers tolerates instability.  <br>
-- Per-WAN rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. (e.g increases faulty WAN action intervals between repetitive failures)<br>
-- Per-WAN VPN transport protocol for best performance in Auto mode; Protocols: HTTPS(web browsing disguise), UDP, TCP, TCP Multi.<br>
-- "TCP Multiple" transport protocol feature, A.K.A parallel transfer channels in other software, allows maximum speed to be achieved on high latency, lossy, and far VPN region servers with commonly used TCP congestion controllers. <br>
-- Automatic packet aggregation weighing for largely asymmetric and heterogenous WANs. Slowly adapts to speed variations.<br>
-- A buffer to prevent TCP reordering. <br>
-- An option for using a WAN for boost only mode with configurable speed trigger and backup only mode (low data consumption, depends on primary WAN quality rating). <br>
-- TCP transport mode implements pacing (effects: low UDP-over-TCP latency overhead, no TCP-over-TCP performance degradation) <br>
-- Instant server region selection for region restricted services. Other services require fixed IP/server. <br>
-- Switching critical settings such as protocols, modes, and adding new WANs without measurable disruption other than latency variation on the aggregation channel. <br>
-<br>
-  Most of the observations listed were observed with Speedify's log files and network simulation tools.
+- SDWAN-esque: Having one exit IP address like any VPN, sessions are uninterrupted. Data is mirrored across WANs for sensitive connections such as VoIP, video calls, and games for "seamless data migration" on fault while simulatenously aggregating (splitting) bulk data across WANs for the speed of the combined WANs as bulk data transfers tolerate instability.  <br>
+- Per-WAN rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. (e.g increases faulty WAN suspend intervals between repetitive failures)<br>
+- Per-WAN VPN transport protocol for best performance in Auto mode; Protocols: HTTPS(disguise as web browsing), UDP, TCP, TCP Multiple.<br>
+- "TCP Multiple" transport protocol feature, as known as parallel transfer channels allows maximum speed to be achieved on high latency, lossy, and far VPN region servers with commonly used TCP congestion controllers. <br>
+- Automatic packet aggregation weighing for largely asymmetric and heterogenous WANs. Slowly adapts to speed variations. <br>
+- A buffer to prevent TCP reordering on aggregation. <br>
+- An option for using a WAN for speed boosts only and backup only mode (low data consumption, depends on primary WAN quality rating). <br>
+- TCP transport mode implements pacing. Effects: low UDP-over-TCP latency overhead, no TCP-over-TCP speed degradation. <br>
+- Instant server region selection for region restricted services. Other solutions require fixed IP/server setup. <br>
+- Switching critical settings such as protocols, modes, and adding new WANs without measurable disruption. <br>
 </details>
 
 <details>
