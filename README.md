@@ -3,7 +3,7 @@
 An easy to use OpenWRT based flavor for Speedify. <br>
 <br>
 Typical use case: 
-- Access to internet that is reliable with usuable speeds in a rural area by using 2 connections, preferably a combination of wired and wireless.
+- Access to internet that is reliable with usuable speeds in a rural area by using at least 2 connections, preferably a combination of wired and wireless.
 - Deploy Speedify to your home network covering all connected devices.
 
 Targets: Raspberry Pi 4 and Generic x86_64 (and virtual machines) <br> <br>
