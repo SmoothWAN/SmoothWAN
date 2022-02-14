@@ -1,6 +1,0 @@
-
-config config 'Setup'
-	option apt ' '
-	option version '0'
-
-
