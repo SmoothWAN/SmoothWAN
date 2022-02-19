@@ -10,7 +10,7 @@ echo list:${NET_LIST}
 for DEV in ${NET_LIST}
 do
 echo checking:$DEV
-	if [[ ${DEV} != "eth0" ]] && [[ ${DEV} = eth* ]] || [[ ${DEV} = usb* ]] || [[ ${DEV} = wwan* ]]; then
+	if [[ ${DEV} != "eth0" ]] && [[ ${DEV} = eth* ]] || [[ ${DEV} = usb* ]] || [[ ${DEV} != wwan* ]]; then
 		echo detect
 		DEVS=$(printf '%s' "$DEV" | sed 's/[0-9]//g')
         	MAC="$(cat /sys/class/net/$DEV/address | awk -F: '{ print $4 $5 $6 }')"

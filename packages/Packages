@@ -1,13 +1,8 @@
 Package: luci-app-piholeconf
 Version: 1.0
 Depends: libc, piholeconf, libuci20130104
-Source: smoothwan/luci-app-piholeconf
-SourceName: luci-app-piholeconf
 License: BSD
-LicenseFiles: LICENSE
 Section: luci
-SourceDateEpoch: 1644530070
-Maintainer: OpenWrt LuCI community
 Architecture: all
 Installed-Size: 380944
 Filename: luci-app-piholeconf_1.0_all.ipk
@@ -18,13 +13,8 @@ Description:  LuCI luci-app-piholeconf app
 Package: luci-app-speedifyconf
 Version: 1.1
 Depends: libc, speedifyconf, libuci20130104
-Source: smoothwan/luci-app-speedifyconf
-SourceName: luci-app-speedifyconf
 License: BSD
-LicenseFiles: LICENSE
 Section: luci
-SourceDateEpoch: 1644530070
-Maintainer: OpenWrt LuCI community
 Architecture: all
 Installed-Size: 1478
 Filename: luci-app-speedifyconf_1.1_all.ipk
@@ -32,31 +22,58 @@ Size: 2324
 SHA256sum: 5ef183f8d395aab127fdea072786530c09dcaeb04aea6c417762ecc8f81eec3a
 Description:  LuCI luci-app-speedifyconf app
 
-Package: luci-app-tailscaleconf
+Package: luci-app-swaninterfaces
+Version: 1.0
+Depends: libc, libuci20130104
+License: BSD
+Section: luci
+Architecture: all
+Installed-Size: 1982
+Filename: luci-app-swaninterfaces_1.0_all.ipk
+Size: 2818
+SHA256sum: 2b74dc6cee9d2fd91cd2335e48639b80cb7a9173983f612c1b04c2693e6c9c85
+Description:  LuCI luci-app-swaninterfaces app
+
+Package: luci-app-swanportfw
+Version: 1.0
+Depends: libc, libuci20130104
+License: BSD
+Section: luci
+Architecture: all
+Installed-Size: 1137
+Filename: luci-app-swanportfw_1.0_all.ipk
+Size: 1975
+SHA256sum: 3765b86bb01678b756ffb786a67c09caebf18d40e0327ead4c6ab829e56f2e73
+Description:  LuCI luci-app-swanportfw app
+
+Package: luci-app-tailscalconf
 Version: 1.0
 Depends: libc, tailscaleconf, libuci20130104
-Source: smoothwan/luci-app-tailscaleconf
-SourceName: luci-app-tailscaleconf
 License: BSD
-LicenseFiles: LICENSE
 Section: luci
-SourceDateEpoch: 1644530070
-Maintainer: OpenWrt LuCI community
 Architecture: all
-Installed-Size: 200340
-Filename: luci-app-tailscaleconf_1.0_all.ipk
-Size: 201294
-SHA256sum: 929dbddfd9fc45e65e6bcc383bcfd5de91dfa76a46d9192ec27fc046757dc1c9
+Installed-Size: 200329
+Filename: luci-app-tailscalconf_1.0_all.ipk
+Size: 201284
+SHA256sum: 79f192f95e61f6ece594c904f968a9d2ee618e47eaafb3a0c705aaecdedf601e
 Description:  LuCI luci-app-tailscaleconf app
+
+Package: luci-app-wifibasic
+Version: 0.1
+Depends: libc, libuci20130104
+License: BSD
+Section: luci
+Architecture: all
+Installed-Size: 1095
+Filename: luci-app-wifibasic_0.1_all.ipk
+Size: 1938
+SHA256sum: 951b92e895f6bf12af6d54e89f5494e6b2d6d3192e7bf9702646ea5dbad047f3
+Description:  LuCI luci-app-wifibasic app
 
 Package: piholeconf
 Version: 1-2
 Depends: libc
-Source: smoothwan/piholeconf
-SourceName: piholeconf
 Section: net
-SourceDateEpoch: 1643746904
-Maintainer: TALMASH
 Architecture: all
 Installed-Size: 1552
 Filename: piholeconf_1-2_all.ipk
@@ -67,11 +84,7 @@ Description:  Install and configure Pi-hole from LuCI with LXC.
 Package: speedifyconf
 Version: 1-3
 Depends: libc
-Source: smoothwan/speedifyconf
-SourceName: speedifyconf
 Section: net
-SourceDateEpoch: 1644530070
-Maintainer: TALMASH
 Architecture: all
 Installed-Size: 1604
 Filename: speedifyconf_1-3_all.ipk
@@ -82,15 +95,11 @@ Description:  Install and configure Speedify from LuCI/WebUI.
 Package: tailscaleconf
 Version: 1-2
 Depends: libc
-Source: smoothwan/tailscaleconf
-SourceName: tailscaleconf
 Section: net
-SourceDateEpoch: 1644530070
-Maintainer: TALMASH
 Architecture: all
-Installed-Size: 1480
+Installed-Size: 1559
 Filename: tailscaleconf_1-2_all.ipk
-Size: 2254
-SHA256sum: 75a9f9a7b6360fc9e38b76f4143983e812fb2dc53d8ceb68061dce73b9cdfae4
+Size: 2269
+SHA256sum: 2d581bf5ffb09cde578a185ba321dc7614a28a49bab5089e0e9524caec08b203
 Description:  Install and configure Tailscale from LuCI/WebUI.
 
