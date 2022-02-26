@@ -1,0 +1,24 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#Set CPU to performance
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#Run usbmuxd for iOS tethering
+usbmuxd
+#Run iperf3 server
+iperf3 -s &
+
+#Generic x86 Tunables
+#Checksum offload
+/usr/sbin/ethtool -K eth0 rx-checksum on
+/usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
+
+#Disable for stock Android 11+ USB tethering (random address), some non-stock vendors offer static MAC option.
+#Persistent network interfaces using MAC, add # to the beginning of the line below to disable,
+sh /usr/share/smoothwan/helpers/persmac.sh &
+
+#Re-mount root overlay with options for resilience against power cuts
+mount -o rw,remount,noatime,sync,auto,exec,relatime,barrier=1,commit=1,errors=continue /
+
+
+exit 0
