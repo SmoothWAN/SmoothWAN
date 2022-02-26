@@ -81,7 +81,7 @@ Interactive discussion hub is hosted at Discord linked top. <br>
 <details>
 <summary>Advanced: Build from source using OpenWRT's imagebuilder</summary>
   - Grab your imagebuilder device target archive from: https://downloads.openwrt.org/releases/21.02.1/targets/ <br>
-  - Clone repo and copy the corresponding device from devconfigs to imagebuilder root. <br>
+  - Clone repo and copy the corresponding device from devconfigs and packages to imagebuilder root. <br>
   - Run "sh build.sh" <br>
   - Images will be located in bin/<device target>
   - Note: For compiling SmoothWAN packages, compile smoothwan-feeds with OpenWRT build system. Pre-compiled packages are included for easy customization, quick builds and imagebuilder-only setup. <br>
