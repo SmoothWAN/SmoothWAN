@@ -26,40 +26,40 @@ Interactive discussion hub is hosted at Discord linked top. <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/usb.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
 - The Raspberry Pi 4 (RPi4) is now broadcasting as a WiFi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.jpg" width="300"/> <br>
 - Visit 192.168.3.1 in your browser and login, there is no password set: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/3.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/3.jpg" width="300"/> <br>
 - You will be greeted with brief instructions in the UI, it's time to setup the WANs as in the diagram: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/4.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/5.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/4.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/5.jpg" width="300"/> <br>
 - Type the name of the first ISP, "ISP1" used in this example, you can tape a label on the USB ethernet for easy identification: <br>
-  <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/6.png" width="300"/> <br>
-  <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/7.png" width="300"/> <br>
-- Notice the last 6 charchters in newdev, select the correct ending address for the USB ethernet that's plugged in to "ISP1" as you noted the addresses before, click Save and Apply and add the same for ISP2 and more: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/8.png" width="300"/> <br>
+  <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/6.jpg" width="300"/> <br>
+  <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/7.jpg" width="300"/> <br>
+- Select the address for the USB ethernet that's plugged in to "ISP1" as you noted the addresses before, click Save and Apply and add the same for ISP2 and more: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/8.jpg" width="300"/> <br>
 - Time to install Speedify! Head over to VPN->Speedify: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.jpg" width="300"/> <br>
 - Click "Trigger Install/Update": <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
-- Click "View Log" tab, it should read as "Speedify is installed" at the end of the line: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/11.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.jpg" width="300"/> <br>
+- Click "View Log" tab, it will show "Speedify is installed" at the end of the log after few seconds: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/11.jpg" width="300"/> <br>
 - Head to Status->Overview: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.jpg" width="300"/> <br>
 - You will be greeted with Speedify app, login: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.jpg" width="300"/> <br>
 - Navigate to settings, and enable "Connect at Startup": <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/14.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/15.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/16.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/14.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/15.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/16.jpg" width="300"/> <br>
 - Time to connect and configure a WiFi AP/router if needed, the internal WiFi of the RPi4 is poor for general usage, connect using RPi4's Ethernet to a configured AP/router: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
 - After switching over to WiFi AP/router, head over to 192.168.3.1 and disable internal WiFI (updated photos): <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/17-1.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/18-1.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/17.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/18.jpg" width="300"/> <br>
 - Setup a password for SmoothWAN admin page: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/19.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/20.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/19.jpg" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/20.jpg" width="300"/> <br>
 - All done, enjoy! <br>
 </details>
 

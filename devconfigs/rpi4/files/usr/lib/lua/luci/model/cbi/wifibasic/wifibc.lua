@@ -1,7 +1,7 @@
 m = Map("wireless", "Automated Wi-Fi Access Point Configuration" )
 
 
-s = m:section(TypedSection, "wifi-iface", "Detected Wi-Fi hardware", "- The use of the integrated Wi-Fi on   the Raspberry Pi 4 is discouraged due to instability and performance issues.<br>- USB Wi-Fi adapters are not reliable in Access Point mode.<br>- USB Wi-Fi adapter automatic detection/setup may not work with all        models, go to main Wireless tab for advanced configuration.<br>- It is recommended to use an external Wi-Fi  access point or a router combo via Ethernet for high reliability and speed.")
+s = m:section(TypedSection, "wifi-iface", "Detected Wi-Fi hardware", "• The use of the integrated Wi-Fi on   the Raspberry Pi 4 is discouraged due to instability and performance issues.<br>• USB Wi-Fi adapters are not reliable in Access Point mode.<br>• USB Wi-Fi adapter automatic detection/setup may not work with all devices, go to main Wireless tab for advanced configuration.<br>• It is recommended to use an external Wi-Fi  access point or a router combo via Ethernet for high reliability and speed.")
 
 ap = s:option(Value, "ssid", "Access Point Name:")
 ap.rmempty = false
@@ -14,7 +14,7 @@ pass.optional = false
 l = m:section(TypedSection, "wifi-device")
 l.anonymous = true
 disabled = l:option(Flag, "disabled", "Turn Off")
-channel = l:option(ListValue, "channel", "Channel")
+channel = l:option(ListValue, "channel", "Channel:")
 channel:value("auto",auto)
 channel:value(1,1)
 channel:value(2,2)
