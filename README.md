@@ -52,12 +52,12 @@ Interactive discussion hub is hosted at Discord linked top. <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/14.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/15.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/16.jpg" width="300"/> <br>
-- Time to connect and configure a WiFi AP/router if needed, the internal WiFi of the RPi4 is poor for general usage, connect using RPi4's Ethernet to a configured AP/router: <br>
+- Time to connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the RPi4 is poor for general usage, connect using RPi4's Ethernet to a configured AP/router: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
-- After switching over to WiFi AP/router, head over to 192.168.3.1 and disable internal WiFI (updated photos): <br>
+- After switching over to Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable internal Wi-Fi: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/17.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/18.jpg" width="300"/> <br>
-- Setup a password for SmoothWAN admin page: <br>
+- Setup a password for SmoothWAN admin page in System->Administration: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/19.jpg" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/20.jpg" width="300"/> <br>
 - All done, enjoy! <br>
@@ -65,10 +65,10 @@ Interactive discussion hub is hosted at Discord linked top. <br>
 
 <details> 
 <summary>Speedify compared to current consumer-grade bonding solutions</summary>
-- SD-WAN, QoS and traffic type aware: By having one exit IP address (VPN) when bonding, connected network sessions are uninterrupted. Sensitive data is mirrored across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive data is aggregated across WANs for the speed of the total combined WANs, including single data streams/sockets.  <br>
+- SD-WAN VPN: By having one exit IP address when bonding, connected network sessions are uninterrupted. Sensitive streams are mirrored across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. (e.g will suspend a WAN on multiple failures, resume and suspend delay is increased on multiple failures) <br>
-- Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: (Automatic detection), HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
-- "TCP Multiple" transport protocol as known as parallel transfer streams allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). <br>
+- Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
+- "TCP Multiple" transport protocol as known as parallel transfer sockets allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). <br>
 - Automatic packet aggregation weighing for largely asymmetric and heterogenous WANs. Slowly adapts to speed variations when using cellular/wireless. <br>
 - No out of order packet delivery on aggregation. <br>
 - An option for using a WAN for speed boosts only and backup only mode, data consumption usage depends on primary WAN quality rating in backup mode for seamless failover. <br>
@@ -83,7 +83,7 @@ Interactive discussion hub is hosted at Discord linked top. <br>
   - Grab your imagebuilder device target archive from: https://downloads.openwrt.org/releases/21.02.1/targets/ <br>
   - Clone repo and copy the corresponding device from devconfigs and packages to imagebuilder root. <br>
   - Run "sh build.sh" <br>
-  - Images will be located in bin/<device target>
+  - Images will be located in bin/<device target> <br>
   - Note: For compiling SmoothWAN packages, compile smoothwan-feeds with OpenWRT build system. Pre-compiled packages are included for easy customization, quick builds and imagebuilder-only setup. <br>
 </details><br>
 

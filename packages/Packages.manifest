@@ -16,7 +16,7 @@ SHA256sum: 1793485a11fea70db654cbffbf26b536a05ee55b3e1d5c4f4e4c9029afffe040
 Description:  LuCI luci-app-piholeconf app
 
 Package: luci-app-speedifyconf
-Version: 1.1
+Version: 1.2
 Depends: libc, speedifyconf, libuci20130104
 Source: smoothwan/luci-app-speedifyconf
 SourceName: luci-app-speedifyconf
@@ -26,10 +26,10 @@ Section: luci
 SourceDateEpoch: 1645392092
 Maintainer: OpenWrt LuCI community
 Architecture: all
-Installed-Size: 1484
-Filename: luci-app-speedifyconf_1.1_all.ipk
-Size: 2332
-SHA256sum: 79fee5ae5dc08f1dbf0dacc58f1e65fdac34e0867892fbab65d1390eec5226a9
+Installed-Size: 1505
+Filename: luci-app-speedifyconf_1.2_all.ipk
+Size: 2354
+SHA256sum: 476b7cdb1c2e4c069fdf7c4c4032eeb5d15bef036a9ff14741809a19b7c30837
 Description:  LuCI luci-app-speedifyconf app
 
 Package: luci-app-tailscaleconf
@@ -65,7 +65,7 @@ SHA256sum: b03939b47f99dac8a692eb9aafac625059592ae2efe67d8bf7db91c9f7411858
 Description:  Install and configure Pi-hole from LuCI with LXC.
 
 Package: speedifyconf
-Version: 1-3
+Version: 4.2-4.2
 Depends: libc
 Source: smoothwan/speedifyconf
 SourceName: speedifyconf
@@ -73,10 +73,10 @@ Section: net
 SourceDateEpoch: 1645392092
 Maintainer: TALMASH
 Architecture: all
-Installed-Size: 1606
-Filename: speedifyconf_1-3_all.ipk
-Size: 2375
-SHA256sum: c0f1779528359725272947a2ec6502183c85ada9cd11f5e8a19dc217c9742224
+Installed-Size: 1745
+Filename: speedifyconf_4.2-4.2_all.ipk
+Size: 2491
+SHA256sum: e69ea61b77c5adfa31f503cd8668723fb165bf3cf4a19fb3f1f08050f9645681
 Description:  Install and configure Speedify from LuCI/WebUI.
 
 Package: tailscaleconf

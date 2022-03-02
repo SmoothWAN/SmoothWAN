@@ -15,8 +15,8 @@ iperf3 -s &
 #Disable for stock Android 11+ USB tethering (random address), some non-stock vendors offer static MAC option.
 sh /usr/share/smoothwan/helpers/macrename.sh &
 
-#Re-mount root overlay with options for resilience against power cuts
-mount -o rw,remount,noatime,sync,auto,exec,relatime,barrier=1,commit=1,errors=continue / &
+#Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
+mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &
 
 
 exit 0
