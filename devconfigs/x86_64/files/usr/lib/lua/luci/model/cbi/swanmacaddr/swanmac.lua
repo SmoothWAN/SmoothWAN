@@ -3,9 +3,9 @@ local net = require "luci.model.network".init()
 local sys = require "luci.sys"
 local ifaces = sys.net:devices()
 
-m = Map("network", translate("Multi-WAN Basic Setup"))
+m = Map("network", translate("Multi-WAN MAC Setup"))
 
-s = m:section(TypedSection, "interface", "Configured WANs", "<b>Guide:</b><br>• All network equipments own a unique address or identifier known as MAC (media access control).<br>• Check the back of the connected medium (USB ethernet, modem etc) for MAC address for the purpose of identification.<br>• Enter a friendly name containing no more than 10 characters consisting of numbers and/or letters in the text field<br>near the 'Add' button below for each unconfigured WAN.<br>• The name will be shown in Speedify interface dialogs as is and data caps/metering/settings are persistent.<br><b>Notes:</b><br>• Disable MAC randomization(privacy settings) on iOS/Android when tethering via USB.<br>• NCM and old cellular modems are unsupported and discouraged from use.")
+s = m:section(TypedSection, "interface", "Configured WANs", "<b>Guide:</b><br>• All network equipments own a unique address or identifier known as MAC (media access control).<br>• Check the back of the connected medium (USB ethernet, modem etc) for MAC address for the purpose of identification.<br>• Enter a friendly name containing no more than 10 characters consisting of numbers and/or letters in the text field<br>near the 'Add' button below for each unconfigured WAN.<br>• The name will be shown in Speedify interface dialogs as is and data caps/metering/settings are persistent.<br><b>Notes:</b><br>• Disable MAC randomization(privacy settings) on iOS/Android when tethering via USB.<br>• NCM and old cellular modems are unsupported by MAC.<br>• Disable Multi-WAN USB (if available) before configuration.")
 
 s.addremove = true
 

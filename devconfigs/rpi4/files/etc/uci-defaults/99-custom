@@ -1,5 +1,25 @@
 uci -q batch << EOI
 set network.lan.ipaddr='192.168.3.1'
+set network.One=interface
+set network.One.proto='dhcp'
+set network.One.device='USB-1'
+set network.One.usename='USB-1'
+set network.One.metric='10'
+set network.Two=interface
+set network.Two.proto='dhcp'
+set network.Two.device='USB-2'
+set network.Two.usename='USB-2'
+set network.Two.metric='20'
+set network.Three=interface
+set network.Three.proto='dhcp'
+set network.Three.device='USB-3'
+set network.Three.usename='USB-3'
+set network.Three.metric='30'
+set network.Four=interface
+set network.Four.proto='dhcp'
+set network.Four.device='USB-4'
+set network.Four.usename='USB-4'
+set network.Four.metric='40'
 commit network
 set system.@system[-1].hostname='SmoothWAN'
 add system led
@@ -12,11 +32,17 @@ set system.@led[1].name='Boot Done'
 set system.@led[1].sysfs='led1'
 set system.@led[1].trigger='none'
 commit system
+set dhcp.cfg01411c.allservers='1'
 add_list dhcp.cfg01411c.server='8.8.8.8'
+add_list dhcp.cfg01411c.server='8.8.4.4'
 set dhcp.cfg01411c.rebind_protection='0'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
+add_list firewall.cfg03dc81.network='One'
+add_list firewall.cfg03dc81.network='Two'
+add_list firewall.cfg03dc81.network='Three'
+add_list firewall.cfg03dc81.network='Four'
 commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'

@@ -23,7 +23,9 @@ set system.@led[1].name='Boot Done'
 set system.@led[1].sysfs='led1'
 set system.@led[1].trigger='none'
 commit system
+set dhcp.cfg01411c.allservers='1'
 add_list dhcp.cfg01411c.server='8.8.8.8'
+add_list dhcp.cfg01411c.server='8.8.4.4'
 set dhcp.cfg01411c.rebind_protection='0'
 commit dhcp
 del firewall.cfg03dc81.network

@@ -24,6 +24,8 @@ echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
 
 #Disable for stock Android 11+ USB tethering (random address), some non-stock vendors offer static MAC option.
 sh /usr/share/smoothwan/helpers/macrename.sh &
+#Disable USB network renaming
+sh /usr/share/smoothwan/helpers/autousb.sh &
 
 #Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
 mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &

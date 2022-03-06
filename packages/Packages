@@ -67,3 +67,31 @@ Size: 2255
 SHA256sum: 8e73a1de709ec3e29b7fc291a42708a4b5b7a19bb954ec911f994a9c2cf31f67
 Description:  Install and configure Tailscale from LuCI/WebUI.
 
+Package: vpnbypass
+Version: 1.3.4-1
+Depends: libc, ipset, iptables
+License: GPL-3.0-or-later
+Section: net
+Architecture: all
+Installed-Size: 2320
+Filename: vpnbypass_1.3.4-1_all.ipk
+Size: 3421
+SHA256sum: 335f6c915bf42e0bc2c92e57e5c6d0551ad882ad8c198b0a17ec523b6109c5e7
+Description:  This service can be used to enable simple VPN split tunnelling.
+ Supports accessing domains, IP ranges outside of your VPN tunnel.
+ Also supports dedicating local ports/IP ranges for direct
+ internet access (outside of your VPN tunnel).
+ Please see the README for further information.
+ 
+ Package: luci-app-vpnbypass
+Version: 1.3.4-1
+Depends: libc, luci-mod-admin-full, vpnbypass
+License: GPL-3.0-or-later
+Section: luci
+Architecture: all
+Installed-Size: 3366
+Filename: luci-app-vpnbypass_1.3.4-1_all.ipk
+Size: 4267
+SHA256sum: 6082aca5f88cd4b5f7ea03d37cdc3f99ee85bdb9a517c49ac1f96b4562c4eca7
+Description:  Provides Web UI for VPNBypass service.
+
