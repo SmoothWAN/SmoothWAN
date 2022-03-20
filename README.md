@@ -4,7 +4,7 @@ Setup Speedify as a gateway using OpenWRT without command line usage. <br>Not af
 <br>
 Typical use case examples: 
 - Use Speedify as a VPN to cover all connected devices in a home network when it's not practical to share a WAN.
-- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections with Speedify, preferably a combination of wired and wireless. Speedify is optimized for livestreaming and mixed usage, most services are optimized for livestreaming only or cost a fortune for home usage.
+- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections with Speedify, preferably a combination of wired and wireless. Speedify is optimized for livestreaming and mixed usage, most services are optimized for livestreaming only (2022).
 
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
@@ -57,7 +57,7 @@ Typical use case examples:
 <details> 
 <summary>Speedify compared to current consumer-grade bonding solutions</summary>
   
-- SD-WAN VPN: By having one exit IP address when bonding, connected network sessions are uninterrupted. Sensitive streams are mirrored across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
+- SDN VPN: By having one exit IP address when bonding, connected network sessions are uninterrupted. Sensitive streams are mirrored across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. (e.g will suspend a WAN on multiple failures, resume and suspend delay is increased on multiple failures) <br>
 - Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
 - "TCP Multiple" transport protocol as known as parallel transfer sockets allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). <br>
@@ -85,12 +85,14 @@ Typical use case examples:
 Platforms: Raspberry Pi 4 and PC  
 <br>
 Additional features: 
--  One-click setup WAN configuration and renaming for USB Ethernet adapters, Cellular USB dongles (RNDIS), and onboard multiport Ethernet. NCM & QMI USB modems are not supported. (unreliable)
+-  PnP and simple WAN configuration and renaming for USB Ethernet adapters, 4G USB dongles* (RNDIS), and onboard multiport Ethernet.
 -  USB Ethernet adapters and tethering devices are plug and play (Raspberry Pi 4 only - DHCP)
 -  Bypass Speedify with selective WAN for local devices/ports/domains using [VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/)
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for home network adblocking
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for remote access to connected devices in your home network
--  Basic wireless setup menu for easy configuration with optimized presets
+-  Basic wireless setup menu for easy configuration with optimized presets  
+  
+<sub>*NCM & QMI USB modems require manual configration instructed by ISP, setup in "Interfaces" page.</sub>
 
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations and Speedify topics, and issues tab for SmoothWAN related issues.  
