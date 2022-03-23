@@ -3,7 +3,7 @@ local net = require "luci.model.network".init()
 local sys = require "luci.sys"
 local ifaces = sys.net:devices()
 
-m = Map("network", translate("Multi-WAN USB Setup"), translate("• Note: Empty the names to use 'Multi-WAN MAC'<br> <img src='\\luci-static/bootstrap/mwanusb.svg' width = 400>"))
+m = Map("network", translate("Multi-WAN USB Setup"), translate("• First character of the name set is displayed in OLED<br>• Note: Empty the names to use 'Multi-WAN MAC'<br> <img src='\\luci-static/bootstrap/mwanusb.svg' width = 400>"))
 
 s = m:section(TypedSection, "interface", "USB Ports")
 
