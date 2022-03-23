@@ -1,10 +1,10 @@
 [![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx) 
 ## Home network internet bonding with Speedify
-Setup Speedify as a gateway using OpenWRT without command line usage. <br>Not affiliated with Speedify or Connectify.<br>
+A distribution for setting up Speedify as the main gateway using OpenWRT without command line usage. <br>Not affiliated with Speedify or Connectify.<br>
 <br>
 Typical use case examples: 
 - Use Speedify as a VPN to cover all connected devices in a home network when it's not practical to share a WAN.
-- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections with Speedify, preferably a combination of wired and wireless. 
+- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections, preferably a combination of wired and wireless. 
 
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
@@ -14,7 +14,7 @@ Typical use case examples:
 <details>
 <summary>Basic Setup for the Raspberry Pi 4 using a smartphone</summary>
   
-- Download the file from the sidebar and follow the instructions to setup the microSD card. <br>
+- Download and follow the instructions from Releases page to setup the microSD card. <br>
 - Connect as the following diagram: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
 - The Raspberry Pi 4 (RPi4) is now broadcasting as a WiFi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
@@ -85,7 +85,7 @@ Typical use case examples:
 Platforms: Raspberry Pi 4 and PC  
 <br>
 Additional features: 
--  Plug and play simple WAN configuration and renaming for USB Ethernet adapters, 4G USB dongles* (RNDIS), and onboard multiport Ethernet.
+-  Easy WAN renaming for USB Ethernet adapters, 4G USB dongles* (RNDIS), and onboard multiport Ethernet.
 -  USB Ethernet adapters and tethering devices are plug and play (Raspberry Pi 4 only - DHCP)
 -  Bypass Speedify with selective WAN for local devices/ports/domains using modified-[VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/)
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for home network adblocking
@@ -98,7 +98,7 @@ Additional features:
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations and Speedify topics, and issues tab for SmoothWAN related issues.  
 Interactive discussion hub is hosted at Discord linked top. <br>
-Libraries/SW used mentioned in Wiki. Credits mentioned in releases. <br>
+Libraries/Apps used are mentioned in Wiki. Credits are mentioned in releases. <br>
 
 [Donate ☕ beans](https://www.paypal.com/paypalme/talalmsb/1)
 
