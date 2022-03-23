@@ -50,10 +50,10 @@ Version: 4.2-4.2
 Depends: libc
 Section: net
 Architecture: all
-Installed-Size: 1745
+Installed-Size: 3543
 Filename: speedifyconf_4.2-4.2_all.ipk
-Size: 2491
-SHA256sum: e69ea61b77c5adfa31f503cd8668723fb165bf3cf4a19fb3f1f08050f9645681
+Size: 4250
+SHA256sum: 354f04f637f70027e4733a48b7bd1727655c18b2a8522c48300dd3956c7d096f
 Description:  Install and configure Speedify from LuCI/WebUI.
 
 Package: tailscaleconf

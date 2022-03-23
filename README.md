@@ -4,7 +4,7 @@ Setup Speedify as a gateway using OpenWRT without command line usage. <br>Not af
 <br>
 Typical use case examples: 
 - Use Speedify as a VPN to cover all connected devices in a home network when it's not practical to share a WAN.
-- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections with Speedify, preferably a combination of wired and wireless. Speedify is optimized for livestreaming and mixed usage, most services are optimized for livestreaming only (2022).
+- Access to a reliable internet with usable speeds in a rural area with poor connectivity by bonding at least 2 connections with Speedify, preferably a combination of wired and wireless. 
 
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
@@ -85,12 +85,12 @@ Typical use case examples:
 Platforms: Raspberry Pi 4 and PC  
 <br>
 Additional features: 
--  PnP and simple WAN configuration and renaming for USB Ethernet adapters, 4G USB dongles* (RNDIS), and onboard multiport Ethernet.
+-  Plug and play simple WAN configuration and renaming for USB Ethernet adapters, 4G USB dongles* (RNDIS), and onboard multiport Ethernet.
 -  USB Ethernet adapters and tethering devices are plug and play (Raspberry Pi 4 only - DHCP)
--  Bypass Speedify with selective WAN for local devices/ports/domains using [VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/)
+-  Bypass Speedify with selective WAN for local devices/ports/domains using modified-[VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/)
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for home network adblocking
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for remote access to connected devices in your home network
--  [OLED display support](https://google.com) for displaying info using [SSD1306_OLED_json](https://github.com/yishunzhikong/SSD1306_OLED_json)
+-  [Plug and play OLED display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying info using [SSD1306_OLED_json](https://github.com/yishunzhikong/SSD1306_OLED_json)
 -  Basic wireless setup menu for easy configuration with optimized presets  
   
 <sub>*NCM & QMI USB modems require manual configration instructed by ISP, setup in "Interfaces" page.</sub>
@@ -98,6 +98,7 @@ Additional features:
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations and Speedify topics, and issues tab for SmoothWAN related issues.  
 Interactive discussion hub is hosted at Discord linked top. <br>
+Libraries/SW used mentioned in Wiki. Credits mentioned in releases. <br>
 
 [Donate ☕ beans](https://www.paypal.com/paypalme/talalmsb/1)
 
