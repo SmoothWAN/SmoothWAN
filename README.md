@@ -19,7 +19,7 @@ Typical use case examples:
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
 - The Raspberry Pi 4 (RPi4) is now broadcasting as a WiFi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.png" width="300"/> <br>
-- Visit 192.168.3.1 in your browser and login, there is no password set: <br>
+- Visit http://172.17.17.2 in your browser and login, there is no password set: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/3.png" width="300"/> <br>
 - You will be greeted with brief instructions in the UI, setup Speedify: <br>
@@ -90,6 +90,7 @@ Additional features:
 -  Bypass Speedify with selective WAN for local devices/ports/domains using [VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/)
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for home network adblocking
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for remote access to connected devices in your home network
+-  [OLED display support](https://google.com) for displaying info using [SSD1306_OLED_json](https://github.com/yishunzhikong/SSD1306_OLED_json)
 -  Basic wireless setup menu for easy configuration with optimized presets  
   
 <sub>*NCM & QMI USB modems require manual configration instructed by ISP, setup in "Interfaces" page.</sub>

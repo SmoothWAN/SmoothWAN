@@ -1,5 +1,21 @@
 uci -q batch << EOI
-set network.lan.ipaddr='192.168.3.1'
+set network.lan.ipaddr='172.17.17.2'
+set network.AutoWANOne=interface
+set network.AutoWANOne.proto='dhcp'
+set network.AutoWANOne.device='eth1'
+set network.AutoWANOne.metric='10'
+set network.AutoWANTwo=interface
+set network.AutoWANTwo.proto='dhcp'
+set network.AutoWANTwo.device='eth2'
+set network.AutoWANTwo.metric='20'
+set network.AutoWANThree=interface
+set network.AutoWANThree.proto='dhcp'
+set network.AutoWANThree.device='eth3'
+set network.AutoWANThree.metric='30'
+set network.AutoWANFour=interface
+set network.AutoWANFour.proto='dhcp'
+set network.AutoWANFour.device='eth4'
+set network.AutoWANFour.metric='40'
 commit network
 set wireless.@wifi-device[0].disabled='0'
 set wireless.@wifi-iface[0].ssid='SmoothWAN Setup'
