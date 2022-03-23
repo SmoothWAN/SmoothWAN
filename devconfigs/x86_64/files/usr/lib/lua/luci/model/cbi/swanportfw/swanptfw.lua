@@ -5,7 +5,7 @@ local ifaces = sys.net:devices()
 
 m = Map("firewall", translate("VPN Basic Port Forwarding"))
 
-s = m:section(TypedSection, "redirect", "Speedify Port Forwarding", "- Applies to Speedify dedicated plan only. (Forwards UDP and TCP)<br>- Add the same source and destination ports in Speedify afterwards.")
+s = m:section(TypedSection, "redirect", "Speedify Port Forwarding", "• Applies to Speedify dedicated plan only. (Forwards UDP and TCP)<br>• Add the same source and destination ports in Speedify afterwards.")
 
 s.addremove = true
 
