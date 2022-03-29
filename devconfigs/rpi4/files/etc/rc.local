@@ -2,8 +2,10 @@
 
 #Set Pi CPU to performance for stability
 echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#Enable a scheduler for root disk for better LXC performance
+echo "bfq" > /sys/class/block/mmcblk0/queue/scheduler 
 #Run usbmuxd for iOS tethering
-usbmuxd
+usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 

@@ -2,8 +2,10 @@
 
 #Set CPU to performance for Atom CPUs
 echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#Enable a scheduler for root disk for better LXC performance
+echo "bfq" > /sys/class/block/sda/queue/scheduler || true
 #Run usbmuxd for iOS tethering
-usbmuxd
+usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
