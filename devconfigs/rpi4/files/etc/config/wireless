@@ -6,7 +6,7 @@ config wifi-device 'radio0'
         option noscan '1'
         option country 'US'
         option short_gi_40 '0'
-        option htmode 'HT40'
+        option htmode 'HT20'
         option hwmode '11g'
         option channel 'auto'
 

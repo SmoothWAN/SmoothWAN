@@ -46,6 +46,10 @@ set dhcp.cfg01411c.rebind_protection='0'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
+add_list firewall.cfg03dc81.network='AutoWANOne'
+add_list firewall.cfg03dc81.network='AutoWANTwo'
+add_list firewall.cfg03dc81.network='AutoWANThree'
+add_list firewall.cfg03dc81.network='AutoWANFour'
 commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'

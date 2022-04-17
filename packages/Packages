@@ -46,14 +46,14 @@ SHA256sum: b03939b47f99dac8a692eb9aafac625059592ae2efe67d8bf7db91c9f7411858
 Description:  Install and configure Pi-hole from LuCI with LXC.
 
 Package: speedifyconf
-Version: 4.2-4.2
+Version: 4.3
 Depends: libc
 Section: net
 Architecture: all
-Installed-Size: 3543
-Filename: speedifyconf_4.2-4.2_all.ipk
-Size: 4250
-SHA256sum: 354f04f637f70027e4733a48b7bd1727655c18b2a8522c48300dd3956c7d096f
+Installed-Size: 3734
+Filename: speedifyconf_4.3_all.ipk
+Size: 4436
+SHA256sum: df711448572613c27d1e3adeb26e4156b290bf4f8d505562d770ada499a78de7
 Description:  Install and configure Speedify from LuCI/WebUI.
 
 Package: tailscaleconf
@@ -83,7 +83,7 @@ Description:  This service can be used to enable simple VPN split tunnelling.
  internet access (outside of your VPN tunnel).
  Please see the README for further information.
  
- Package: luci-app-vpnbypass
+Package: luci-app-vpnbypass
 Version: 1.3.4-1
 Depends: libc, luci-mod-admin-full, vpnbypass
 License: GPL-3.0-or-later
@@ -93,5 +93,17 @@ Installed-Size: 3366
 Filename: luci-app-vpnbypass_1.3.4-1_all.ipk
 Size: 4267
 SHA256sum: 6082aca5f88cd4b5f7ea03d37cdc3f99ee85bdb9a517c49ac1f96b4562c4eca7
-Description:  Provides Web UI for VPNBypass service.
+Description:  Provides Web UI for VPNBypass service. Multi-WAN mod, Prefork.
+
+Package: luci-mod-battstatus
+Version: git-21.229.36674-854399a
+Depends: libc, luci-base, libiwinfo-lua, rpcd-mod-iwinfo, libi2c, i2c-tools
+License: Apache-2.0
+Section: luci
+Architecture: all
+Installed-Size: 1386
+Filename: luci-mod-battstatus_git-21.229.36674-854399a_all.ipk
+Size: 2308
+SHA256sum: fe57cbcaeff2260392fb11239331781e1b0b44df88b99bc9c3bc1b81870d3049
+Description:  Provides a battery charge indicator in LuCI. Supports INA219 w/o battery gauge. Multi-WAN mod, Prefork.
 
