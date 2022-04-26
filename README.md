@@ -5,6 +5,7 @@ A router OS for easy bonding setup using Speedify as the main gateway with OpenW
 Use case: 
 - Use Speedify as an SDN bonding VPN to cover all connected devices in a home network when it's not possible or practical to share a WAN per device.  
 - Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans.
+- Backpack streaming setup.
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
   
@@ -78,7 +79,7 @@ Additional features:
 -  Bypass Speedify with selective WAN for local devices/ports/domains using a modified-[VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/) build 
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking  
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for easy remote access to connected devices in your home network  
--  [PnP display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying Speedify info  
+-  [PnP display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying Speedify info (backpack streaming)  
 -  Basic wireless setup menu for easy configuration with optimized presets (WIP)  
   
 <sub>*NCM & QMI USB modems require manual configration instructed by ISP, setup in "Interfaces" page.</sub>
