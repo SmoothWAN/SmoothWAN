@@ -6,10 +6,18 @@
 
 <%+header%>
 
-<h2>Speedify UI - <a href="http://172.17.17.2/spdui">Fullscreen</a> </h2>
+<h2>Speedify UI - <a id="fullscreen" href="http://172.17.17.2/spdui">Fullscreen</a> </h2>
 <div class="iframe-embed-wrapper iframe-embed-responsive-16by9">
-    <iframe class="iframe-embed" src="/spdui"></iframe>
+        <iframe class="iframe-embed" id="spdui"></iframe>
+        <script>
+        var rand = Math.floor((Math.random()*1000000)+1);
+        var iframe = document.getElementById('spdui');
+        var fullscreen = document.getElementById('fullscreen');
+        iframe.src = "/spdui/?uid="+rand;
+        fullscreen.href = "http://172.17.17.2/spdui/?uid="+rand;
+        </script>
 </div>
+
 
 <h2 name="content"><%:Status%></h2>
 
