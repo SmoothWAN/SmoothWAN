@@ -1,10 +1,10 @@
 [![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx) 
-## Home network internet bonding with Speedify
+## Internet bonding router using Speedify
 A router OS for easy bonding setup using Speedify as the main gateway with OpenWRT without command line usage. <br>Not affiliated with Speedify or Connectify.<br>
 <br>
 Use case: 
-- Use Speedify as an SDN bonding VPN to cover all connected devices in a home network when it's not possible or practical to share a WAN per device.  
 - Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans.
+- Use Speedify as an SDN bonding VPN to cover all connected devices in a home network when it's not possible or practical to share a WAN per device.  
 - Backpack streaming setup.
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
@@ -15,11 +15,12 @@ Use case:
   <summary><b>Quick Setup with a Raspberry Pi 4 using a smartphone</b></summary>
   
 - Download and follow the instructions from "Releases" page to setup the microSD card. <br>
-- Connect as the following diagram: <br>
+- Insert the micro SD card and power up the Pi.
+- Connect your hardware in a similiar way to this example using USB ethernet adapters: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
-- The Raspberry Pi 4 (RPi4) is now broadcasting as a Wi-Fi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
+- The Pi is now broadcasting as a Wi-Fi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.png" width="300"/> <br>
-- Visit: http://172.17.17.2 or for old versions: http://192.168.3.1 in your browser and login, there is no password set: <br>
+- Visit: http://172.17.17.2 there is no password set: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/3.png" width="300"/> <br>
 - You will be greeted with brief instructions in the UI, setup Speedify: <br>
@@ -30,23 +31,22 @@ Use case:
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/6.png" width="300"/> <br>
 - Head to Status->Overview: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/7.png" width="300"/> <br>
-- You will be greeted with the Speedify app, login: <br>
+- Speedify app is now installed, login: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/8.png" width="300"/> <br>
-- Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the RPi4 is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
+- Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
-- After switching over to Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable Pi's Wi-Fi: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.png" width="300"/> <br>
+- After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable Pi's Wi-Fi: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
 - Setup a password for SmoothWAN admin page in System->Administration <br>
 - All done, enjoy a reliable internet. <br>
 
 ***
 
 - <b>Extra</b>: to change the USB ports / WAN name, head to Interfaces->Multi-WAN USB: <br> 
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/14.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/15.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/16.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/17.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/11.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.png" width="300"/> <br>
 
 </details>
 
@@ -55,7 +55,7 @@ Use case:
 
 - Relatively affordable and does not require setting up a server. <br>
 - Includes optimization for non-streaming services.  <br>
-- Instant server region selection for region restricted services and multiple backup pubilic servers. <br>
+- Instant server region selection for region restricted services and multiple backup public servers. <br>
 - SDN VPN: By having one exit IP address, connected network sessions are uninterrupted and implements flow control: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. e.g WAN resume and suspend delay is increased on multiple failures, poor connections will be removed from aggregation and used for backup etc. <br>
 - Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
