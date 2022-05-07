@@ -1,0 +1,44 @@
+uci -q batch << EOI
+set network.lan.ipaddr='172.17.17.2'
+set network.WAN=interface
+set network.WAN.proto='dhcp'
+set network.WAN.device='WAN'
+set network.WAN.usename='WAN'
+set network.WAN.metric='10'
+set network.USB=interface
+set network.USB.proto='dhcp'
+set network.USB.device='USB'
+set network.USB.usename='USB'
+set network.USB.metric='20'
+commit network
+set system.@system[-1].hostname='SmoothWAN'
+add system led
+set system.@led[0]=led
+set system.@led[0].name='System Load Indicator'
+set system.@led[0].sysfs='led0'
+set system.@led[0].trigger='heartbeat'
+add system led
+set system.@led[1].name='Boot Done'
+set system.@led[1].sysfs='led1'
+set system.@led[1].trigger='none'
+commit system
+set dhcp.cfg01411c.allservers='1'
+add_list dhcp.cfg01411c.server='8.8.8.8'
+add_list dhcp.cfg01411c.server='8.8.4.4'
+set dhcp.cfg01411c.rebind_protection='0'
+commit dhcp
+del firewall.cfg03dc81.network
+add_list firewall.cfg03dc81.network='Speedify'
+add_list firewall.cfg03dc81.network='WAN'
+add_list firewall.cfg03dc81.network='USB'
+commit firewall
+set network.Speedify=interface
+set network.Speedify.proto='none'
+set network.Speedify.device='connectify0'
+commit network
+set nlbwmon.cfg015d22.database_directory='/usr/share/nlbwmon'
+set nlbwmon.cfg015d22.commit_interval='10m'
+commit nlbwmon
+
+EOI
+
