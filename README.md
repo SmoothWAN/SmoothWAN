@@ -71,7 +71,7 @@ Use case:
   
  ***
   
-Platforms: Raspberry Pi 4(~250Mbit chacha20), NanoPi R4S(~400Mbit+ AES) and 64-bit PC
+Platforms: Raspberry Pi 4(~250Mbit chacha20), and 64-bit PC
 <br>
 Additional features: 
 -  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS)  
