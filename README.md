@@ -7,7 +7,8 @@ Use case:
 - Use Speedify as an SDN bonding VPN to cover all connected devices in a home network when it's not possible or practical to share a WAN per device.  
 - Backpack streaming setup.
   
-<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>  
+<sub>Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and plug SmoothWAN to LAN.</sub>
   
  ***
   
@@ -57,6 +58,7 @@ Use case:
 - Includes optimization for non-streaming services.  <br>
 - Instant server region selection for region restricted services and multiple backup public servers. <br>
 - SDN VPN: By having one exit IP address, connected network sessions are uninterrupted and implements flow control: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
+- FEC using existing DTLS encryption. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. e.g WAN resume and suspend delay is increased on multiple failures, poor connections will be removed from aggregation and used for backup etc. <br>
 - Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
 - "TCP Multiple" transport protocol as known as parallel transfer sockets similiar to threaded download managers allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). Also circumvents poor ISP restrictions. <br>
