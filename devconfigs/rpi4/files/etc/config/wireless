@@ -8,7 +8,7 @@ config wifi-device 'radio0'
         option short_gi_40 '0'
         option htmode 'HT20'
         option hwmode '11g'
-        option channel 'auto'
+        option channel '1'
 
 config wifi-iface 'wifinet0'
         option device 'radio0'
