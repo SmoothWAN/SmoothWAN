@@ -1,14 +1,12 @@
-
 config wifi-device 'radio0'
         option type 'mac80211'
         option path 'platform/soc/fe300000.mmcnr/mmc_host/mmc1/mmc1:0001/mmc1:0001:1'
         option cell_density '0'
-        option noscan '1'
-        option country 'US'
         option short_gi_40 '0'
-        option htmode 'HT20'
-        option hwmode '11g'
-        option channel '1'
+        option hwmode '11a'
+        option channel '153'
+        option country 'US'
+        option htmode 'VHT80'
 
 config wifi-iface 'wifinet0'
         option device 'radio0'
@@ -21,4 +19,3 @@ config wifi-iface 'wifinet0'
         option disassoc_low_ack '0'
         option key 'brassworld'
         option network 'lan'
-
