@@ -1,9 +1,19 @@
 #!/bin/sh
 
-renamedev () {
+setupdev () {
 	ip link set $1 down
 	ip link set $1 name $2
 	ip link set $2 up
+	sleep 2
+	echo c > /sys/class/net/eth0/queues/rx-0/rps_cpus
+	echo c > /sys/class/net/eth0/queues/tx-0/xps_cpus
+	echo c > /sys/class/net/eth0/queues/tx-1/xps_cpus
+	echo c > /sys/class/net/eth0/queues/tx-2/xps_cpus
+	echo c > /sys/class/net/eth0/queues/tx-3/xps_cpus
+	echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
+	#Checksum offload
+	/usr/sbin/ethtool -K eth0 rx-checksum on
+	/usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
 }
 
 while :
@@ -29,28 +39,28 @@ USB3="$(ls -l $PATH3/net | awk -F ' ' '{print $9}')"
 USB4="$(ls -l $PATH4/net | awk -F ' ' '{print $9}')"
 
 if [[ ${USB13} ]] && [[ ${USB13} != ${USB1name} ]]; then
-		renamedev "${USB13}" "${USB1name}"
+		setupdev "${USB13}" "${USB1name}"
 		logger -t mwanusb "Renamed USB1 (3.0+) to ${USB1name}"
 	fi
 if [[ ${USB23} ]] && [[ ${USB23} != ${USB2name} ]]; then
-		renamedev "${USB23}" "${USB2name}"
+		setupdev "${USB23}" "${USB2name}"
 		logger -t mwanusb "Renamed USB2 (3.0+) to ${USB2name}"
 	fi
 if [[ ${USB1} ]] && [[ ${USB1} != ${USB1name} ]]; then
-		renamedev "${USB1}" "${USB1name}"
+		setupdev "${USB1}" "${USB1name}"
 		logger -t mwanusb "Renamed USB1 to ${USB1name}"
 	fi
 if [[ ${USB2} ]] && [[ ${USB2} != ${USB2name} ]]; then
-		renamedev "${USB2}" "${USB2name}"
+		setupdev "${USB2}" "${USB2name}"
 		logger -t mwanusb "Renamed USB2 to ${USB2name}"
 	fi
 if [[ ${USB3} ]] && [[ ${USB3} != ${USB3name} ]]; then
-		renamedev "${USB3}" "${USB3name}"
+		setupdev "${USB3}" "${USB3name}"
 		uci set network.Three.device=${USB3name}
 		logger -t mwanusb "Renamed USB3 to ${USB3name}"
 	fi
 if [[ ${USB4} ]] && [[ ${USB4} != ${USB4name} ]]; then
-		renamedev "${USB4}" "${USB4name}"
+		setupdev "${USB4}" "${USB4name}"
 		logger -t mwanusb "Renamed USB4 to ${USB4name}"
 	fi
 
