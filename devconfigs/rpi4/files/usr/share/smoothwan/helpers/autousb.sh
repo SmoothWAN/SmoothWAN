@@ -1,19 +1,23 @@
 #!/bin/sh
 
 setupdev () {
+	#Rename
 	ip link set $1 down
 	ip link set $1 name $2
 	ip link set $2 up
 	sleep 2
-	echo c > /sys/class/net/eth0/queues/rx-0/rps_cpus
-	echo c > /sys/class/net/eth0/queues/tx-0/xps_cpus
-	echo c > /sys/class/net/eth0/queues/tx-1/xps_cpus
-	echo c > /sys/class/net/eth0/queues/tx-2/xps_cpus
-	echo c > /sys/class/net/eth0/queues/tx-3/xps_cpus
-	echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
+	#Affinity
+	echo c > /sys/class/net/$2/queues/rx-0/rps_cpus
+	echo c > /sys/class/net/$2/queues/tx-0/xps_cpus
+	echo c > /sys/class/net/$2/queues/tx-1/xps_cpus
+	echo c > /sys/class/net/$2/queues/tx-2/xps_cpus
+	echo c > /sys/class/net/$2/queues/tx-3/xps_cpus
+	echo c > /sys/class/net/$2/queues/tx-4/xps_cpus
 	#Checksum offload
-	/usr/sbin/ethtool -K eth0 rx-checksum on
-	/usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
+	/usr/sbin/ethtool -K $2 rx-checksum on
+	/usr/sbin/ethtool -K $2 tx-checksum-ipv4 on
+	#Increment TTL
+	iptables -t mangle -I PREROUTING -i $2 -j TTL --ttl-set 65
 }
 
 while :

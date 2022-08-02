@@ -8,6 +8,4 @@
 #
 
 iptables -t nat -A PREROUTING -d $(uci get network.lan.ipaddr)/32 -p tcp -m tcp --dport 9330 -j DNAT --to-destination 127.0.0.1:9331
-iptables -t nat -A PREROUTING -d $(uci get network.lan.ipaddr)/32 -p tcp -m tcp --dport 80 -j DNAT --to-destination 127.0.0.1:80
-iptables -t nat -A INPUT -d 127.0.0.1/32 -m conntrack --ctstate DNAT -j SNAT --to-source 127.0.0.1
-
+iptables -t nat -A PREROUTING -i br-tailscale0 -p tcp -m tcp --dport 9330 -j DNAT --to-destination 127.0.0.1:9331
