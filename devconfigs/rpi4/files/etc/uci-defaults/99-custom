@@ -62,6 +62,12 @@ commit network
 set nlbwmon.cfg015d22.database_directory='/usr/share/nlbwmon'
 set nlbwmon.cfg015d22.commit_interval='10m'
 commit nlbwmon
+set system.ntp.use_dhcp='0'
+del system.ntp.server
+add_list system.ntp.server='162.159.200.123'
+commit system
+set luci.apply.holdoff='1'
+commit luci
 
 EOI
 
