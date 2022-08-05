@@ -1,109 +1,129 @@
-Package: luci-app-piholeconf
-Version: 1.0
-Depends: libc, piholeconf, libuci20130104
-License: BSD
-Section: luci
+Package: iptmon
+Version: 0.1.6-1
+Depends: libc, luci-app-statistics, collectd-mod-iptables, dnsmasq
+Source: /home/build/iptmon/iptmon
+SourceName: iptmon
+Section: net
+SourceDateEpoch: 1609833678
+Maintainer: Jordan Sokolic <oofnik@gmail.com>
 Architecture: all
-Installed-Size: 242113
-Filename: luci-app-piholeconf_1.0_all.ipk
-Size: 243129
-SHA256sum: cd0fb11c95fcd7c9939830f7b01a73760b577898f1e58069c2306fd1e6952e81
+Installed-Size: 2280
+Filename: iptmon_0.1.6-1_all.ipk
+Size: 3322
+SHA256sum: 19747a4629dd59e6eaf2b80460eef751be871eabc147dbb81e369bbb03b9163d
+Description:  iptmon is a script used to create and update 
+ iptables firewall rules to count transmit 
+ and recieve traffic to/from each host.
+
+Package: luci-app-piholeconf
+Version: 1.1
+Depends: libc, piholeconf, libuci20130104
+Source: smoothwan/luci-app-piholeconf
+SourceName: luci-app-piholeconf
+License: BSD
+LicenseFiles: LICENSE
+Section: luci
+SourceDateEpoch: 1658046896
+Maintainer: OpenWrt LuCI community
+Architecture: all
+Installed-Size: 242326
+Filename: luci-app-piholeconf_1.1_all.ipk
+Size: 243339
+SHA256sum: c0f17295b8d71d9e958d4a8e6542e43bf200d7a2a3d561447d74b3807076b10d
 Description:  LuCI luci-app-piholeconf app
 
 Package: luci-app-speedifyconf
-Version: 1.2
+Version: 1.3
 Depends: libc, speedifyconf, libuci20130104
+Source: smoothwan/luci-app-speedifyconf
+SourceName: luci-app-speedifyconf
 License: BSD
+LicenseFiles: LICENSE
 Section: luci
+SourceDateEpoch: 1658046896
+Maintainer: OpenWrt LuCI community
 Architecture: all
-Installed-Size: 1504
-Filename: luci-app-speedifyconf_1.2_all.ipk
-Size: 2354
-SHA256sum: 399c31d2806cc2716fac2875fc4e7b432d9a4804d3748857eab721769d187445
+Installed-Size: 3253
+Filename: luci-app-speedifyconf_1.3_all.ipk
+Size: 4102
+SHA256sum: 346ff39cd4afcdb0eb81855b9056b8a923d0a45ecc841b1b217ce2fce3683e60
 Description:  LuCI luci-app-speedifyconf app
 
 Package: luci-app-tailscaleconf
-Version: 1.0
+Version: 1.1
 Depends: libc, tailscaleconf, libuci20130104
+Source: smoothwan/luci-app-tailscaleconf
+SourceName: luci-app-tailscaleconf
 License: BSD
+LicenseFiles: LICENSE
 Section: luci
+SourceDateEpoch: 1658046896
+Maintainer: OpenWrt LuCI community
 Architecture: all
-Installed-Size: 159635
-Filename: luci-app-tailscaleconf_1.0_all.ipk
-Size: 160589
-SHA256sum: 283e63fa0006b0923a2285c544060c8760de4099df0a3f37792f3a5b32b5a3a5
+Installed-Size: 159915
+Filename: luci-app-tailscaleconf_1.1_all.ipk
+Size: 160920
+SHA256sum: f232ca31904751dc54917788b288289128c1376e8552d63fb34ec8a52645ebf9
 Description:  LuCI luci-app-tailscaleconf app
 
-Package: piholeconf
-Version: 1.3
-Depends: libc
-Section: net
+Package: luci-mod-battstatus
+Version: git-21.229.36674-854399a
+Depends: libc, luci-base, libiwinfo-lua, rpcd-mod-iwinfo, libi2c, i2c-tools
+Source: feeds/luci/modules/luci-mod-battstatus
+SourceName: luci-mod-battstatus
+License: Apache-2.0
+Section: luci
+SourceDateEpoch: 1629195074
+Maintainer: OpenWrt LuCI community
 Architecture: all
-Installed-Size: 1637
-Filename: piholeconf_1.3_all.ipk
-Size: 2378
-SHA256sum: 8b77b91534b771c2951f58d537beaecbe650d1057e87d425a7169ad99ab180f8
+Installed-Size: 1410
+Filename: luci-mod-battstatus_git-21.229.36674-854399a_all.ipk
+Size: 2319
+SHA256sum: 65441494b87bbc9f2a86f01e58575c242ffe7d762ff6239e24eff48e4270192b
+Description:  Provides a battery charge indicator in LuCI. Supports INA219 w/o battery gauge.
+
+Package: piholeconf
+Version: 1.4
+Depends: libc
+Source: smoothwan/piholeconf
+SourceName: piholeconf
+Section: net
+SourceDateEpoch: 1658046896
+Maintainer: TALMASH
+Architecture: all
+Installed-Size: 1733
+Filename: piholeconf_1.4_all.ipk
+Size: 2476
+SHA256sum: 0a0d1eb4b594fadf141f99b793cff3749c760a14041592975190dc535510149a
 Description:  Install and configure Pi-hole from LuCI with LXC.
 
 Package: speedifyconf
-Version: 4.4
+Version: 4.5
 Depends: libc
+Source: smoothwan/speedifyconf
+SourceName: speedifyconf
 Section: net
+SourceDateEpoch: 1658046896
+Maintainer: TALMASH
 Architecture: all
-Installed-Size: 3704
-Filename: speedifyconf_4.4_all.ipk
-Size: 4389
-SHA256sum: f39170a4bf4935d86e451cea7f36d72e2a7cd9c8d22ab3089aa0d025f8dbae8f 
+Installed-Size: 3910
+Filename: speedifyconf_4.5_all.ipk
+Size: 4608
+SHA256sum: 9eeae6f16378d4d5334e1b1c566ae826d225d796dbd276d5cede5ea0cc34e8d0
 Description:  Install and configure Speedify from LuCI/WebUI.
 
 Package: tailscaleconf
-Version: 1-2
+Version: 2.1-2.1
 Depends: libc
+Source: smoothwan/tailscaleconf
+SourceName: tailscaleconf
 Section: net
+SourceDateEpoch: 1658046896
+Maintainer: TALMASH
 Architecture: all
-Installed-Size: 1478
-Filename: tailscaleconf_1-2_all.ipk
-Size: 2250
-SHA256sum: d5aa924b746539415c0b0636a290af29ede96c60fe6478680533e6f981d44d48
+Installed-Size: 1534
+Filename: tailscaleconf_2.1-2.1_all.ipk
+Size: 2305
+SHA256sum: 104f51dd8c365b4e096068d43f9f45a5f31c4735923a19a4854533f5dcd0d539
 Description:  Install and configure Tailscale from LuCI/WebUI.
-
-Package: vpnbypass
-Version: 1.3.5-1
-Depends: libc, ipset, iptables
-License: GPL-3.0-or-later
-Section: net
-Architecture: all
-Installed-Size: 2319
-Filename: vpnbypass_1.3.5-1_all.ipk
-Size: 3435
-SHA256sum: 9a1f50662dbc052e26c9a1587eabc0c1235ea16c58e3d620b70aafab651538be
-Description:  This service can be used to enable simple VPN split tunnelling.
- Supports accessing domains, IP ranges outside of your VPN tunnel.
- Also supports dedicating local ports/IP ranges for direct
- internet access (outside of your VPN tunnel).
- Please see the README for further information.
-
-Package: luci-app-vpnbypass
-Version: 1.3.4-1
-Depends: libc, luci-mod-admin-full, vpnbypass
-License: GPL-3.0-or-later
-Section: luci
-Architecture: all
-Installed-Size: 3366
-Filename: luci-app-vpnbypass_1.3.4-1_all.ipk
-Size: 4267
-SHA256sum: 6082aca5f88cd4b5f7ea03d37cdc3f99ee85bdb9a517c49ac1f96b4562c4eca7
-Description:  Provides Web UI for VPNBypass service. Multi-WAN mod, Prefork.
-
-Package: luci-mod-battstatus
-Version: git-29.229.36674-854399a
-Depends: libc, luci-base, libiwinfo-lua, rpcd-mod-iwinfo, libi2c, i2c-tools
-License: Apache-2.0
-Section: luci
-Architecture: all
-Installed-Size: 1386
-Filename: luci-mod-battstatus_git-29.229.36674-854399a_all_ina219.ipk
-Size: 2308
-SHA256sum: fe57cbcaeff2260392fb11239331781e1b0b44df88b99bc9c3bc1b81870d3049
-Description:  Provides a battery charge indicator in LuCI. Supports INA219 w/o battery gauge. Multi-WAN mod, Prefork.
 
