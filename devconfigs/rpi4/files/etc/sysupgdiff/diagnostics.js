@@ -73,8 +73,8 @@ return view.extend({
 			L.resolveDefault(fs.stat('/bin/traceroute6'), {}),
 			L.resolveDefault(fs.stat('/usr/bin/traceroute6'), {}),
 			L.resolveDefault(fs.stat('/usr/bin/arp-scan'), {}),
-            L.resolveDefault(fs.stat('/usr/bin/vcgencmd'), {}),
-            L.resolveDefault(fs.stat('/usr/bin/wanspeedtest'), {}),
+        	L.resolveDefault(fs.stat('/usr/bin/vcgencmd'), {}),
+        	L.resolveDefault(fs.stat('/usr/bin/wanspeedtest'), {}),
 			network.getDevices(),
 			uci.load('luci')
 		]);

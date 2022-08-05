@@ -54,6 +54,9 @@ commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
+del network.cfg030f15.ports
+add_list network.cfg030f15.ports='eth0'
+add_list network.cfg030f15.ports='usb0'
 commit network
 set nlbwmon.cfg015d22.database_directory='/usr/share/nlbwmon'
 set nlbwmon.cfg015d22.commit_interval='10m'
