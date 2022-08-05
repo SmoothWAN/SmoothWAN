@@ -11,4 +11,5 @@
 include distroconfig.txt
 
 [all]
+dtoverlay=dwc2
 dtparam=i2c_arm=on

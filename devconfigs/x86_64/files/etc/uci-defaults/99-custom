@@ -49,6 +49,7 @@ set dhcp.lan.ra_slaac='0'
 del dhcp.lan.ra_flags
 add_list dhcp.lan.ra_flags='none'
 set dhcp.lan.dhcpv6='server'
+set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
@@ -60,11 +61,6 @@ commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
-set network.SPEEDIFY.proto='static'
-set network.SPEEDIFY.ipaddr='10.202.0.2'
-set network.SPEEDIFY.netmask='255.255.255.0'
-set network.SPEEDIFY.gateway='10.202.0.1'
-add_list network.SPEEDIFY.dns='10.202.0.1'
 commit network
 set nlbwmon.cfg015d22.database_directory='/usr/share/nlbwmon'
 set nlbwmon.cfg015d22.commit_interval='10m'
@@ -75,6 +71,39 @@ add_list system.ntp.server='162.159.200.123'
 commit system
 set luci.apply.holdoff='1'
 commit luci
+add_list vpn-policy-routing.config.supported_interface='AutoWANOne'
+add_list vpn-policy-routing.config.supported_interface='AutoWANTwo'
+add_list vpn-policy-routing.config.supported_interface='AutoWANThree'
+add_list vpn-policy-routing.config.supported_interface='AutoWANFour'
+add_list vpn-policy-routing.config.supported_interface='Speedify'
+commit vpn-policy-routing
+set luci_statistics.collectd_sensors.enable='1'
+set luci_statistics.collectd_sensors.IgnoreSelected='1'
+del luci_statistics.cfg1b3a2e
+set luci_statistics.collectd_iptables.enable='1'
+set luci_statistics.cfg1a3a2e.name='LAN'
+set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
+set luci_statistics.collectd_ping.enable='1'
+del luci_statistics.collectd_ping.Hosts
+add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
+set luci_statistics.collectd_ping.AddressFamily='any'
+del luci_statistics.collectd_uptime.enable
+del luci_statistics.collectd_network.enable
+set luci_statistics.collectd.BaseDir='/usr/lib/collectd/database'
+set luci_statistics.collectd.Include='/etc/collectd/conf.d/*.conf'
+set luci_statistics.collectd_uptime.enable='1'
+del luci_statistics.collectd_interface.IgnoreSelected
+del luci_statistics.collectd_interface.Interfaces
+add_list luci_statistics.collectd_interface.Interfaces='eth1'
+add_list luci_statistics.collectd_interface.Interfaces='br-lan'
+add_list luci_statistics.collectd_interface.Interfaces='connectify0'
+add_list luci_statistics.collectd_interface.Interfaces='eth2'
+add_list luci_statistics.collectd_interface.Interfaces='eth3'
+add_list luci_statistics.collectd_interface.Interfaces='eth4'
+commit luci_statistics
 
 EOI
 
+
+#Replace diagnostics page
+cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
