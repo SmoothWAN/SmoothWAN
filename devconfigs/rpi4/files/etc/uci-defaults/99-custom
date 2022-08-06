@@ -35,13 +35,12 @@ commit system
 set dhcp.cfg01411c.allservers='1'
 set dhcp.cfg01411c.rebind_protection='0'
 set dhcp.lan.force='1'
-set dhcp.lan.force='1'
-set dhcp.lan.ra='server'
-set dhcp.lan.ra_default='2'
-set dhcp.lan.ra_slaac='0'
+del dhcp.lan.ra
+del dhcp.lan.ra_default
+del dhcp.lan.ra_slaac
+del dhcp.lan.dhcpv6
 del dhcp.lan.ra_flags
 add_list dhcp.lan.ra_flags='none'
-set dhcp.lan.dhcpv6='server'
 set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
 commit dhcp
 del firewall.cfg03dc81.network
@@ -58,9 +57,6 @@ del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth0'
 add_list network.cfg030f15.ports='usb0'
 commit network
-set nlbwmon.cfg015d22.database_directory='/usr/share/nlbwmon'
-set nlbwmon.cfg015d22.commit_interval='10m'
-commit nlbwmon
 set system.ntp.use_dhcp='0'
 del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
