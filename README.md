@@ -8,18 +8,18 @@ Use case:
 - Backpack streaming setup.
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>  
-<sub>Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and plug SmoothWAN to LAN.</sub>
+<sub>Pi Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and plug SmoothWAN to LAN.</sub>
   
  ***
   
 <details>
-  <summary><b>Quick Setup with a Raspberry Pi 4 using a smartphone</b></summary>
+  <summary><b>Quick Setup using a smartphone</b></summary>
   
-- Download and follow the instructions from "Releases" page to setup the microSD card. <br>
-- Insert the micro SD card and power up the Pi.
-- Connect your hardware in a similiar way to this example using USB ethernet adapters: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/> <br>
-- The Pi is now broadcasting as a Wi-Fi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
+- Download and follow the instructions from "Releases" page. <br>
+- Connect your hardware in a similiar way to this example: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1slate.svg" width="400"/><br>
+- The Pi/Slate is now broadcasting as a Wi-Fi access point for easy configuration, connect to "SmoothWAN Setup", password: "brassworld": <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1.png" width="300"/> <br>
 - Visit: http://172.17.17.2 there is no password set: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2.png" width="300"/> <br>
@@ -34,11 +34,6 @@ Use case:
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/7.png" width="300"/> <br>
 - Speedify app is now installed, login: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/8.png" width="300"/> <br>
-- Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
-- After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable Pi's Wi-Fi: <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
 - Setup a password for SmoothWAN admin page in System->Administration <br>
 - All done, enjoy a reliable internet. <br>
 
@@ -48,40 +43,47 @@ Use case:
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/11.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.png" width="300"/> <br>
+- <b>Pi specifics:</b>
+  - Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
+  - After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable Pi's Wi-Fi: <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
 
 </details>
 
 <details> 
-<summary>Speedify solutions in Q2 2022</summary>
+<summary>Speedify observed solutions in Q4 2022</summary>
 
 - Relatively affordable and does not require setting up a server. <br>
 - Includes optimization for non-streaming services.  <br>
 - Instant server region selection for region restricted services and multiple backup public servers. <br>
-- SDN VPN: By having one exit IP address, connected network sessions are uninterrupted and implements flow control: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
-- FEC using existing DTLS encryption. <br>
+- SDN VPN: By having one exit IP address, connected network sessions are uninterrupted by flow control: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
+- FEC using existing DTLS(?) encryption. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. e.g WAN resume and suspend delay is increased on multiple failures, poor connections will be removed from aggregation and used for backup etc. <br>
 - Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
-- "TCP Multiple" transport protocol as known as parallel transfer sockets similiar to threaded download managers allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). Also circumvents poor ISP restrictions. <br>
+- "TCP Multiple" transport protocol as known as parallel transfer sockets allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). Also circumvents poor ISP restrictions. <br>
 - Quick packet aggregation weighing for largely asymmetric and heterogenous WANs. Slowly adapts to speed variations when using cellular/wireless. <br>
-- No out of order packet delivery on aggregation, needed for single socket TCP connection performance. <br>
+- Low out of order packet delivery on aggregation, needed for single socket TCP connection performance. <br>
 - An option for using a WAN for speed boosts only and backup only mode, data consumption usage depends on primary WAN quality rating in backup mode for seamless failover. <br>
 - Switching critical settings such as protocols, modes, and adding or removing WANs without disruption. <br>
-- TCP transport modes implements pacing for low RTT and low TCP-over-TCP overhead. <br>
+- TCP transport modes with low RTT and low TCP-over-TCP overhead. <br>
 
   
 </details>
   
  ***
   
-Platforms: Raspberry Pi 4(~250Mbit chacha20), and 64-bit PC
+Platforms: Slate AX, Raspberry Pi 4 / Pi 400, and 64-bit PC
 <br>
 Additional features: 
--  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS)  
--  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Raspberry Pi 4/NanoPi R4S) with interface renaming.  
--  Bypass Speedify with selective WAN for local devices/ports/domains using a modified-[VPNBypass](https://docs.openwrt.melmac.net/vpnbypass/) build 
--  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking  
+-  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
+-  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Pi/PC) with interface renaming.  
+-  Bypass Speedify with selective WAN for local devices/ports/domains using a PBR and/or Speedify's internal bypass LuCI app (Smart WAN selection) 
+-  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking (Pi-only)  
+-  AdGuard Home pre-installed on Slate AX
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for easy remote access to connected devices in your home network  
--  [PnP display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying Speedify info (backpack streaming)  
+-  [PnP mini-display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying Speedify info (backpack streaming)  
 -  Basic wireless setup menu for easy configuration with optimized presets (WIP)  
   
 <sub>*NCM & QMI USB modems require manual configration instructed by ISP, setup in "Interfaces" page.</sub>
@@ -94,8 +96,6 @@ Libraries/Apps used are mentioned in Wiki. Credits are mentioned per release. <b
 <details> 
   <summary><b>Credits</b></summary>
   @: Github - d@: Discord - a@:anonymous <br>
-  <b>Testers(a-z):</b>  <br>
-  @bt61 d@FloppyDisk @hle5128 d@pedro84 d@sqlazer <br>
   <b>Donors(a-z):</b>  <br>
   @bt61 d@FloppyDisk @hle5128 d@mattmatt a@Max** d@pedro84 a@Ron** d@sqlazer <br>
 </details>
