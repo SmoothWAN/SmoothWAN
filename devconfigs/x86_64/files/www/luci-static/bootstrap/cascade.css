@@ -868,9 +868,10 @@ header .brand {
 	float: left;
 	display: block;
 	padding: 8px 20px 12px;
-	margin-left: -20px;
-	color: #fff;
-	font-size: 20px;
+	margin-left: -1px;
+	color: #ededed;
+	font-size: 22px;
+	font-family: cursive;
 	font-weight: 200;
 	line-height: 1;
 }

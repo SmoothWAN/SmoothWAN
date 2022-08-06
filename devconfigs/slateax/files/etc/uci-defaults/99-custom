@@ -57,6 +57,8 @@ del dhcp.lan.ra_flags
 add_list dhcp.lan.ra_flags='none'
 set dhcp.lan.dhcpv6='server'
 set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
+set network.Speedify.peerdns='0'
+add_list network.Speedify.dns='10.202.0.1'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
