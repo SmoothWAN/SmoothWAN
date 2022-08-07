@@ -70,6 +70,8 @@ commit firewall
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
+set network.Speedify.peerdns='0'
+add_list network.Speedify.dns='10.202.0.1'
 commit network
 set system.ntp.use_dhcp='0'
 del system.ntp.server
