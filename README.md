@@ -46,14 +46,14 @@ Use case:
 - <b>Pi specifics:</b>
   - Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
-  - After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless (Basic) and disable Pi's Wi-Fi: <br>
+  - After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless and disable Pi's Wi-Fi: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
 
 </details>
 
 <details> 
-<summary>Speedify observed solutions in Q4 2022</summary>
+<summary>Speedify observed details in Q4 2022</summary>
 
 - Relatively affordable and does not require setting up a server. <br>
 - Includes optimization for non-streaming services.  <br>

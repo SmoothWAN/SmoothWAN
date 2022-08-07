@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $(ls /sys/devices/platform/soc/3a001000.dp1/net/) == "eth0" ]; then
+        ip link set eth0 down
+        ip link set eth0 name PortTwo
+        ip link set PortTwo up
+fi
+if [ $(ls /sys/devices/platform/soc/3a001200.dp2/net/) == "eth1" ]; then
+        ip link set eth1 down
+        ip link set eth1 name PortOne
+        ip link set PortOne up
+fi

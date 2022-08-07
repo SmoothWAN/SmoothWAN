@@ -4,11 +4,11 @@ del network.wan6
 set network.lan.ipaddr='172.17.17.2'
 set network.PortOne=interface
 set network.PortOne.proto='dhcp'
-set network.PortOne.device='eth1'
+set network.PortOne.device='PortOne'
 set network.PortOne.metric='10'
 set network.PortTwo=interface
 set network.PortTwo.proto='dhcp'
-set network.PortTwo.device='eth0'
+set network.PortTwo.device='PortTwo'
 set network.PortTwo.metric='20'
 set network.AutoUSBeth1=interface
 set network.AutoUSBeth1.proto='dhcp'
@@ -57,8 +57,6 @@ del dhcp.lan.ra_flags
 add_list dhcp.lan.ra_flags='none'
 set dhcp.lan.dhcpv6='server'
 set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
-set network.Speedify.peerdns='0'
-add_list network.Speedify.dns='10.202.0.1'
 commit dhcp
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
