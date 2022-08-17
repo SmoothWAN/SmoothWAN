@@ -79,9 +79,9 @@ Use cases:
 Platforms: Slate AX (easy), Raspberry Pi 4 / Pi 400, and 64-bit PC
 <br>
 Additional features: 
--  Speedify 12.4 is now using ISP-lookup names, the following features are currently inactive:
-    -  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
-    -  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Pi/PC) with interface renaming.  
+-  Speedify 12.4 is now using ISP-lookup names, the following features in strike are currently inactive:
+    -  USB port agnostic for portable setups using persistent WAN configuration & ~~naming~~ by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
+    -  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Pi/PC) with ~~interface renaming~~.  
 -  Bypass Speedify with selective WAN for local devices/ports/domains using a PBR and/or Speedify's internal bypass with a LuCI app (Adaptive WAN selection: data caps etc) 
 -  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking (Pi/PC)  
 -  AdGuard Home pre-installed on Slate AX
