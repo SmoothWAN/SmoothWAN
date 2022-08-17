@@ -1,20 +1,23 @@
-[![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx) 
+[![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx)   
+<img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="400"/>
+
 ## Internet bonding router using Speedify
 A router OS for easy bonding setup using Speedify as the main gateway with OpenWRT without command line usage. <br>Not affiliated with Speedify or Connectify.<br>
 <br>
-Use case: 
-- Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans.
-- Use Speedify as an SDN bonding VPN to cover all connected devices in a home network when it's not possible or practical to share a WAN per device.  
+Use cases: 
+- Build a reliable internet access with seamless failover, lossless and usable<sup>1</sup> single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans.
+- Cover all connected devices in a home network when it's not possible or practical to share a WAN per device running Speedify.  
 - Backpack streaming setup.
   
-<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="400"/> <br>  
-<sub>Pi Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and plug SmoothWAN to LAN.</sub>
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/> <br>  
+<sub>[Pi Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and connect SmoothWAN to AP's LAN.](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688)</sub>  
+<sub>[1] Mainly for stability rather than complete aggregate speed</sub>
   
  ***
   
 <details>
-  <summary><b>Quick Setup using a smartphone</b></summary>
-  
+  <summary><b>Quick setup using a smartphone</b></summary>  
+<b>Note:</b> Slate AX is recommended for ease of use due to built in stable Wi-Fi adapters, no extra hardware is needed.<br>
 - Download and follow the instructions from "Releases" page. <br>
 - Connect your hardware in a similiar way to this example: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/1a.svg" width="400"/>
@@ -44,11 +47,11 @@ Use case:
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/12.png" width="300"/> <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/13.png" width="300"/> <br>
 - <b>Pi specifics:</b>
-  - Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is poor for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
+  - Connect and configure a Wi-Fi AP/router if needed, the internal Wi-Fi of the Pi is unstable for general use, connect using RPi4's Ethernet port to a configured AP/router [(more info)](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688): <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/2a.svg" width="300"/> <br>
   - After connecting your mobile over the Wi-Fi AP/router, head over to Network->Wireless and disable Pi's Wi-Fi: <br>
 <img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/9.png" width="300"/> <br>
-<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="300"/> <br>
+<img src="https://github.com/TalalMash/SmoothWAN-web/raw/main/Basic%20Setup%20Guide%20assets/10.png" width="800"/> <br>
 
 </details>
 
@@ -56,10 +59,9 @@ Use case:
 <summary>Speedify observed details in Q4 2022</summary>
 
 - Relatively affordable and does not require setting up a server. <br>
-- Includes optimization for non-streaming services.  <br>
+- Includes optimization for non-livestreaming services.  <br>
 - Instant server region selection for region restricted services and multiple backup public servers. <br>
-- SDN VPN: By having one exit IP address, connected network sessions are uninterrupted by flow control: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
-- FEC using existing DTLS(?) encryption. <br>
+- Application aware conditioning: sensitive streams packets are duplicated across WANs and prioritized for VoIP, video calls, streaming, and games for seamless failover and lossless connectivity even when combining lossy WANs. While non-sensitive streams packets are aggregated across WANs for the speed of the total combined WANs, and bulk downloads using single sockets are aggregated. Sensitive streams are also aggregated with high quality sources. <br>
 - Per WAN quality rating system that's based on jitter, latency, stability, and speed variations over a period of time to prevent an unstable WAN from impacting total aggregation performance. e.g WAN resume and suspend delay is increased on multiple failures, poor connections will be removed from aggregation and used for backup etc. <br>
 - Per WAN VPN transport protocols for optimal connectivity when used with strict ISPs or poor middleboxes, used protocols: HTTPS(disguises as web browsing), UDP, TCP, TCP Multiple. <br>
 - "TCP Multiple" transport protocol as known as parallel transfer sockets allows maximum speed to be achieved on high latency, lossy, and far region VPN servers (with loss based CCA host settings and out-of-order packets). Also circumvents poor ISP restrictions. <br>
@@ -74,13 +76,14 @@ Use case:
   
  ***
   
-Platforms: Slate AX, Raspberry Pi 4 / Pi 400, and 64-bit PC
+Platforms: Slate AX (easy), Raspberry Pi 4 / Pi 400, and 64-bit PC
 <br>
 Additional features: 
--  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
--  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Pi/PC) with interface renaming.  
--  Bypass Speedify with selective WAN for local devices/ports/domains using a PBR and/or Speedify's internal bypass LuCI app (Smart WAN selection) 
--  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking (Pi-only)  
+-  Speedify 12.4 is now using ISP-lookup names, the following features are currently inactive:
+    -  USB port agnostic for portable setups using persistent WAN configuration by MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
+    -  Preset configuration for USB Ethernet adapters and tethering devices for plug and play (Pi/PC) with interface renaming.  
+-  Bypass Speedify with selective WAN for local devices/ports/domains using a PBR and/or Speedify's internal bypass with a LuCI app (Adaptive WAN selection: data caps etc) 
+-  [Pi-hole installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Pi-hole) for local home network adblocking (Pi/PC)  
 -  AdGuard Home pre-installed on Slate AX
 -  [Tailscale installer](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-Tailscale) for easy remote access to connected devices in your home network  
 -  [PnP mini-display support](https://github.com/TalalMash/SmoothWAN/wiki/Setting-up-OLED-display-for-stats-(RPi4)) for displaying Speedify info (backpack streaming)  
@@ -91,7 +94,7 @@ Additional features:
 
 Use the discussions tab in Github for a forum-like discussion on networking configurations and Speedify topics, and issues tab for SmoothWAN related issues.  
 Interactive discussion hub is hosted at Discord linked top. <br>
-Libraries/Apps used are mentioned in Wiki. Credits are mentioned per release. <br>
+Libraries/Apps used are mentioned in Wiki. <br>
 
 <details> 
   <summary><b>Credits</b></summary>
