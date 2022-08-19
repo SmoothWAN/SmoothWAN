@@ -100,7 +100,7 @@ Libraries/Apps used are mentioned in Wiki. <br>
   <summary><b>Credits</b></summary>
   @: Github - d@: Discord - a@:anonymous <br>
   <b>Donors(a-z):</b>  <br>
-  @bt61 d@FloppyDisk @hle5128 d@mattmatt a@Max** d@pedro84 a@Ron** d@sqlazer <br>
+  @bt61 d@FloppyDisk @hle5128 d@mattmatt a@Max** d@pedro84 a@Ron** @tadgill d@sqlazer <br>
 </details>
 
 [Buy me maté 🧉](https://www.paypal.com/paypalme/talalmsb/1)
