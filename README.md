@@ -96,11 +96,9 @@ Use the discussions tab in Github for a forum-like discussion on networking conf
 Interactive discussion hub is hosted at Discord linked top. <br>
 Libraries/Apps used are mentioned in Wiki. <br>
 
-<details> 
-  <summary><b>Credits</b></summary>
+  <b>Donors❤</b> <br>
   @: Github - d@: Discord - a@:anonymous <br>
-  <b>Donors(a-z):</b>  <br>
-  @bt61 d@FloppyDisk @hle5128 d@mattmatt a@Max** d@pedro84 a@Ron** @tadgill d@sqlazer <br>
-</details>
+  @bt61 d@FloppyDisk @hle5128 @JVimes d@mattmatt a@Max** d@pedro84 a@Ron** @tadgill d@sqlazer <br>
+  <br>
 
 [Buy me maté 🧉](https://www.paypal.com/paypalme/talalmsb/1)
