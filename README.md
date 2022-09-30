@@ -2,21 +2,22 @@
 <img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="400"/>
 
 ## Internet bonding router using Speedify
-A router OS for quick bonding setup using Speedify running on OpenWRT typically as the main gateway in a home network. <br>
+An OpenWRT router OS for fixed internet bonding setup using Speedify with a browser only. <br>
 Not affiliated with Speedify or Connectify.<br>
 <br>
 Use cases: 
-- Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an afforadable solution. e.g Rural areas, developing countries...
+- Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an afforadable solution. e.g rural areas, developing countries...
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
+- Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others in LXC)
   
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/> <br>  
-<sub>[Pi Update regarding router/AP section: It's advisable to turn off DHCP in router/AP settings and instead connect SmoothWAN to AP's LAN.](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688)</sub>  
+<sub>[- More info on Pi's Wi-Fi setup](https://github.com/TalalMash/SmoothWAN/discussions/18#discussioncomment-2521688)<br>- Slate AX/Flint is much easier to setup with no extra hardware.</sub>  
   
  ***
   
 <details>
-  <summary><b>Quick setup using a smartphone</b></summary>  
+  <summary><b>Quick setup using a smartphone as an example</b></summary>  
 <b>Note:</b> Slate AX or Flint is recommended for ease of use due to built in stable Wi-Fi adapters, no extra hardware is needed.<br>
 - Download and follow the instructions from "Releases" page. <br>
 - Connect your hardware in a similiar way to this example: <br>
@@ -56,12 +57,9 @@ Use cases:
 </details>
 
 <details> 
-<summary>TalalMash's observed Speedify functions in details (Q4 2022)</summary>
-<b>Note:</b><br>
-The purpose of this bit is to clarify the technical functionalities in order to know if it is useful for your setup and the similarity with other consumer-based solutions e.g Peplink, Netcloud etc...<br>
-Always test Speedify on your computer before using SmoothWAN.<br>
-This is not an endorsment; As of Q4 2022 there are no highly technical explanations or in-depth comparision on Speedify's website for the network inclined leading to a few misconceptions.<br>
-The following information may not be accurate but it will hopefuly clarify the app's functions to save you time and SmoothWAN unrelated discussion-section questions:<br><br>
+<summary>Speedify in technical terms</summary>
+<b>Notes:</b> These are my own findings and they are not accurate. <br>
+<br>
 - Includes optimization for non-livestreaming services in addition to livestreaming, e.g realtime connections. <br>
 - Relatively affordable due to publicly shared servers. <br>
 - Server region selection for region restricted services and multiple backup public servers. <br>
@@ -74,13 +72,13 @@ The following information may not be accurate but it will hopefuly clarify the a
 - Low out of order packet delivery on aggregation, needed for single socket TCP connection performance at the cost of minor latency increase. <br>
 - Options for using a WAN for speed boosts only with adjustable threshold (advanced - CLI) and backup only mode. <br>
 - Switching critical settings such as protocols, modes, and adding or removing WANs without disruption or requiring a restart. <br>
-- Maintains low TCP-over-TCP overhead. <br>
+- Maintains low TCP-over-TCP overhead relative to other VPNs. <br>
   
 </details>
   
  ***
   
-Platforms: Slate AX (easy), Raspberry Pi 4 / Pi 400, and 64-bit PC
+Platforms: GL.iNet Flint/Slate AX, Raspberry Pi 4 / Pi 400, and 64-bit PC
 <br><br>
 Additional features: 
 -  USB port agnostic for portable setups using persistent WAN configuration & naming by using MAC-addr for USB Ethernet adapters, 4G USB dongles* (RNDIS, Pi/PC)  
@@ -104,16 +102,8 @@ Use the [discussions](https://github.com/TalalMash/SmoothWAN/discussions) tab in
 <details>
   <summary><b>Maté Donors ❤</b></summary>
   Special thanks to:<br>
-  -bt61<br>
-  -FloppyDisk<br>
-  -hle5128<br>
-  -JVimes<br>
-  -mattmatt<br>
-  -Max**<br>
-  -Ron**<br>
-  -tadgill<br>
-  -sqlazer<br>
-  <br>
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/donors.drawio.svg"/><br>
+<b>Note:</b> Add *** at the end of the donation message be excempt from this list.<br>
 </details>
 
 [Buy me maté 🧉](https://www.paypal.com/paypalme/talalmsb/1)  
