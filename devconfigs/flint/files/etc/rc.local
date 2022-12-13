@@ -1,0 +1,21 @@
+#Some options are included here for easy backup and tweaking.
+
+#Set CPU to performance for Atom CPUs
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+#Run usbmuxd for iOS tethering
+usbmuxd &
+#Run iperf3 server
+iperf3 -s &
+#Run iptmon
+iptmon init
+#Set fan speed
+echo 150 > /sys/class/thermal/cooling_device0/cur_state
+
+#Multi-WAN MAC service
+sh /usr/share/smoothwan/helpers/macrename.sh &
+
+#Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
+mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &
+
+
+exit 0
