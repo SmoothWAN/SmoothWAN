@@ -5,7 +5,7 @@
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify, with an emphasis on using an internet browser for easy configuration. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
 
-Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://talalmash.github.io/SmoothWAN-docs) for information and guides.    
+Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guides.    
 
 Use cases: 
 - Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an afforadable solution. e.g rural areas, developing countries...
@@ -13,6 +13,4 @@ Use cases:
 - Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others in LXC)
   
-<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/> <br>  
-
-
+<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="500"/> <img src="https://user-images.githubusercontent.com/96490382/208723215-92bb40df-c56d-4f82-b597-707aa8e35f7b.gif" width="500"/>   
