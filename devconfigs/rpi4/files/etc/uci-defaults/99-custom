@@ -1,4 +1,5 @@
 uci -q batch << EOI
+
 set network.lan.ipaddr='172.17.17.2'
 set network.One=interface
 set network.One.proto='dhcp'
@@ -21,7 +22,9 @@ set network.Four.device='4-USB'
 set network.Four.usename='4-USB'
 set network.Four.metric='40'
 commit network
+
 set system.@system[-1].hostname='SmoothWAN'
+set system.@system[-1].log_size='1024'
 add system led
 set system.@led[0]=led
 set system.@led[0].name='System Load Indicator'
@@ -32,8 +35,10 @@ set system.@led[1].name='Boot Done'
 set system.@led[1].sysfs='led1'
 set system.@led[1].trigger='none'
 commit system
+
 set dhcp.cfg01411c.allservers='1'
 set dhcp.cfg01411c.rebind_protection='0'
+add_list dhcp.cfg01411c.server='127.0.0.1#5353'
 set dhcp.lan.force='1'
 del dhcp.lan.ra
 del dhcp.lan.ra_default
@@ -45,6 +50,7 @@ set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
 set network.Speedify.peerdns='0'
 add_list network.Speedify.dns='10.202.0.1'
 commit dhcp
+
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
 add_list firewall.cfg03dc81.network='One'
@@ -52,6 +58,7 @@ add_list firewall.cfg03dc81.network='Two'
 add_list firewall.cfg03dc81.network='Three'
 add_list firewall.cfg03dc81.network='Four'
 commit firewall
+
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
@@ -59,18 +66,22 @@ del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth0'
 add_list network.cfg030f15.ports='usb0'
 commit network
+
 set system.ntp.use_dhcp='0'
 del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
+
 set luci.apply.holdoff='1'
 commit luci
+
 add_list vpn-policy-routing.config.supported_interface='One'
 add_list vpn-policy-routing.config.supported_interface='Two'
 add_list vpn-policy-routing.config.supported_interface='Three'
 add_list vpn-policy-routing.config.supported_interface='Four'
 add_list vpn-policy-routing.config.supported_interface='Speedify'
 commit vpn-policy-routing
+
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
 del luci_statistics.cfg1b3a2e
@@ -80,6 +91,8 @@ set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
+add_list luci_statistics.collectd_ping.Hosts='10.203.0.1'
+add_list luci_statistics.collectd_ping.Hosts='8.8.8.8'
 set luci_statistics.collectd_ping.AddressFamily='any'
 del luci_statistics.collectd_uptime.enable
 del luci_statistics.collectd_network.enable

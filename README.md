@@ -14,7 +14,7 @@ Supported hardware:
 - Other IPQ80x/IPQ60x based gear such as the latest Belkin/Netgear will be supported (need testers)
 
 Use cases: 
-- Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an afforadable solution. e.g rural areas, developing countries...
+- Build a reliable internet access with seamless failover, lossless and usable single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
 - Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others in LXC)

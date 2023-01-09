@@ -59,15 +59,21 @@ set wireless.@wifi-iface[0].key='brassworld'
 commit wireless
 
 set system.@system[-1].hostname='SmoothWAN'
+set system.@system[-1].log_size='1024'
 del system.led_wan
-add system led # =cfg048bba
-set system.@led[-1].trigger='heartbeat'
-set system.@led[-1].sysfs='blue:wan'
-set system.@led[-1].name='Boot Done & Load Indicator'
+add system led
+set system.@led[0].trigger='default-on'
+set system.@led[0].sysfs='white_led'
+set system.@led[0].name='Boot Done'
+add system led
+set system.@led[1].trigger='none'
+set system.@led[1].sysfs='blue_led'
+set system.@led[1].name='Boot Done'
 commit system
 
 set dhcp.cfg01411c.allservers='1'
 set dhcp.cfg01411c.rebind_protection='0'
+add_list dhcp.cfg01411c.server='127.0.0.1#5353'
 set dhcp.lan.force='1'
 del dhcp.lan.ra
 del dhcp.lan.ra_default
@@ -126,6 +132,8 @@ set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
+add_list luci_statistics.collectd_ping.Hosts='10.203.0.1'
+add_list luci_statistics.collectd_ping.Hosts='8.8.8.8'
 set luci_statistics.collectd_ping.AddressFamily='any'
 del luci_statistics.collectd_uptime.enable
 del luci_statistics.collectd_network.enable

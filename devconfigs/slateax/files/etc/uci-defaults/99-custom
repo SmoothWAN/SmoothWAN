@@ -29,6 +29,7 @@ set network.AutoUSB2.metric='40'
 del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth2'
 commit network
+
 set wireless.@wifi-device[0].disabled='0'
 set wireless.@wifi-iface[0].ssid='SmoothWAN Setup'
 set wireless.@wifi-device[0].channel='auto'
@@ -39,15 +40,23 @@ set wireless.@wifi-device[0].country='US'
 set wireless.@wifi-iface[0].encryption='psk2+ccmp'
 set wireless.@wifi-iface[0].key='brassworld'
 commit wireless
+
 set system.@system[-1].hostname='SmoothWAN'
+set system.@system[-1].log_size='1024'
 del system.led_wan
-add system led # =cfg048bba
-set system.@led[-1].trigger='heartbeat'
-set system.@led[-1].sysfs='blue:wan'
-set system.@led[-1].name='Boot Done & Load Indicator'
+add system led
+set system.@led[0].trigger='default-on'
+set system.@led[0].sysfs='white_led'
+set system.@led[0].name='Boot Done'
+add system led
+set system.@led[1].trigger='none'
+set system.@led[1].sysfs='blue_led'
+set system.@led[1].name='Boot Done'
 commit system
+
 set dhcp.cfg01411c.allservers='1'
 set dhcp.cfg01411c.rebind_protection='0'
+add_list dhcp.cfg01411c.server='127.0.0.1#5353'
 set dhcp.lan.force='1'
 del dhcp.lan.ra
 del dhcp.lan.ra_default
@@ -58,6 +67,7 @@ add_list dhcp.lan.ra_flags='none'
 set dhcp.lan.dhcpv6='server'
 set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
 commit dhcp
+
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
 add_list firewall.cfg03dc81.network='PortOne'
@@ -67,18 +77,22 @@ add_list firewall.cfg03dc81.network='AutoUSB2'
 add_list firewall.cfg03dc81.network='AutoUSBeth0'
 add_list firewall.cfg03dc81.network='AutoUSBeth1'
 commit firewall
+
 set network.Speedify=interface
 set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
 set network.Speedify.peerdns='0'
 add_list network.Speedify.dns='10.202.0.1'
 commit network
+
 set system.ntp.use_dhcp='0'
 del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
+
 set luci.apply.holdoff='1'
 commit luci
+
 add_list vpn-policy-routing.config.supported_interface='PortOne'
 add_list vpn-policy-routing.config.supported_interface='PortTwo'
 add_list vpn-policy-routing.config.supported_interface='AutoUSB1'
@@ -87,6 +101,7 @@ add_list vpn-policy-routing.config.supported_interface='AutoUSBeth0'
 add_list vpn-policy-routing.config.supported_interface='AutoUSBeth1'
 add_list vpn-policy-routing.config.supported_interface='Speedify'
 commit vpn-policy-routing
+
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
 del luci_statistics.cfg1b3a2e
@@ -96,6 +111,8 @@ set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
+add_list luci_statistics.collectd_ping.Hosts='10.203.0.1'
+add_list luci_statistics.collectd_ping.Hosts='8.8.8.8'
 set luci_statistics.collectd_ping.AddressFamily='any'
 del luci_statistics.collectd_uptime.enable
 del luci_statistics.collectd_network.enable
