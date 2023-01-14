@@ -1,4 +1,5 @@
 #!/bin/sh
+#credits to @meavydev for flint support
 
 if [ $(ls /sys/devices/platform/soc/3a001000.dp1/net/) == "eth0" ]; then
         ip link set eth0 down
@@ -10,13 +11,14 @@ if [ $(ls /sys/devices/platform/soc/3a001200.dp2/net/) == "eth1" ]; then
         ip link set eth1 name PortOne
         ip link set PortOne up
 fi
-if [ $(ls /sys/devices/platform/soc/3a001200.dp2/net/) == "eth2" ]; then
+if [ $(ls /sys/devices/platform/soc/3a001400.dp3/net/) == "eth2" ]; then
         ip link set eth2 down
         ip link set eth2 name PortTwo
         ip link set PortTwo up
 fi
-if [ $(ls /sys/devices/platform/soc/3a001200.dp2/net/) == "eth3" ]; then
+if [ $(ls /sys/devices/platform/soc/3a001600.dp4/net/) == "eth3" ]; then
         ip link set eth3 down
         ip link set eth3 name PortThree
         ip link set PortThree up
 fi
+

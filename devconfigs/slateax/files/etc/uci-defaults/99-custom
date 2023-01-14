@@ -118,6 +118,15 @@ del luci_statistics.collectd_uptime.enable
 del luci_statistics.collectd_network.enable
 set luci_statistics.collectd.Include='/etc/collectd/conf.d/*.conf'
 set luci_statistics.collectd_uptime.enable='1'
+set luci_statistics.collectd_interface.IgnoreSelected='1'
+add_list luci_statistics.collectd_interface.Interfaces='br-lan'
+add_list luci_statistics.collectd_interface.Interfaces='ip6tnl0'
+add_list luci_statistics.collectd_interface.Interfaces='bond0'
+add_list luci_statistics.collectd_interface.Interfaces='lo'
+add_list luci_statistics.collectd_interface.Interfaces='gretap0'
+add_list luci_statistics.collectd_interface.Interfaces='ip6gre0'
+add_list luci_statistics.collectd_interface.Interfaces='gre0'
+set luci_statistics.collectd_rrdtool.DataDir='/etc/rrd'
 commit luci_statistics
 
 EOI
