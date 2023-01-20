@@ -149,6 +149,10 @@ add_list luci_statistics.collectd_interface.Interfaces='ip6gre0'
 add_list luci_statistics.collectd_interface.Interfaces='gre0'
 set luci_statistics.collectd_rrdtool.DataDir='/etc/rrd'
 commit luci_statistics
+set ttyd.cfg01a8ea.ssl='1'
+set ttyd.cfg01a8ea.ssl_cert='/etc/nginx/nginx.cer'
+set ttyd.cfg01a8ea.ssl_key='/etc/nginx/nginx.key'
+commit ttyd
 
 EOI
 
