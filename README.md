@@ -11,7 +11,6 @@ Supported hardware:
 - GL.iNet Flint
 - GL.iNet Slate AX
 - Raspberry Pi 4 / Pi 400
-- NETGEAR R7800 (Nighthawk X4S AC2600)
 
 Use cases: 
 - Build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...

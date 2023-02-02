@@ -91,7 +91,7 @@ set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
-add_list luci_statistics.collectd_ping.Hosts='10.203.0.1'
+add_list luci_statistics.collectd_ping.Hosts='10.202.0.5'
 add_list luci_statistics.collectd_ping.Hosts='8.8.8.8'
 set luci_statistics.collectd_ping.AddressFamily='any'
 del luci_statistics.collectd_uptime.enable
