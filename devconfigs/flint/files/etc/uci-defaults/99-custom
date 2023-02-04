@@ -153,6 +153,11 @@ set ttyd.cfg01a8ea.ssl='1'
 set ttyd.cfg01a8ea.ssl_cert='/etc/nginx/nginx.cer'
 set ttyd.cfg01a8ea.ssl_key='/etc/nginx/nginx.key'
 commit ttyd
+add fstab mount # =cfg024d78
+set fstab.@mount[-1].enabled='1'
+set fstab.@mount[-1].target='/mnt/smoothwan'
+set fstab.@mount[-1].uuid='337d0b9f-8716-42b2-b316-312811aef984'
+commit fstab
 
 EOI
 
