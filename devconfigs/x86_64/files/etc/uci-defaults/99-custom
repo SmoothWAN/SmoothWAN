@@ -1,22 +1,40 @@
 uci -q batch << EOI
 
 set network.lan.ipaddr='172.17.17.2'
-set network.AutoWANOne=interface
-set network.AutoWANOne.proto='dhcp'
-set network.AutoWANOne.device='eth1'
-set network.AutoWANOne.metric='10'
-set network.AutoWANTwo=interface
-set network.AutoWANTwo.proto='dhcp'
-set network.AutoWANTwo.device='eth2'
-set network.AutoWANTwo.metric='20'
-set network.AutoWANThree=interface
-set network.AutoWANThree.proto='dhcp'
-set network.AutoWANThree.device='eth3'
-set network.AutoWANThree.metric='30'
-set network.AutoWANFour=interface
-set network.AutoWANFour.proto='dhcp'
-set network.AutoWANFour.device='eth4'
-set network.AutoWANFour.metric='40'
+set network.AutoUSBeth1=interface
+set network.AutoUSBeth1.proto='dhcp'
+set network.AutoUSBeth1.device='eth1'
+set network.AutoUSBeth1.metric='31'
+
+set network.AutoUSBeth2=interface
+set network.AutoUSBeth2.proto='dhcp'
+set network.AutoUSBeth2.device='eth2'
+set network.AutoUSBeth2.metric='32'
+
+set network.AutoUSBeth3=interface
+set network.AutoUSBeth3.proto='dhcp'
+set network.AutoUSBeth3.device='eth3'
+set network.AutoUSBeth3.metric='33'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='40'
+
+set network.AutoUSB1=interface
+set network.AutoUSB1.proto='dhcp'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='41'
+
+set network.AutoUSB2=interface
+set network.AutoUSB2.proto='dhcp'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='42'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='43'
 commit network
 
 set wireless.@wifi-device[0].disabled='0'

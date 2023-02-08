@@ -10,22 +10,40 @@ set network.PortTwo=interface
 set network.PortTwo.proto='dhcp'
 set network.PortTwo.device='PortTwo'
 set network.PortTwo.metric='20'
-set network.AutoUSBeth0=interface
 set network.AutoUSBeth0.proto='dhcp'
 set network.AutoUSBeth0.device='eth0'
-set network.AutoUSBeth0.metric='21'
+set network.AutoUSBeth0.metric='30'
+
 set network.AutoUSBeth1=interface
 set network.AutoUSBeth1.proto='dhcp'
 set network.AutoUSBeth1.device='eth1'
 set network.AutoUSBeth1.metric='31'
+
+set network.AutoUSBeth3=interface
+set network.AutoUSBeth3.proto='dhcp'
+set network.AutoUSBeth3.device='eth3'
+set network.AutoUSBeth3.metric='33'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='40'
+
 set network.AutoUSB1=interface
 set network.AutoUSB1.proto='dhcp'
-set network.AutoUSB1.device='usb0'
-set network.AutoUSB1.metric='30'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='41'
+
 set network.AutoUSB2=interface
 set network.AutoUSB2.proto='dhcp'
-set network.AutoUSB2.device='usb1'
-set network.AutoUSB2.metric='40'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='42'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='43'
+
 del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth2'
 commit network
