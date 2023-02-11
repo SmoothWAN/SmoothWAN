@@ -7,7 +7,7 @@
 # special user chains, e.g. input_wan_rule or postrouting_lan_rule.
 
 iptables -N forwarding_log_chain
-iptables -A forwarding_rule -j forwarding_log_chain
+iptables -A INPUT -j forwarding_log_chain
 
 iptables -A forwarding_log_chain -m string --algo bm --string "BitTorrent" -j LOG --log-prefix "P2P:"
 iptables -A forwarding_log_chain -m string --algo bm --string "BitTorrent protocol" -j LOG --log-prefix "P2P:"
@@ -17,4 +17,3 @@ iptables -A forwarding_log_chain -m string --algo bm --string "announce.php?pass
 iptables -A forwarding_log_chain -m string --algo bm --string "torrent" -j LOG --log-prefix "P2P:"
 iptables -A forwarding_log_chain -m string --algo bm --string "announce" -j LOG --log-prefix "P2P:"
 iptables -A forwarding_log_chain -m string --algo bm --string "info_hash" -j LOG --log-prefix "P2P:"
-sh /usr/lib/p2plog/p2p.sh &
