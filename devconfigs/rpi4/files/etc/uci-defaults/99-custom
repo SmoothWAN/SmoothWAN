@@ -120,6 +120,10 @@ set ttyd.cfg01a8ea.ssl='1'
 set ttyd.cfg01a8ea.ssl_cert='/etc/nginx/nginx.cer'
 set ttyd.cfg01a8ea.ssl_key='/etc/nginx/nginx.key'
 commit ttyd
+add_list nlbwmon.cfg015d22.local_network='172.17.0.0/12'
+set nlbwmon.cfg015d22.database_compress='1'
+set nlbwmon.cfg015d22.database_directory='/usr/lib/nlbwmon'
+commit nlbwmon
 
 EOI
 

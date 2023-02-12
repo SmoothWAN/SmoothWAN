@@ -15,10 +15,7 @@ iptmon init &
 #Set fan speed for Slate AX
 echo 150 > /sys/class/thermal/cooling_device0/cur_state
 
-#Multi-WAN MAC service
-sh /usr/share/smoothwan/helpers/macrename.sh &
-
 #P2P logging
-sh /usr/lib/speedifyconf/p2p.sh &
+sh /usr/lib/p2plog/p2p.sh &
 
 exit 0

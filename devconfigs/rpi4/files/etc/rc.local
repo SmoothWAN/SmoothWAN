@@ -30,8 +30,6 @@ echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
 /usr/sbin/ethtool -K eth0 rx-checksum on
 /usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
 
-#Multi-WAN MAC service
-sh /usr/share/smoothwan/helpers/macrename.sh &
 #Multi-WAN USB service
 sh /usr/share/smoothwan/helpers/autousb.sh &
 
@@ -39,6 +37,6 @@ sh /usr/share/smoothwan/helpers/autousb.sh &
 mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &
 
 #P2P logging
-sh /usr/lib/speedifyconf/p2p.sh &
+sh /usr/lib/p2plog/p2p.sh &
 
 exit 0

@@ -111,10 +111,14 @@ add_list firewall.cfg03dc81.network='PortWAN'
 add_list firewall.cfg03dc81.network='PortOne'
 add_list firewall.cfg03dc81.network='PortTwo'
 add_list firewall.cfg03dc81.network='PortThree'
+add_list firewall.cfg03dc81.network='AutoUSB0'
 add_list firewall.cfg03dc81.network='AutoUSB1'
 add_list firewall.cfg03dc81.network='AutoUSB2'
+add_list firewall.cfg03dc81.network='AutoUSB3'
 add_list firewall.cfg03dc81.network='AutoUSBeth0'
 add_list firewall.cfg03dc81.network='AutoUSBeth1'
+add_list firewall.cfg03dc81.network='AutoUSBeth2'
+add_list firewall.cfg03dc81.network='AutoUSBeth3'
 commit firewall
 
 set network.Speedify=interface
@@ -178,6 +182,10 @@ set fstab.@mount[-1].enabled='1'
 set fstab.@mount[-1].target='/mnt/smoothwan'
 set fstab.@mount[-1].uuid='337d0b9f-8716-42b2-b316-312811aef984'
 commit fstab
+add_list nlbwmon.cfg015d22.local_network='172.17.0.0/12'
+set nlbwmon.cfg015d22.database_compress='1'
+set nlbwmon.cfg015d22.database_directory='/usr/lib/nlbwmon'
+commit nlbwmon
 
 EOI
 
