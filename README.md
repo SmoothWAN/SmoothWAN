@@ -4,19 +4,24 @@
 
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify primarily, with an emphasis on using an internet browser for easy configuration. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
-Also includes <a href="">Engarde</a> and <a href="">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
+
+Also includes <a href="https://smoothwan.com/engarde/">Engarde</a> and <a href="https://smoothwan.com/tinyfec/">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
 
 
 Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guides.    
 
-Supported hardware:
+*Supported hardware*
+
 - PC Intel/AMD
 - GL.iNet Flint
 - GL.iNet Slate AX
 - Raspberry Pi 4 / Pi 400
 - Banana Pi R64/R3 (soon)
 
-Use cases: 
+Only supporting devices that are difficult to brick/damage with 3rd party firmware. (no restrictions + locked bootloader)
+
+*Use cases*
+
 - Use Speedify to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
 - Use <a href="https://smoothwan.com/engarde/">Engarde</a> as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
@@ -24,7 +29,8 @@ Use cases:
 - Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others are possible in LXC)
 
-Additional features:
+*Additional features*
+
 - AdGuard Home pre-installed and pre-configured (one-click enable) with password change UI addition
 - Custom Speedify version selection and tune/tweaks (bypasses)
 - Preset network configuration for various hardware
