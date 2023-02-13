@@ -39,10 +39,6 @@ Additional features:
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/>
 
 ***
-
-**Basic Setup**  
-  
-<img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="500"/>  
   
 **WebUI preview**  
   
