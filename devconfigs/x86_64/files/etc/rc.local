@@ -12,9 +12,6 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-#Run iptmon
-iptmon init &
-
 #Generic x86 Tunables (not using hotplug.d in order to experiment)
 #Checksum offload example (add more for other interfaces)
 /usr/sbin/ethtool -K eth0 rx-checksum on

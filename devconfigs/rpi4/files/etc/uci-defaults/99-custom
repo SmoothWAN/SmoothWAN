@@ -46,7 +46,6 @@ del dhcp.lan.ra_slaac
 del dhcp.lan.dhcpv6
 del dhcp.lan.ra_flags
 add_list dhcp.lan.ra_flags='none'
-set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
 set network.Speedify.peerdns='0'
 add_list network.Speedify.dns='10.202.0.1'
 commit dhcp
@@ -84,10 +83,6 @@ commit vpn-policy-routing
 
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
-del luci_statistics.cfg1b3a2e
-set luci_statistics.collectd_iptables.enable='1'
-set luci_statistics.cfg1a3a2e.name='LAN'
-set luci_statistics.cfg1a3a2e.chain='zone_lan_postrouting'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
@@ -131,6 +126,6 @@ EOI
 cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
 #Hints
 sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to 10.</b>+g" /www/luci-static/resources/view/network/wireless.js
-sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to 10')+" /www/luci-static/resources/view/network/interfaces.js
+sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to 10, then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf

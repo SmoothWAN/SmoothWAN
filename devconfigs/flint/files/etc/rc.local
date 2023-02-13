@@ -9,9 +9,6 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-#Run iptmon
-iptmon init &
-
 #P2P logging
 sh /usr/lib/p2plog/p2p.sh &
 

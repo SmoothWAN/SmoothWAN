@@ -12,8 +12,6 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-#Run iptmon
-iptmon init &
 
 #RPi4 Tunables (not using hotplug.d in order to experiment)
 #IRQ for ETH0 to CPU1 on 64 bit kernel

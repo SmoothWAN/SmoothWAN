@@ -9,9 +9,6 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-#Run iptmon
-iptmon init &
-
 #Set fan speed for Slate AX
 echo 150 > /sys/class/thermal/cooling_device0/cur_state
 
