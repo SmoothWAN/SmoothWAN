@@ -12,7 +12,6 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-
 #RPi4 Tunables (not using hotplug.d in order to experiment)
 #IRQ for ETH0 to CPU1 on 64 bit kernel
 echo 2 > /proc/irq/31/smp_affinity
@@ -27,9 +26,6 @@ echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
 #Checksum offload
 /usr/sbin/ethtool -K eth0 rx-checksum on
 /usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
-
-#Multi-WAN USB service
-sh /usr/share/smoothwan/helpers/autousb.sh &
 
 #EXT4-fs: Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
 mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &

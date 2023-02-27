@@ -1,26 +1,62 @@
 uci -q batch << EOI
 
 set network.lan.ipaddr='172.17.17.2'
-set network.One=interface
-set network.One.proto='dhcp'
-set network.One.device='1-USB'
-set network.One.usename='1-USB'
-set network.One.metric='10'
-set network.Two=interface
-set network.Two.proto='dhcp'
-set network.Two.device='2-USB'
-set network.Two.usename='2-USB'
-set network.Two.metric='20'
-set network.Three=interface
-set network.Three.proto='dhcp'
-set network.Three.device='3-USB'
-set network.Three.usename='3-USB'
-set network.Three.metric='30'
-set network.Four=interface
-set network.Four.proto='dhcp'
-set network.Four.device='4-USB'
-set network.Four.usename='4-USB'
-set network.Four.metric='40'
+
+set network.PortOne=interface
+set network.PortOne.proto='dhcp'
+set network.PortOne.device='eth1'
+set network.PortOne.metric='20'
+
+set network.PortTwo=interface
+set network.PortTwo.proto='dhcp'
+set network.PortTwo.device='eth2'
+set network.PortTwo.metric='30'
+
+set network.PortThree=interface
+set network.PortThree.proto='dhcp'
+set network.PortThree.device='eth3'
+set network.PortThree.metric='40'
+
+set network.PortFour=interface
+set network.PortFour.proto='dhcp'
+set network.PortFour.device='eth4'
+set network.PortFour.metric='31'
+
+set network.AutoUSBeth5=interface
+set network.AutoUSBeth5.proto='dhcp'
+set network.AutoUSBeth5.device='eth5'
+set network.AutoUSBeth5.metric='32'
+
+set network.AutoUSBeth6=interface
+set network.AutoUSBeth6.proto='dhcp'
+set network.AutoUSBeth6.device='eth6'
+set network.AutoUSBeth6.metric='33'
+
+set network.AutoUSBeth7=interface
+set network.AutoUSBeth7.proto='dhcp'
+set network.AutoUSBeth7.device='eth7'
+set network.AutoUSBeth7.metric='34'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='40'
+
+set network.AutoUSB1=interface
+set network.AutoUSB1.proto='dhcp'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='41'
+
+set network.AutoUSB2=interface
+set network.AutoUSB2.proto='dhcp'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='42'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='43'
+
 commit network
 
 set system.@system[-1].hostname='SmoothWAN'
@@ -36,26 +72,22 @@ set system.@led[1].sysfs='led1'
 set system.@led[1].trigger='none'
 commit system
 
-set dhcp.cfg01411c.allservers='1'
-set dhcp.cfg01411c.rebind_protection='0'
-add_list dhcp.cfg01411c.server='127.0.0.1#5353'
-set dhcp.lan.force='1'
-del dhcp.lan.ra
-del dhcp.lan.ra_default
-del dhcp.lan.ra_slaac
-del dhcp.lan.dhcpv6
-del dhcp.lan.ra_flags
-add_list dhcp.lan.ra_flags='none'
-set network.Speedify.peerdns='0'
-add_list network.Speedify.dns='10.202.0.1'
+del dhcp.@dnsmasq[-1]
 commit dhcp
 
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='Speedify'
-add_list firewall.cfg03dc81.network='One'
-add_list firewall.cfg03dc81.network='Two'
-add_list firewall.cfg03dc81.network='Three'
-add_list firewall.cfg03dc81.network='Four'
+add_list firewall.cfg03dc81.network='PortOne'
+add_list firewall.cfg03dc81.network='PortTwo'
+add_list firewall.cfg03dc81.network='PortThree'
+add_list firewall.cfg03dc81.network='PortFour'
+add_list firewall.cfg03dc81.network='AutoUSBeth5'
+add_list firewall.cfg03dc81.network='AutoUSBeth6'
+add_list firewall.cfg03dc81.network='AutoUSBeth7'
+add_list firewall.cfg03dc81.network='AutoUSB0'
+add_list firewall.cfg03dc81.network='AutoUSB1'
+add_list firewall.cfg03dc81.network='AutoUSB2'
+add_list firewall.cfg03dc81.network='AutoUSB3'
 commit firewall
 
 set network.Speedify=interface
@@ -63,7 +95,6 @@ set network.Speedify.proto='none'
 set network.Speedify.device='connectify0'
 del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth0'
-add_list network.cfg030f15.ports='usb0'
 commit network
 
 set system.ntp.use_dhcp='0'
@@ -74,10 +105,17 @@ commit system
 set luci.apply.holdoff='1'
 commit luci
 
-add_list vpn-policy-routing.config.supported_interface='One'
-add_list vpn-policy-routing.config.supported_interface='Two'
-add_list vpn-policy-routing.config.supported_interface='Three'
-add_list vpn-policy-routing.config.supported_interface='Four'
+add_list vpn-policy-routing.config.supported_interface='PortOne'
+add_list vpn-policy-routing.config.supported_interface='PortTwo'
+add_list vpn-policy-routing.config.supported_interface='PortThree'
+add_list vpn-policy-routing.config.supported_interface='PortFour'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth5'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth6'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth7'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB0'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB1'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB2'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB3'
 add_list vpn-policy-routing.config.supported_interface='Speedify'
 commit vpn-policy-routing
 
@@ -95,12 +133,6 @@ set luci_statistics.collectd.Include='/etc/collectd/conf.d/*.conf'
 set luci_statistics.collectd_uptime.enable='1'
 del luci_statistics.collectd_interface.IgnoreSelected
 del luci_statistics.collectd_interface.Interfaces
-add_list luci_statistics.collectd_interface.Interfaces='3-USB'
-add_list luci_statistics.collectd_interface.Interfaces='br-lan'
-add_list luci_statistics.collectd_interface.Interfaces='connectify0'
-add_list luci_statistics.collectd_interface.Interfaces='1-USB'
-add_list luci_statistics.collectd_interface.Interfaces='2-USB'
-add_list luci_statistics.collectd_interface.Interfaces='4-USB'
 set luci_statistics.collectd_interface.IgnoreSelected='1'
 add_list luci_statistics.collectd_interface.Interfaces='br-lan'
 add_list luci_statistics.collectd_interface.Interfaces='ip6tnl0'
@@ -125,7 +157,7 @@ EOI
 #Replace diagnostics page
 cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
 #Hints
-sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to 10.</b>+g" /www/luci-static/resources/view/network/wireless.js
-sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to 10, then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
+sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to a unique number (e.g 10 or more).</b>+g" /www/luci-static/resources/view/network/wireless.js
+sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to a unique number (e.g 10 or more), then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf

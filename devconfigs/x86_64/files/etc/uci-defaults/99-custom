@@ -62,19 +62,7 @@ set system.@led[1].sysfs='led1'
 set system.@led[1].trigger='none'
 commit system
 
-set dhcp.cfg01411c.allservers='1'
-set dhcp.cfg01411c.rebind_protection='0'
-add_list dhcp.cfg01411c.server='127.0.0.1#5353'
-set dhcp.lan.force='1'
-set dhcp.lan.force='1'
-del dhcp.lan.ra
-del dhcp.lan.ra_default
-del dhcp.lan.ra_slaac
-del dhcp.lan.dhcpv6
-del dhcp.lan.ra_flags
-add_list dhcp.lan.ra_flags='none'
-set network.Speedify.peerdns='0'
-add_list network.Speedify.dns='10.202.0.1'
+del dhcp.@dnsmasq[-1]
 commit dhcp
 
 del firewall.cfg03dc81.network
@@ -101,10 +89,15 @@ commit system
 set luci.apply.holdoff='1'
 commit luci
 
-add_list vpn-policy-routing.config.supported_interface='AutoWANOne'
-add_list vpn-policy-routing.config.supported_interface='AutoWANTwo'
-add_list vpn-policy-routing.config.supported_interface='AutoWANThree'
-add_list vpn-policy-routing.config.supported_interface='AutoWANFour'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB0'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB1'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB2'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB3'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth1'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth2'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth3'
+
+
 add_list vpn-policy-routing.config.supported_interface='Speedify'
 commit vpn-policy-routing
 
@@ -123,12 +116,6 @@ set luci_statistics.collectd.Include='/etc/collectd/conf.d/*.conf'
 set luci_statistics.collectd_uptime.enable='1'
 del luci_statistics.collectd_interface.IgnoreSelected
 del luci_statistics.collectd_interface.Interfaces
-add_list luci_statistics.collectd_interface.Interfaces='eth1'
-add_list luci_statistics.collectd_interface.Interfaces='br-lan'
-add_list luci_statistics.collectd_interface.Interfaces='connectify0'
-add_list luci_statistics.collectd_interface.Interfaces='eth2'
-add_list luci_statistics.collectd_interface.Interfaces='eth3'
-add_list luci_statistics.collectd_interface.Interfaces='eth4'
 set luci_statistics.collectd_interface.IgnoreSelected='1'
 add_list luci_statistics.collectd_interface.Interfaces='br-lan'
 add_list luci_statistics.collectd_interface.Interfaces='ip6tnl0'
@@ -154,7 +141,7 @@ EOI
 #Replace diagnostics page
 cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
 #Hints
-sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to 10.</b>+g" /www/luci-static/resources/view/network/wireless.js
-sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to 10, then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
+sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to a unique number (e.g 10 or more).</b>+g" /www/luci-static/resources/view/network/wireless.js
+sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to a unique number (e.g 10 or more), then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf

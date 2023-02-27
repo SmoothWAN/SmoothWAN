@@ -6,42 +6,38 @@ set network.lan.ipaddr='172.17.17.2'
 
 set network.PortWAN=interface
 set network.PortWAN.proto='dhcp'
-set network.PortWAN.device='PortWAN'
+set network.PortWAN.device='eth0'
 set network.PortWAN.metric='10'
 
 set network.PortOne=interface
 set network.PortOne.proto='dhcp'
-set network.PortOne.device='PortOne'
+set network.PortOne.device='eth1'
 set network.PortOne.metric='20'
 
 set network.PortTwo=interface
 set network.PortTwo.proto='dhcp'
-set network.PortTwo.device='PortTwo'
+set network.PortTwo.device='eth2'
 set network.PortTwo.metric='30'
 
 set network.PortThree=interface
 set network.PortThree.proto='dhcp'
-set network.PortThree.device='PortThree'
+set network.PortThree.device='eth3'
 set network.PortThree.metric='40'
 
-set network.AutoUSBeth0.proto='dhcp'
-set network.AutoUSBeth0.device='eth0'
-set network.AutoUSBeth0.metric='30'
+set network.AutoUSBeth5=interface
+set network.AutoUSBeth5.proto='dhcp'
+set network.AutoUSBeth5.device='eth5'
+set network.AutoUSBeth5.metric='31'
 
-set network.AutoUSBeth1=interface
-set network.AutoUSBeth1.proto='dhcp'
-set network.AutoUSBeth1.device='eth1'
-set network.AutoUSBeth1.metric='31'
+set network.AutoUSBeth6=interface
+set network.AutoUSBeth6.proto='dhcp'
+set network.AutoUSBeth6.device='eth6'
+set network.AutoUSBeth6.metric='32'
 
-set network.AutoUSBeth2=interface
-set network.AutoUSBeth2.proto='dhcp'
-set network.AutoUSBeth2.device='eth2'
-set network.AutoUSBeth2.metric='32'
-
-set network.AutoUSBeth3=interface
-set network.AutoUSBeth3.proto='dhcp'
-set network.AutoUSBeth3.device='eth3'
-set network.AutoUSBeth3.metric='33'
+set network.AutoUSBeth7=interface
+set network.AutoUSBeth7.proto='dhcp'
+set network.AutoUSBeth7.device='eth7'
+set network.AutoUSBeth7.metric='33'
 
 set network.AutoUSB0=interface
 set network.AutoUSB0.proto='dhcp'
@@ -69,7 +65,7 @@ commit network
 
 set wireless.@wifi-device[0].disabled='0'
 set wireless.@wifi-iface[0].ssid='SmoothWAN Setup'
-set wireless.@wifi-device[0].channel='auto'
+set wireless.@wifi-device[0].channel='36'
 set wireless.@wifi-device[0].channels='36 40 44 48'
 set wireless.@wifi-device[0].band='5g'
 set wireless.@wifi-device[0].htmod='HE80'
@@ -91,18 +87,7 @@ set system.@led[1].sysfs='blue_led'
 set system.@led[1].name='Boot Done'
 commit system
 
-set dhcp.cfg01411c.allservers='1'
-set dhcp.cfg01411c.rebind_protection='0'
-add_list dhcp.cfg01411c.server='127.0.0.1#5353'
-set dhcp.lan.force='1'
-del dhcp.lan.ra
-del dhcp.lan.ra_default
-del dhcp.lan.ra_slaac
-del dhcp.lan.dhcpv6
-del dhcp.lan.ra_flags
-add_list dhcp.lan.ra_flags='none'
-set dhcp.lan.dhcpv6='server'
-set dhcp.@dnsmasq[0].dhcpscript='/usr/sbin/iptmon'
+del dhcp.@dnsmasq[-1]
 commit dhcp
 
 del firewall.cfg03dc81.network
@@ -115,10 +100,9 @@ add_list firewall.cfg03dc81.network='AutoUSB0'
 add_list firewall.cfg03dc81.network='AutoUSB1'
 add_list firewall.cfg03dc81.network='AutoUSB2'
 add_list firewall.cfg03dc81.network='AutoUSB3'
-add_list firewall.cfg03dc81.network='AutoUSBeth0'
-add_list firewall.cfg03dc81.network='AutoUSBeth1'
-add_list firewall.cfg03dc81.network='AutoUSBeth2'
-add_list firewall.cfg03dc81.network='AutoUSBeth3'
+add_list firewall.cfg03dc81.network='AutoUSBeth5'
+add_list firewall.cfg03dc81.network='AutoUSBeth6'
+add_list firewall.cfg03dc81.network='AutoUSBeth7'
 commit firewall
 
 set network.Speedify=interface
@@ -140,10 +124,13 @@ add_list vpn-policy-routing.config.supported_interface='PortWAN'
 add_list vpn-policy-routing.config.supported_interface='PortOne'
 add_list vpn-policy-routing.config.supported_interface='PortTwo'
 add_list vpn-policy-routing.config.supported_interface='PortThree'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB0'
 add_list vpn-policy-routing.config.supported_interface='AutoUSB1'
 add_list vpn-policy-routing.config.supported_interface='AutoUSB2'
-add_list vpn-policy-routing.config.supported_interface='AutoUSBeth0'
-add_list vpn-policy-routing.config.supported_interface='AutoUSBeth1'
+add_list vpn-policy-routing.config.supported_interface='AutoUSB3'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth5'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth6'
+add_list vpn-policy-routing.config.supported_interface='AutoUSBeth7'
 add_list vpn-policy-routing.config.supported_interface='Speedify'
 commit vpn-policy-routing
 
@@ -189,7 +176,9 @@ EOI
 #Replace diagnostics page
 cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
 #Hints
-sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to 10.</b>+g" /www/luci-static/resources/view/network/wireless.js
-sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to 10, then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
+sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to a unique number (e.g 10 or more).</b>+g" /www/luci-static/resources/view/network/wireless.js
+sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to a unique number (e.g 10 or more), then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
+sed -i "s+s = m.section(form.GridSection, 'wifi-device', _('Wireless Overview'));+s = m.section(form.GridSection, 'wifi-device', _('Wireless Overview'), _('<b>SmoothWAN Note</b>: By default, the first <em>Generic</em> radio is the 5Ghz adapter, second is 2.4Ghz.'));+" /www/luci-static/resources/view/network/wireless.js
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
+echo > /etc/hotplug.d/net/macs
