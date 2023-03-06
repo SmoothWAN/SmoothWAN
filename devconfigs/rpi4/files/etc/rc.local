@@ -12,7 +12,7 @@ usbmuxd &
 #Run iperf3 server
 iperf3 -s &
 
-#RPi4 Tunables (not using hotplug.d in order to experiment)
+#RPi4 Tunables
 #IRQ for ETH0 to CPU1 on 64 bit kernel
 echo 2 > /proc/irq/31/smp_affinity
 echo 2 > /proc/irq/32/smp_affinity

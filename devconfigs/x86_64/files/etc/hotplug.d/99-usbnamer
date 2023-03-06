@@ -1,0 +1,38 @@
+#!/bin/sh
+
+if [[ -f /sys/class/net/$INTERFACE/device/bInterfaceClass ]] && [[ ! $INTERFACE == "USB_"* ]] ; then
+# dev="$(cat /sys/class/net/$INTERFACE/address | awk -F'[:]' '{print "USB_"toupper($5$6)}')"
+  dev="$(ls /sys/class/net/$INTERFACE/device -la | awk -F' ' '{print $11}' | sha256sum | cut -c 1-4 | awk -F" " '{print "USB_"$0}')"
+
+ logger -t usbnamer "Renaming $INTERFACE to $dev"
+
+ ip link set $INTERFACE down
+ ip link set $INTERFACE name $dev
+ ip link set $dev up
+fi
+
+if [[ $dev == "USB_"* ]]; then
+
+ ucinetlist="$(uci show network | grep proto | awk -F '.' '{print $2}')"
+ echo ucinetlist="$(uci show network | grep proto | awk -F '.' '{print $2}')" | grep -w -q $dev && createProfile=0 || createProfile=1
+        if [[ $createProfile == 1 ]]; then
+                logger -t usbnamer "Creating DHCP profile for $dev"
+                ifdown $dev
+                incremetric="$(uci show network | grep metric | awk -F "'" '{print $2}' | sort -n | tail -1 | xargs -n 1 expr +1 +)"
+                if [[ ! $incremetric ]]; then
+                        incremetric=2
+                fi
+                uci set network.$dev=interface
+                uci set network.$dev.proto='dhcp'
+                uci set network.$dev.device=$dev
+                uci set network.$dev.metric=$incremetric
+                uci commit network
+                uci add_list firewall.cfg03dc81.network=$dev
+                uci commit firewall
+                uci add_list pbr.config.supported_interface=$dev
+                uci commit pbr
+                logger -t usbnamer "Profile (now) exists for $dev"
+                ip link set $dev up
+                ifup $dev
+        fi
+fi
