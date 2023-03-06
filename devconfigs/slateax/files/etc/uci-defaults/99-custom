@@ -65,9 +65,10 @@ commit system
 set luci.apply.holdoff='1'
 commit luci
 
-add_list pbr.config.supported_interface='PortOne'
-add_list pbr.config.supported_interface='PortTwo'
-commit pbr
+add_list vpn-policy-routing.config.supported_interface='PortOne'
+add_list vpn-policy-routing.config.supported_interface='PortTwo'
+add_list vpn-policy-routing.config.supported_interface='wan'
+commit vpn-policy-routing
 
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
