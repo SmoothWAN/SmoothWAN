@@ -16,7 +16,7 @@ Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Gi
 - GL.iNet Flint
 - GL.iNet Slate AX
 - Raspberry Pi 4 / Pi 400
-- Banana Pi R64/R3 (soon)
+- Banana Pi R64/R3 (untested)
 
 Only supporting devices that are difficult to brick/damage with 3rd party firmware. (no restrictions + locked bootloader)
 
@@ -34,6 +34,7 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 - AdGuard Home pre-installed and pre-configured (one-click enable) with password change UI addition
 - Custom Speedify version selection and tune/tweaks (bypasses)
 - Preset network configuration for various hardware
+- Unique interface ID for USB ports
 - VPN PBR pre-configured
 - Tailscale installer and pre-configuration
 - <a href="https://www.ntop.org/products/traffic-analysis/ntop/">ntopng</a> (deep-packet-inspection analysis) installer

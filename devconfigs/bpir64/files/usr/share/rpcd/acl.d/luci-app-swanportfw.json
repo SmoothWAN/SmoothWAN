@@ -1,0 +1,11 @@
+{
+	"luci-app-swanportfw": {
+		"description": "Grant UCI access for luci-app-swanportfw VPN Port Forwarding",
+		"read": {
+			"uci": [ "firewall" ]
+		},
+		"write": {
+			"uci": [ "firewall" ]
+		}
+	}
+}

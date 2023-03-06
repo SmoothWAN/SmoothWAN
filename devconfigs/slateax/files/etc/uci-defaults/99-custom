@@ -113,3 +113,5 @@ sed -i "s+s = m.section(form.GridSection, 'wifi-device', _('Wireless Overview'))
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
 echo > /etc/hotplug.d/net/macs
+service apache2 stop
+service apache2 disable
