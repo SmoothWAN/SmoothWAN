@@ -119,5 +119,3 @@ sed -i "s+Choose the network(s) you want to attach to this wireless interface or
 sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to a unique number (e.g 10 or more), then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
-service apache2 stop
-service apache2 disable
