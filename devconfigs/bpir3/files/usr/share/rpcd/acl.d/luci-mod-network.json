@@ -60,6 +60,7 @@
                             "/usr/bin/traceroute": [ "exec" ],
                             "/usr/bin/traceroute6": [ "exec", "list" ],
                             "/usr/bin/wanspeedtest": [ "exec", "list" ],
+                            "/usr/bin/arp-scan": [ "exec", "list" ],
                             "/usr/bin/curl": [ "exec", "list" ]
                     },
                     "ubus": {
