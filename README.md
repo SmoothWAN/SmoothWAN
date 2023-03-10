@@ -1,5 +1,6 @@
-[![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx)   
-<img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="800"/>  
+[![Discourse](https://user-images.githubusercontent.com/96490382/224407817-9e2cef2a-6c51-4a71-90c4-8a48633b51bf.png)](https://smoothwan.discourse.group/)
+
+<img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="600"/>  
 <h2>Internet bonding router with seamless failover using Speedify (primarily)</h2> 
 
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify primarily, with an emphasis on using an internet browser for easy configuration. <br>  
