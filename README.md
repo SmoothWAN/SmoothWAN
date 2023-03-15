@@ -30,10 +30,11 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 - Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others are possible in LXC)
 
-*Additional features*
+*Changes in OpenWrt*
 
-- AdGuard Home pre-installed and pre-configured (one-click enable) with password change UI addition
-- Custom Speedify version selection and tune/tweaks (bypasses)
+- AdGuard Home pre-installed and pre-configured with password change UI addition
+- Dnsmasq DHCP is disabled and replaced with AdGuard Home DHCP. [(revert)](https://smoothwan.com/adg/#due-to-popular-request-and-leak-proof-dns-adgh-is-the-default-dhcp-server)
+- Custom Speedify version selection, GUI for built-in custom bypass, and tuning.
 - Preset network configuration for various hardware
 - Unique interface ID for USB ports
 - VPN PBR pre-configured
