@@ -30,6 +30,8 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 - Low budget alternative to commonly used solutions
 - Backpack streaming setup. (RTMP and others are possible in LXC)
 
+**Note: If you need to combine multiple stable internet connections above 100Mbit, consider a load balancer such as the GL.iNet Slate/Flint 4.2.0 official firmware which includes Wi-Fi and easier to setup compared to the TP-Link Multi-WAN series.**
+
 *Changes in OpenWrt*
 
 - AdGuard Home pre-installed and pre-configured with password change UI addition
