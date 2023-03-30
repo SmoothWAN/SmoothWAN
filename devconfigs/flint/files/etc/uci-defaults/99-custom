@@ -28,17 +28,6 @@ del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth4'
 commit network
 
-set wireless.@wifi-device[0].disabled='0'
-set wireless.@wifi-iface[0].ssid='SmoothWAN Setup'
-set wireless.@wifi-device[0].channel='36'
-set wireless.@wifi-device[0].channels='36 40 44 48'
-set wireless.@wifi-device[0].band='5g'
-set wireless.@wifi-device[0].htmod='HE80'
-set wireless.@wifi-device[0].country='US'
-set wireless.@wifi-iface[0].encryption='psk2+ccmp'
-set wireless.@wifi-iface[0].key='brassworld'
-commit wireless
-
 set system.@system[-1].hostname='SmoothWAN'
 set system.@system[-1].log_size='1024'
 del system.led_wan

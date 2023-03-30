@@ -8,6 +8,7 @@
                                 "/proc/sys/net/ipv6/conf/*/mtu": [ "read" ],
                                 "/proc/sys/net/ipv6/conf/*/hop_limit": [ "read" ],
                                 "/usr/libexec/luci-peeraddr": [ "exec" ],
+                                "/usr/bin/resetwifi": [ "exec"],
                                 "/usr/lib/opkg/info/netifd.control": [ "read" ]
                         },
                         "ubus": {
@@ -22,6 +23,7 @@
                         "file": {
                                 "/sbin/ifup": [ "exec" ],
                                 "/sbin/ifdown": [ "exec" ],
+                                "/usr/bin/resetwifi": [ "exec"],
                                 "/sbin/wifi": [ "exec" ]
                         },
                         "ubus": {
