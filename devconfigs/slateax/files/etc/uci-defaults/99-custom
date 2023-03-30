@@ -142,3 +142,5 @@ sed -i "s+s = m.section(form.GridSection, 'wifi-device', _('Wireless Overview'))
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
 echo > /etc/hotplug.d/net/macs
+echo 'nameserver  127.0.0.1' > /etc/resolv.conf
+chattr +i /etc/resolv.conf
