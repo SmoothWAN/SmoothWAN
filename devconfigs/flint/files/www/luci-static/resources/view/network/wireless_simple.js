@@ -2184,8 +2184,9 @@ return view.extend({
 
 			// return E([ nodes, E('h3', _('')), table ]);
 			return E([ nodes,
-				E('h3', _("Reset Wireless Network Configuration")),
-				reset, 'br'
+				E('h3', _("Profiles")),
+				E('h7', "Reset configuration and restart the radios:"),
+				reset
 			]);
 		}, this, m));
 	},

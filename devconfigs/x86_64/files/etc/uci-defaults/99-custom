@@ -20,7 +20,42 @@ set network.AutoWANeth3.metric='33'
 set network.AutoWANeth4=interface
 set network.AutoWANeth4.proto='dhcp'
 set network.AutoWANeth4.device='eth4'
-set network.AutoWANeth4.metric='33'
+set network.AutoWANeth4.metric='34'
+
+set network.AutoUSBeth5=interface
+set network.AutoUSBeth5.proto='dhcp'
+set network.AutoUSBeth5.device='eth5'
+set network.AutoUSBeth5.metric='35'
+
+set network.AutoUSBeth6=interface
+set network.AutoUSBeth6.proto='dhcp'
+set network.AutoUSBeth6.device='eth6'
+set network.AutoUSBeth6.metric='36'
+
+set network.AutoUSBeth7=interface
+set network.AutoUSBeth7.proto='dhcp'
+set network.AutoUSBeth7.device='eth7'
+set network.AutoUSBeth7.metric='37'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='40'
+
+set network.AutoUSB1=interface
+set network.AutoUSB1.proto='dhcp'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='41'
+
+set network.AutoUSB2=interface
+set network.AutoUSB2.proto='dhcp'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='42'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='43'
 
 commit network
 
@@ -69,9 +104,6 @@ set system.ntp.use_dhcp='0'
 del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
-
-set luci.apply.holdoff='1'
-commit luci
 
 add_list pbr.config.supported_interface='AutoWANeth1'
 add_list pbr.config.supported_interface='AutoWANeth2'

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cp /etc/factoryconfig/wireless /etc/config/wireless
+wifi down
+sleep 1
+wifi up
+exit 0

@@ -51,9 +51,6 @@ del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
 
-set luci.apply.holdoff='1'
-commit luci
-
 add_list pbr.config.supported_interface='AutoWANeth1'
 add_list pbr.config.supported_interface='AutoWANeth2'
 add_list pbr.config.supported_interface='AutoWANeth3'

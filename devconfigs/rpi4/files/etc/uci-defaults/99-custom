@@ -1,6 +1,60 @@
 uci -q batch << EOI
 
 set network.lan.ipaddr='172.17.17.2'
+set network.PortOne=interface
+set network.PortOne.proto='dhcp'
+set network.PortOne.device='eth1'
+set network.PortOne.metric='20'
+
+set network.PortTwo=interface
+set network.PortTwo.proto='dhcp'
+set network.PortTwo.device='eth2'
+set network.PortTwo.metric='30'
+
+set network.PortThree=interface
+set network.PortThree.proto='dhcp'
+set network.PortThree.device='eth3'
+set network.PortThree.metric='40'
+
+set network.PortFour=interface
+set network.PortFour.proto='dhcp'
+set network.PortFour.device='eth4'
+set network.PortFour.metric='50'
+
+set network.AutoUSBeth5=interface
+set network.AutoUSBeth5.proto='dhcp'
+set network.AutoUSBeth5.device='eth5'
+set network.AutoUSBeth5.metric='65'
+
+set network.AutoUSBeth6=interface
+set network.AutoUSBeth6.proto='dhcp'
+set network.AutoUSBeth6.device='eth6'
+set network.AutoUSBeth6.metric='66'
+
+set network.AutoUSBeth7=interface
+set network.AutoUSBeth7.proto='dhcp'
+set network.AutoUSBeth7.device='eth7'
+set network.AutoUSBeth7.metric='67'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='70'
+
+set network.AutoUSB1=interface
+set network.AutoUSB1.proto='dhcp'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='71'
+
+set network.AutoUSB2=interface
+set network.AutoUSB2.proto='dhcp'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='72'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='73'
 commit network
 
 set system.@system[-1].hostname='SmoothWAN'
@@ -20,6 +74,17 @@ del dhcp.@dnsmasq[-1]
 commit dhcp
 
 del firewall.cfg03dc81.network
+add_list firewall.cfg03dc81.network='PortOne'
+add_list firewall.cfg03dc81.network='PortTwo'
+add_list firewall.cfg03dc81.network='PortThree'
+add_list firewall.cfg03dc81.network='PortFour'
+add_list firewall.cfg03dc81.network='AutoUSBeth5'
+add_list firewall.cfg03dc81.network='AutoUSBeth6'
+add_list firewall.cfg03dc81.network='AutoUSBeth7'
+add_list firewall.cfg03dc81.network='AutoUSB0'
+add_list firewall.cfg03dc81.network='AutoUSB1'
+add_list firewall.cfg03dc81.network='AutoUSB2'
+add_list firewall.cfg03dc81.network='AutoUSB3'
 add_list firewall.cfg03dc81.network='wan'
 commit firewall
 
@@ -35,8 +100,18 @@ del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
 
-set luci.apply.holdoff='1'
-commit luci
+add_list pbr.config.supported_interface='PortOne'
+add_list pbr.config.supported_interface='PortTwo'
+add_list pbr.config.supported_interface='PortThree'
+add_list pbr.config.supported_interface='PortFour'
+add_list pbr.config.supported_interface='AutoUSBeth5'
+add_list pbr.config.supported_interface='AutoUSBeth6'
+add_list pbr.config.supported_interface='AutoUSBeth7'
+add_list pbr.config.supported_interface='AutoUSB0'
+add_list pbr.config.supported_interface='AutoUSB1'
+add_list pbr.config.supported_interface='AutoUSB2'
+add_list pbr.config.supported_interface='AutoUSB3'
+commit pbr
 
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
