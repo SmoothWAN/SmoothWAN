@@ -140,6 +140,23 @@ add_list nlbwmon.cfg015d22.local_network='172.17.17.0/24'
 set nlbwmon.cfg015d22.database_compress='1'
 set nlbwmon.cfg015d22.database_directory='/usr/lib/nlbwmon'
 commit nlbwmon
+add firewall zone # =cfg11dc81
+set firewall.@zone[-1].name='Tailscale'
+set firewall.@zone[-1].input='ACCEPT'
+set firewall.@zone[-1].output='ACCEPT'
+set firewall.@zone[-1].forward='ACCEPT'
+set firewall.@zone[-1].masq='1'
+add_list firewall.@zone[-1].device='br-tailscale0'
+add firewall forwarding # =cfg12ad58
+set firewall.@forwarding[-1].src='Tailscale'
+set firewall.@forwarding[-1].dest='lan'
+add firewall forwarding # =cfg13ad58
+set firewall.@forwarding[-1].src='Tailscale'
+set firewall.@forwarding[-1].dest='wan'
+add firewall forwarding # =cfg14ad58
+set firewall.@forwarding[-1].src='lan'
+set firewall.@forwarding[-1].dest='Tailscale'
+commit firewall
 
 EOI
 
