@@ -43,6 +43,14 @@ set network.AutoUSB2.proto='dhcp'
 set network.AutoUSB2.device='usb2'
 set network.AutoUSB2.metric='42'
 
+set network.wwan=interface
+set network.wwan.proto='dhcp'
+set network.wwan.metric='100'
+
+set network.wwan2=interface
+set network.wwan2.proto='dhcp'
+set network.wwan2.metric='99'
+
 del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth2'
 commit network
@@ -65,6 +73,8 @@ commit dhcp
 
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='wan'
+add_list firewall.cfg03dc81.network='wwan'
+add_list firewall.cfg03dc81.network='wwan2'
 add_list firewall.cfg03dc81.network='PortOne'
 add_list firewall.cfg03dc81.network='PortTwo'
 add_list firewall.cfg03dc81.network='AutoUSB0'
