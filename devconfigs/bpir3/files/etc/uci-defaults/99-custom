@@ -119,7 +119,7 @@ sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN N
 #Crude fixes
 printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
 echo -e 'nameserver ::1\nnameserver  127.0.0.1' > /etc/resolv.conf
-/bin/chattr +i /etc/resolv.conf &
+/usr/bin/chattr +i /etc/resolv.conf &
 /etc/init.d/apache2 disable &
 
 echo "DISTRIB_DESCRIPTION='SmoothWAN v0.99.5HF5'" >> /etc/openwrt_release &
