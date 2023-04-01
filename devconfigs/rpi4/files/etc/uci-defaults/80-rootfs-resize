@@ -1,0 +1,29 @@
+if [ ! -e /etc/rootfs-resize ] \
+&& [ -e /etc/rootpt-resize ] \
+&& type losetup > /dev/null \
+&& type resize2fs > /dev/null \
+&& lock -n /var/lock/rootpt-resize
+then
+BOOT_DEV="$(sed -n -e "\|\s/boot\s.*$|{s///p;q}" /etc/mtab)"
+BOOT_PART="${BOOT_DEV##*[^0-9]}"
+DISK_DEV="${BOOT_DEV%${BOOT_PART}}"
+ROOT_DEV="${DISK_DEV}$((BOOT_PART+1))"
+ROOT_TYPE="$(ubus call system board \
+| jsonfilter -e "$['rootfs_type']")"
+case "${ROOT_TYPE}" in
+(ext4) LOOP_DEV="$(losetup -f)"
+losetup "${LOOP_DEV}" "${ROOT_DEV}" ;;
+(squashfs) LOOP_DEV="$(losetup -n -l \
+| sed -n -e "\|\s.*\s${ROOT_DEV#/dev}\s.*$|{s///p;q}")" ;;
+esac
+resize2fs -f "${LOOP_DEV}"
+touch /etc/rootfs-resize
+BOOT_DEV="$(sed -n -e "\|\s/boot\s.*$|{s///p;q}" /etc/mtab)"
+BOOT_PART="${BOOT_DEV##*[^0-9]}"
+DISK_DEV="${BOOT_DEV%${BOOT_PART}}"
+ROOT_DEV="${DISK_DEV}$((BOOT_PART+1))"
+ROOT_UUID="$(lsblk -n -o PARTUUID ${ROOT_DEV})"
+sed -i -r -e "s|(PARTUUID=)\S+|\1${ROOT_UUID}|g" /boot/grub/grub.cfg
+reboot
+fi
+exit 1

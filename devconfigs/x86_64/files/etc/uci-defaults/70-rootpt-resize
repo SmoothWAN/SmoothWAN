@@ -1,0 +1,16 @@
+if [ ! -e /etc/rootpt-resize ] \
+&& type parted > /dev/null \
+&& lock -n /var/lock/rootpt-resize
+then
+BOOT_DEV="$(sed -n -e "\|\s/boot\s.*$|{s///p;q}" /etc/mtab)"
+BOOT_PART="${BOOT_DEV##*[^0-9]}"
+DISK_DEV="${BOOT_DEV%${BOOT_PART}}"
+parted -l ---pretend-input-tty << EOI
+ok
+fix
+EOI
+parted -s "${DISK_DEV%p}" resizepart "$((BOOT_PART+1))" 100%
+touch /etc/rootpt-resize
+reboot
+fi
+exit 1
