@@ -10,8 +10,8 @@
 <div class="iframe-embed-wrapper iframe-embed-responsive-16by9">
         <iframe class="iframe-embed" id="engui"></iframe>
         <script>
-        document.getElementById('engui').src="https://" + location.host + ":9001/";
-        document.getElementById('fullscreen').href="https://" + location.host + ":9001/";
+        document.getElementById('engui').src="http://" + location.host + ":9001/";
+        document.getElementById('fullscreen').href="http://" + location.host + ":9001/";
         </script>
 </div>
 
