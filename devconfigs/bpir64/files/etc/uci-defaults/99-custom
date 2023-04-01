@@ -29,7 +29,7 @@ set system.@system[-1].log_size='1024'
 commit system
 
 add_list dhcp.lan.dhcp_option='6,172.17.17.2'
-set dhcp.cfg05411c.port='0'
+set dhcp.@dnsmasq[-1].port='0'
 commit dhcp
 
 del firewall.cfg03dc81.network
