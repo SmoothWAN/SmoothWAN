@@ -105,11 +105,7 @@ add_list firewall.cfg03dc81.network='AutoUSBeth6'
 add_list firewall.cfg03dc81.network='AutoUSBeth7'
 commit firewall
 
-set network.wan=interface
-set network.wan.proto='none'
-set network.wan.device='connectify0'
-set network.wan.peerdns='0'
-add_list network.wan.dns='10.202.0.1'
+del network.globals.ula_prefix
 commit network
 
 set system.ntp.use_dhcp='0'
@@ -179,6 +175,7 @@ set firewall.@forwarding[-1].dest='wan'
 add firewall forwarding # =cfg14ad58
 set firewall.@forwarding[-1].src='lan'
 set firewall.@forwarding[-1].dest='Tailscale'
+set firewall.@zone[1].masq6="1"
 commit firewall
 
 EOI

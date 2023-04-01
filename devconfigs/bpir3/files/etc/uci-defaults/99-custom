@@ -43,9 +43,7 @@ add_list firewall.cfg03dc81.network='AutoWANeth3'
 add_list firewall.cfg03dc81.network='AutoWANeth4'
 commit firewall
 
-set network.wan=interface
-set network.wan.proto='none'
-set network.wan.device='connectify0'
+del network.globals.ula_prefix
 del network.cfg030f15.ports
 add_list network.cfg030f15.ports='eth0'
 commit network
@@ -105,6 +103,7 @@ set firewall.@forwarding[-1].dest='wan'
 add firewall forwarding # =cfg14ad58
 set firewall.@forwarding[-1].src='lan'
 set firewall.@forwarding[-1].dest='Tailscale'
+set firewall.@zone[1].masq6="1"
 commit firewall
 
 EOI
