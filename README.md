@@ -3,15 +3,15 @@
 **[Donate to Parrot Rescue Lebanon 🦜](https://gofund.me/63163a6c)**  
 
 <img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="600"/>  
-<h2>Internet bonding router with seamless failover using Speedify (primarily)</h2> 
+<h2>Internet bonding router with seamless failover using Speedify</h2> 
 
-<i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify primarily, with an emphasis on using an internet browser for easy configuration. <br>  
+<i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify, with an emphasis on using an internet browser for easy configuration on the go. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
 
 Also includes <a href="https://smoothwan.com/engarde/">Engarde</a> and <a href="https://smoothwan.com/tinyfec/">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
 
 
-Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guides.    
+Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guide.    
 
 *Supported hardware*
 
@@ -21,7 +21,7 @@ Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Gi
 - Raspberry Pi 4 / Pi 400
 - Banana Pi R64/R3 (untested)
 
-Only supporting devices that are difficult to brick/damage with 3rd party firmware. (no restrictions + locked bootloader)
+Only supporting devices that are difficult to brick/damage with 3rd party firmware. (read-only bootloader with no restrictions)
 
 *Use cases*
 
@@ -34,7 +34,11 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 
 **Note: If you need to combine multiple stable internet connections above 100Mbit, consider a load balancer such as the GL.iNet Slate/Flint 4.2.0 official firmware which includes Wi-Fi and easier to setup compared to the TP-Link Multi-WAN series.**
 
-**[Changes in OpenWrt](https://smoothwan.com/features/)**
+***
+
+**[Changes in OpenWrt](https://smoothwan.com/features/) (link)**
+
+***
 
 *Typical setup*  
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/>
