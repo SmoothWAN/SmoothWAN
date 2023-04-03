@@ -1,5 +1,7 @@
 [![Discourse](https://user-images.githubusercontent.com/96490382/224407817-9e2cef2a-6c51-4a71-90c4-8a48633b51bf.png)](https://smoothwan.discourse.group/)
 
+**[Donate to Parrot Rescue Lebanon 🦜](https://gofund.me/63163a6c)**  
+
 <img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="600"/>  
 <h2>Internet bonding router with seamless failover using Speedify (primarily)</h2> 
 
@@ -23,28 +25,16 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 
 *Use cases*
 
-- Use Speedify to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
+- Use [Speedify](https://speedify.com/) to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
-- Use <a href="https://smoothwan.com/engarde/">Engarde</a> as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
-- Use <a href="https://smoothwan.com/tinyfec/">TinyFEC VPN</a> for fixing a lossy unusable internet connection using forward-error-correction (single WAN - self-hosting)
-- Low budget alternative to commonly used solutions
-- Backpack streaming setup. (RTMP and others are possible in LXC)
+- Use [Engarde](/engarde) as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
+- Use [TinyFEC VPN](/tinyfec) for fixing a lossy unusable internet connection using forward-error-correction at a speed cost (single WAN - self-hosting)
+- Significantly lower budget alternative to commonly used solutions (Speedify)
+- Backpack streaming setup. (LXC enabled for video relay setup)
 
 **Note: If you need to combine multiple stable internet connections above 100Mbit, consider a load balancer such as the GL.iNet Slate/Flint 4.2.0 official firmware which includes Wi-Fi and easier to setup compared to the TP-Link Multi-WAN series.**
 
-*Changes in OpenWrt*
-
-- AdGuard Home pre-installed and pre-configured with password change UI addition
-- Dnsmasq DHCP is disabled and replaced with AdGuard Home DHCP. [(revert)](https://smoothwan.com/adg/#due-to-popular-request-and-leak-proof-dns-adgh-is-the-default-dhcp-server)
-- Custom Speedify version selection, GUI for built-in custom bypass, and tuning.
-- Preset network configuration for various hardware
-- Unique interface ID for USB ports
-- VPN PBR pre-configured
-- Tailscale installer and pre-configuration
-- <a href="https://www.ntop.org/products/traffic-analysis/ntop/">ntopng</a> (deep-packet-inspection analysis) installer
-- One-click cloud-init script for setting up Engarde & TinyFEC VPN in cloud
-- <a href="https://smoothwan.com/tips/#identifying-client-using-p2p-or-bittorrent">BitTorrent detection log</a> showing client IP address as the source
-- Per-client (LAN) bandwidth limiter (EQoS)
+**[Changes in OpenWrt](https://smoothwan.com/features/)**
 
 *Typical setup*  
 <img src="https://raw.githubusercontent.com/TalalMash/SmoothWAN-web/main/smoothwan-illust.drawio.svg" width="600"/>
