@@ -120,6 +120,7 @@ printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
 echo -e 'nameserver ::1\nnameserver  127.0.0.1' > /etc/resolv.conf
 /usr/bin/chattr +i /etc/resolv.conf &
 /etc/init.d/apache2 disable &
+cp /etc/factoryconfig/rt_tables /etc/iproute2/rt_tables &
 
 echo "DISTRIB_DESCRIPTION='SmoothWAN v0.99.5HF5'" >> /etc/openwrt_release &
 exit 0
