@@ -32,7 +32,9 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 - Significantly lower budget alternative to commonly used solutions (Speedify)
 - Backpack streaming setup. (LXC enabled for video relay setup)
 
-**Note: If you need to combine multiple stable internet connections above 100Mbit, consider a load balancer such as the GL.iNet Slate/Flint 4.2.0 official firmware which includes Wi-Fi and easier to setup compared to the TP-Link Multi-WAN series.**
+**A note for those looking for high speed downloads: If you need to combine multiple *stable & reliable* internet connections above 100Mbit, use a *load balancer*.**
+
+**Tip: Both Synology routers and GL.iNet Slate/Flint (with 4.2.0 firmware) include Wi-Fi and are much easier to setup compared to the TP-Link Multi-WAN series / pfSense...**
 
 ***
 
