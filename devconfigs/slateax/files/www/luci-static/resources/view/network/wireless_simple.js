@@ -817,7 +817,7 @@ return view.extend({
 		s.addremove = false;
 
 
-		ms = m.section(form.TypedSection, 'wifi-iface', _('Wireless Setup'), _("- Wi-Fi channel is set to automatically set if wireless WAN is enabled. <br>- Click <b>Scan</b> button above to view available networks.<br>- Click <b>Enable</b> in the interfaces above after entering and applying wireless WAN settings.<br>- This configuration page is dumbed down & no automation to support various devices and hardware."));
+		ms = m.section(form.TypedSection, 'wifi-iface', _('Wireless Setup'), _("- Wi-Fi channel follows wireless WAN if enabled. <br>- Click <b>Scan</b> button above to view available networks.<br>- Click <b>Enable</b> in the interfaces above after entering and applying wireless WAN settings.<br>- This configuration page is dumbed down & no automation to support various devices and hardware."));
 		t = ms.option(form.Value, 'ssid' ,	_('SSID'));
 		p = ms.option(form.Value, 'key' ,	_('Password'));
 		t = ms.option(form.ListValue, 'encryption', _('Encryption'));
