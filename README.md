@@ -8,7 +8,7 @@
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify, with an emphasis on using an internet browser for easy configuration on the go. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
 
-Also includes <a href="https://smoothwan.com/engarde/">Engarde</a> and <a href="https://smoothwan.com/tinyfec/">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
+Also includes <a href="https://github.com/porech/engarde">Engarde</a> and <a href="https://github.com/wangyu-/tinyfecVPN">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
 
 
 Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guide.    
@@ -27,8 +27,8 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 
 - Use [Speedify](https://speedify.com/) to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
-- Use [Engarde](/engarde) as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
-- Use [TinyFEC VPN](/tinyfec) for fixing a lossy unusable internet connection using forward-error-correction at a speed cost (single WAN - self-hosting)
+- Use [Engarde](https://github.com/porech/engarde) as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
+- Use [TinyFEC VPN](https://github.com/wangyu-/tinyfecVPN) for fixing a lossy unusable internet connection using forward-error-correction at a speed cost (single WAN - self-hosting)
 - Significantly lower budget alternative to commonly used solutions (Speedify)
 - Backpack streaming setup. (LXC enabled for video relay setup)
 
