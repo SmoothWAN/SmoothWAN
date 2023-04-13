@@ -31,7 +31,7 @@ if [[ $dev == "USB_"* ]]; then
                 uci commit firewall
                 uci add_list vpn-policy-routing.config.supported_interface=$dev
                 uci commit vpn-policy-routing
-                logger -t usbnamer "Profile (now) exists for $dev"
+                logger -t usbnamer "UCI profile created for  interface  $dev"
                 ip link set $dev up
                 ifup $dev
         fi
