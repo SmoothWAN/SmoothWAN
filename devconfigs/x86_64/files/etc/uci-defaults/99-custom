@@ -90,10 +90,17 @@ commit dhcp
 
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='wan'
+add_list firewall.cfg03dc81.network='AutoUSB0'
+add_list firewall.cfg03dc81.network='AutoUSB1'
+add_list firewall.cfg03dc81.network='AutoUSB2'
+add_list firewall.cfg03dc81.network='AutoUSB3'
 add_list firewall.cfg03dc81.network='AutoWANeth1'
 add_list firewall.cfg03dc81.network='AutoWANeth2'
 add_list firewall.cfg03dc81.network='AutoWANeth3'
 add_list firewall.cfg03dc81.network='AutoWANeth4'
+add_list firewall.cfg03dc81.network='AutoWANeth5'
+add_list firewall.cfg03dc81.network='AutoWANeth6'
+add_list firewall.cfg03dc81.network='AutoWANeth7'
 commit firewall
 
 del network.globals.ula_prefix
