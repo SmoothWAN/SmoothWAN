@@ -26,6 +26,7 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 *Use cases*
 
 - Use [Speedify](https://speedify.com/) to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
+- Run a VPN over Speedify to bypass captcha/IP-blocking on public servers. (WARP recommended for streaming)
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
 - Use [Engarde](https://github.com/porech/engarde) as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
 - Use [TinyFEC VPN](https://github.com/wangyu-/tinyfecVPN) for fixing a lossy unusable internet connection using forward-error-correction at a speed cost (single WAN - self-hosting)
