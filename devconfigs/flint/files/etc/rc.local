@@ -3,6 +3,11 @@
 #Set CPU to performance (some CPUs stutter when changing freq)
 echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
+#Enable Z-RAM
+echo 200000000 > /sys/block/zram0/disksize
+mkswap /dev/zram0
+swapon /dev/zram0
+
 #Run usbmuxd for iOS tethering
 usbmuxd &
 
