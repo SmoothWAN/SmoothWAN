@@ -8,6 +8,9 @@ echo 200000000 > /sys/block/zram0/disksize
 mkswap /dev/zram0
 swapon /dev/zram0
 
+#Run irqbalance
+irqbalance &
+
 #Run usbmuxd for iOS tethering
 usbmuxd &
 
