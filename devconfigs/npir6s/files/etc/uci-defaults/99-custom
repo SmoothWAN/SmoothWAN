@@ -11,6 +11,27 @@ set network.AutoWANeth2=interface
 set network.AutoWANeth2.proto='dhcp'
 set network.AutoWANeth2.device='eth2'
 set network.AutoWANeth2.metric='11'
+
+set network.AutoUSB0=interface
+set network.AutoUSB0.proto='dhcp'
+set network.AutoUSB0.device='usb0'
+set network.AutoUSB0.metric='40'
+
+set network.AutoUSB1=interface
+set network.AutoUSB1.proto='dhcp'
+set network.AutoUSB1.device='usb1'
+set network.AutoUSB1.metric='41'
+
+set network.AutoUSB2=interface
+set network.AutoUSB2.proto='dhcp'
+set network.AutoUSB2.device='usb2'
+set network.AutoUSB2.metric='42'
+
+set network.AutoUSB3=interface
+set network.AutoUSB3.proto='dhcp'
+set network.AutoUSB3.device='usb3'
+set network.AutoUSB3.metric='43'
+
 commit network
 
 set system.@system[0].hostname='SmoothWAN'
@@ -25,6 +46,10 @@ del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='wan'
 add_list firewall.cfg03dc81.network='AutoWANeth1'
 add_list firewall.cfg03dc81.network='AutoWANeth2'
+add_list firewall.cfg03dc81.network='AutoUSB0'
+add_list firewall.cfg03dc81.network='AutoUSB1'
+add_list firewall.cfg03dc81.network='AutoUSB2'
+add_list firewall.cfg03dc81.network='AutoUSB3'
 commit firewall
 
 del network.globals.ula_prefix
@@ -39,6 +64,12 @@ commit system
 
 add_list pbr.config.supported_interface='AutoWANeth1'
 add_list pbr.config.supported_interface='AutoWANeth2'
+add_list pbr.config.supported_interface='AutoUSB0`
+add_list pbr.config.supported_interface='AutoUSB1`
+add_list pbr.config.supported_interface='AutoUSB2`
+add_list pbr.config.supported_interface='AutoUSB3`
+
+
 
 commit pbr
 
