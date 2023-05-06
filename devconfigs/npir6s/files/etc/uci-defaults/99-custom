@@ -1,0 +1,123 @@
+uci -q batch << EOI
+
+set network.lan.ipaddr='172.17.17.2'
+
+#set network.AutoWANeth1=interface
+#set network.AutoWANeth1.proto='dhcp'
+#set network.AutoWANeth1.device='eth1'
+#set network.AutoWANeth1.metric='31'
+#
+#set network.AutoWANeth2=interface
+#set network.AutoWANeth2.proto='dhcp'
+#set network.AutoWANeth2.device='eth2'
+#set network.AutoWANeth2.metric='32'
+#
+#set network.AutoWANeth3=interface
+#set network.AutoWANeth3.proto='dhcp'
+#set network.AutoWANeth3.device='eth3'
+#set network.AutoWANeth3.metric='33'
+#
+#set network.AutoWANeth4=interface
+#set network.AutoWANeth4.proto='dhcp'
+#set network.AutoWANeth4.device='eth4'
+#set network.AutoWANeth4.metric='33'
+#
+commit network
+
+set system.@system[-1].hostname='SmoothWAN'
+set system.@system[-1].log_size='1024'
+commit system
+
+add_list dhcp.lan.dhcp_option='6,172.17.17.2'
+set dhcp.@dnsmasq[-1].port='0'
+commit dhcp
+
+#del firewall.cfg03dc81.network
+#add_list firewall.cfg03dc81.network='wan'
+#add_list firewall.cfg03dc81.network='AutoWANeth1'
+#add_list firewall.cfg03dc81.network='AutoWANeth2'
+#add_list firewall.cfg03dc81.network='AutoWANeth3'
+#add_list firewall.cfg03dc81.network='AutoWANeth4'
+#commit firewall
+#
+del network.globals.ula_prefix
+del network.cfg030f15.ports
+#add_list network.cfg030f15.ports='eth0'
+commit network
+
+set system.ntp.use_dhcp='0'
+del system.ntp.server
+add_list system.ntp.server='162.159.200.123'
+commit system
+
+#add_list pbr.config.supported_interface='AutoWANeth1'
+#add_list pbr.config.supported_interface='AutoWANeth2'
+#add_list pbr.config.supported_interface='AutoWANeth3'
+#add_list pbr.config.supported_interface='AutoWANeth4'
+#commit pbr
+#
+set luci_statistics.collectd_sensors.enable='1'
+set luci_statistics.collectd_sensors.IgnoreSelected='1'
+set luci_statistics.collectd_ping.enable='1'
+del luci_statistics.collectd_ping.Hosts
+add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
+add_list luci_statistics.collectd_ping.Hosts='10.202.0.5'
+add_list luci_statistics.collectd_ping.Hosts='8.8.8.8'
+set luci_statistics.collectd_ping.AddressFamily='any'
+del luci_statistics.collectd_uptime.enable
+del luci_statistics.collectd_network.enable
+set luci_statistics.collectd.Include='/etc/collectd/conf.d/*.conf'
+set luci_statistics.collectd_uptime.enable='1'
+del luci_statistics.collectd_interface.IgnoreSelected
+del luci_statistics.collectd_interface.Interfaces
+set luci_statistics.collectd_interface.IgnoreSelected='1'
+add_list luci_statistics.collectd_interface.Interfaces='br-lan'
+add_list luci_statistics.collectd_interface.Interfaces='ip6tnl0'
+add_list luci_statistics.collectd_interface.Interfaces='bond0'
+add_list luci_statistics.collectd_interface.Interfaces='lo'
+add_list luci_statistics.collectd_interface.Interfaces='gretap0'
+add_list luci_statistics.collectd_interface.Interfaces='ip6gre0'
+add_list luci_statistics.collectd_interface.Interfaces='gre0'
+set luci_statistics.collectd_rrdtool.DataDir='/etc/rrd'
+commit luci_statistics
+add_list nlbwmon.cfg015d22.local_network='172.17.17.0/24'
+set nlbwmon.cfg015d22.database_compress='1'
+set nlbwmon.cfg015d22.database_directory='/usr/lib/nlbwmon'
+commit nlbwmon
+add firewall zone # =cfg11dc81
+set firewall.@zone[-1].name='Tailscale'
+set firewall.@zone[-1].input='ACCEPT'
+set firewall.@zone[-1].output='ACCEPT'
+set firewall.@zone[-1].forward='ACCEPT'
+set firewall.@zone[-1].masq='1'
+add_list firewall.@zone[-1].device='br-tailscale0'
+add firewall forwarding # =cfg12ad58
+set firewall.@forwarding[-1].src='Tailscale'
+set firewall.@forwarding[-1].dest='lan'
+add firewall forwarding # =cfg13ad58
+set firewall.@forwarding[-1].src='Tailscale'
+set firewall.@forwarding[-1].dest='wan'
+add firewall forwarding # =cfg14ad58
+set firewall.@forwarding[-1].src='lan'
+set firewall.@forwarding[-1].dest='Tailscale'
+set firewall.@zone[1].masq6="1"
+commit firewall
+
+EOI
+
+#Replace diagnostics page
+cp /etc/sysupgdiff/diagnostics.js /www/luci-static/resources/view/network/diagnostics.js
+
+#Hints
+sed -i "s+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.+Choose the network(s) you want to attach to this wireless interface or fill out the <em>custom</em> field to define a new network.<br><br><b>SmoothWAN Note!<br><br>If this is a Wireless WAN, head to Network->Interfaces and edit the automatically created interface to set the metric to a unique number (e.g 10 or more).</b>+g" /www/luci-static/resources/view/network/wireless.js
+sed -i "s+_('Bring up on boot')+_('Bring up on boot'), _('<br><br><b>SmoothWAN Note!<br><br>If this is a WAN connection, head to Advanced Settings tab above and set metric to a unique number (e.g 10 or more), then to Firewall and set zone to red.')+" /www/luci-static/resources/view/network/interfaces.js
+
+#Crude fixes
+printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
+echo -e 'nameserver ::1\nnameserver  127.0.0.1' > /etc/resolv.conf
+/usr/bin/chattr +i /etc/resolv.conf &
+/etc/init.d/apache2 disable &
+cp /etc/factoryconfig/rt_tables /etc/iproute2/rt_tables &
+
+echo "DISTRIB_DESCRIPTION='SmoothWAN v0.99.5HF5'" >> /etc/openwrt_release &
+exit 0

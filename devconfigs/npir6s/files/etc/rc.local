@@ -1,0 +1,21 @@
+#The following parameters forked to background instead of services for easy tweaking and diagnostics.
+
+#Set CPU to performance (some CPUs stutter when changing freq)
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor &
+
+#Run irqbalance
+irqbalance &
+
+#Enable a scheduler for root disk for better LXC performance
+echo "bfq" > /sys/class/block/mmcblk0/queue/scheduler &
+
+#Run usbmuxd for iOS tethering
+usbmuxd &
+
+#Run iperf3 server
+iperf3 -s &
+
+#P2P logging
+sh /usr/lib/p2plog/p2p.sh &
+
+exit 0
