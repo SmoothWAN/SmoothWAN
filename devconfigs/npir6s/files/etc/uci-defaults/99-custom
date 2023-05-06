@@ -2,15 +2,15 @@ uci -q batch << EOI
 
 set network.lan.ipaddr='172.17.17.2'
 
-set network.AutoWANeth1=interface
-set network.AutoWANeth1.proto='dhcp'
-set network.AutoWANeth1.device='eth0'
-set network.AutoWANeth1.metric='10'
+set network.PortOne=interface
+set network.PortOne.proto='dhcp'
+set network.PortOne.device='eth0'
+set network.PortOne.metric='10'
 
-set network.AutoWANeth2=interface
-set network.AutoWANeth2.proto='dhcp'
-set network.AutoWANeth2.device='eth2'
-set network.AutoWANeth2.metric='11'
+set network.PortTwo=interface
+set network.PortTwo.proto='dhcp'
+set network.PortTwo.device='eth2'
+set network.PortTwo.metric='11'
 
 set network.AutoUSB0=interface
 set network.AutoUSB0.proto='dhcp'
@@ -44,8 +44,8 @@ commit dhcp
 
 del firewall.cfg03dc81.network
 add_list firewall.cfg03dc81.network='wan'
-add_list firewall.cfg03dc81.network='AutoWANeth1'
-add_list firewall.cfg03dc81.network='AutoWANeth2'
+add_list firewall.cfg03dc81.network='PortOne'
+add_list firewall.cfg03dc81.network='PortTwo'
 add_list firewall.cfg03dc81.network='AutoUSB0'
 add_list firewall.cfg03dc81.network='AutoUSB1'
 add_list firewall.cfg03dc81.network='AutoUSB2'
@@ -53,8 +53,10 @@ add_list firewall.cfg03dc81.network='AutoUSB3'
 commit firewall
 
 del network.globals.ula_prefix
-del network.cfg030f15.ports
-add_list network.cfg030f15.ports='eth1'
+del network.cfg040f15.ports
+add_list network.cfg040f15.ports='eth1'
+del network.wan
+del network.wan6
 commit network
 
 set system.ntp.use_dhcp='0'
@@ -62,8 +64,8 @@ del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
 
-add_list pbr.config.supported_interface='AutoWANeth1'
-add_list pbr.config.supported_interface='AutoWANeth2'
+add_list pbr.config.supported_interface='PortOne'
+add_list pbr.config.supported_interface='PortTwo'
 add_list pbr.config.supported_interface='AutoUSB0`
 add_list pbr.config.supported_interface='AutoUSB1`
 add_list pbr.config.supported_interface='AutoUSB2`
