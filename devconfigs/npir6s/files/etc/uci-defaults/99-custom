@@ -66,13 +66,10 @@ commit system
 
 add_list pbr.config.supported_interface='PortOne'
 add_list pbr.config.supported_interface='PortTwo'
-add_list pbr.config.supported_interface='AutoUSB0`
-add_list pbr.config.supported_interface='AutoUSB1`
-add_list pbr.config.supported_interface='AutoUSB2`
-add_list pbr.config.supported_interface='AutoUSB3`
-
-
-
+add_list pbr.config.supported_interface='AutoUSB0'
+add_list pbr.config.supported_interface='AutoUSB1'
+add_list pbr.config.supported_interface='AutoUSB2'
+add_list pbr.config.supported_interface='AutoUSB3'
 commit pbr
 
 set luci_statistics.collectd_sensors.enable='1'
