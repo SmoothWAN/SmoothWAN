@@ -2,47 +2,34 @@ uci -q batch << EOI
 
 set network.lan.ipaddr='172.17.17.2'
 
-#set network.AutoWANeth1=interface
-#set network.AutoWANeth1.proto='dhcp'
-#set network.AutoWANeth1.device='eth1'
-#set network.AutoWANeth1.metric='31'
-#
-#set network.AutoWANeth2=interface
-#set network.AutoWANeth2.proto='dhcp'
-#set network.AutoWANeth2.device='eth2'
-#set network.AutoWANeth2.metric='32'
-#
-#set network.AutoWANeth3=interface
-#set network.AutoWANeth3.proto='dhcp'
-#set network.AutoWANeth3.device='eth3'
-#set network.AutoWANeth3.metric='33'
-#
-#set network.AutoWANeth4=interface
-#set network.AutoWANeth4.proto='dhcp'
-#set network.AutoWANeth4.device='eth4'
-#set network.AutoWANeth4.metric='33'
-#
+set network.AutoWANeth1=interface
+set network.AutoWANeth1.proto='dhcp'
+set network.AutoWANeth1.device='eth0'
+set network.AutoWANeth1.metric='10'
+
+set network.AutoWANeth2=interface
+set network.AutoWANeth2.proto='dhcp'
+set network.AutoWANeth2.device='eth2'
+set network.AutoWANeth2.metric='11'
 commit network
 
-set system.@system[-1].hostname='SmoothWAN'
-set system.@system[-1].log_size='1024'
+set system.@system[0].hostname='SmoothWAN'
+set system.@system[0].log_size='1024'
 commit system
 
 add_list dhcp.lan.dhcp_option='6,172.17.17.2'
 set dhcp.@dnsmasq[-1].port='0'
 commit dhcp
 
-#del firewall.cfg03dc81.network
-#add_list firewall.cfg03dc81.network='wan'
-#add_list firewall.cfg03dc81.network='AutoWANeth1'
-#add_list firewall.cfg03dc81.network='AutoWANeth2'
-#add_list firewall.cfg03dc81.network='AutoWANeth3'
-#add_list firewall.cfg03dc81.network='AutoWANeth4'
-#commit firewall
-#
+del firewall.cfg03dc81.network
+add_list firewall.cfg03dc81.network='wan'
+add_list firewall.cfg03dc81.network='AutoWANeth1'
+add_list firewall.cfg03dc81.network='AutoWANeth2'
+commit firewall
+
 del network.globals.ula_prefix
 del network.cfg030f15.ports
-#add_list network.cfg030f15.ports='eth0'
+add_list network.cfg030f15.ports='eth1'
 commit network
 
 set system.ntp.use_dhcp='0'
@@ -50,12 +37,11 @@ del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
 
-#add_list pbr.config.supported_interface='AutoWANeth1'
-#add_list pbr.config.supported_interface='AutoWANeth2'
-#add_list pbr.config.supported_interface='AutoWANeth3'
-#add_list pbr.config.supported_interface='AutoWANeth4'
-#commit pbr
-#
+add_list pbr.config.supported_interface='AutoWANeth1'
+add_list pbr.config.supported_interface='AutoWANeth2'
+
+commit pbr
+
 set luci_statistics.collectd_sensors.enable='1'
 set luci_statistics.collectd_sensors.IgnoreSelected='1'
 set luci_statistics.collectd_ping.enable='1'
@@ -117,7 +103,14 @@ printf "config config 'Setup'\n option enabled '0'" > /etc/config/ntopconf
 echo -e 'nameserver ::1\nnameserver  127.0.0.1' > /etc/resolv.conf
 /usr/bin/chattr +i /etc/resolv.conf &
 /etc/init.d/apache2 disable &
+/etc/init.d/irqbalance enable &
+/etc/init.d/usbmuxd enable &
+/etc/init.d/irqbalance start &
+/etc/init.d/usbmuxd start &
 cp /etc/factoryconfig/rt_tables /etc/iproute2/rt_tables &
+
+#FriendlyWrt crude customizations
+/bin/passwd -d root &
 
 echo "DISTRIB_DESCRIPTION='SmoothWAN v0.99.5HF5'" >> /etc/openwrt_release &
 exit 0
