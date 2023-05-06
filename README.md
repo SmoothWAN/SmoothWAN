@@ -11,15 +11,18 @@ This project is not affiliated with Speedify or Connectify.<br>
 Also includes <a href="https://github.com/porech/engarde">Engarde</a> and <a href="https://github.com/wangyu-/tinyfecVPN">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
 
 
-Visit the documentation at [SmoothWAN website](https://www.smoothwan.com) or [Github Pages](http://smoothwan.github.io/SmoothWAN-docs) for information and guide.    
+Visit the [wiki](http://smoothwan.github.io/SmoothWAN-docs) for information and guides.    
 
 *Supported hardware*
+(order by performance)
 
 - PC Intel/AMD
+- NanoPi R6S (beta)
+- Banana Pi R3 (untested)
+- Raspberry Pi 4 / Pi 400
+- Banana Pi R64 (untested)
 - GL.iNet Flint
 - GL.iNet Slate AX
-- Raspberry Pi 4 / Pi 400
-- Banana Pi R64/R3 (untested)
 
 Only supporting devices that are difficult to brick/damage with 3rd party firmware. (read-only bootloader with no restrictions)
 
@@ -28,14 +31,12 @@ Only supporting devices that are difficult to brick/damage with 3rd party firmwa
 - Use [Speedify](https://speedify.com/) to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
 - Run a VPN over Speedify to bypass captcha/IP-blocking on public servers or other uses.
 - Cover all connected devices in a home network when it's not possible or practical to share a WAN per each device running Speedify.  
-- Use [Engarde](https://github.com/porech/engarde) as an self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
+- Use [Engarde](https://github.com/porech/engarde) as self-hosting alternative to Speedify's Redundant mode (lossless by duplicating traffic across WANs - no aggregation)
 - Use [TinyFEC VPN](https://github.com/wangyu-/tinyfecVPN) for fixing a lossy unusable internet connection using forward-error-correction at a speed cost (single WAN - self-hosting)
 - Significantly lower budget alternative to commonly used solutions (Speedify)
 - Backpack streaming setup. (LXC enabled for video relay setup)
 
-**A note for those looking for high speed downloads: If you need to combine multiple *stable & reliable* internet connections above 100Mbit, use a *load balancer*.**
-
-**Tip: Both Synology routers and GL.iNet Slate/Flint (with 4.2.0 firmware) include Wi-Fi and are much easier to setup compared to the TP-Link Multi-WAN series / pfSense...**
+**A note for those looking for high speed downloads: If you need to combine multiple *stable & reliable* internet connections above 100Mbit, use a *load balancer* instead of *bonding* unless you have specific needs.**
 
 ***
 
