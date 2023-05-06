@@ -136,8 +136,10 @@ echo -e 'nameserver ::1\nnameserver  127.0.0.1' > /etc/resolv.conf
 /etc/init.d/apache2 disable &
 /etc/init.d/irqbalance enable &
 /etc/init.d/usbmuxd enable &
+/etc/init.d/uhttpd disable &
 /etc/init.d/irqbalance start &
 /etc/init.d/usbmuxd start &
+/etc/init.d/uhttpd stop &
 cp /etc/factoryconfig/rt_tables /etc/iproute2/rt_tables &
 
 #FriendlyWrt crude customizations
