@@ -12,6 +12,21 @@ set network.PortTwo.proto='dhcp'
 set network.PortTwo.device='eth2'
 set network.PortTwo.metric='11'
 
+set network.AutoWANeth3=interface
+set network.AutoWANeth3.proto='dhcp'
+set network.AutoWANeth3.device='eth3'
+set network.AutoWANeth3.metric='33'
+
+set network.AutoWANeth4=interface
+set network.AutoWANeth4.proto='dhcp'
+set network.AutoWANeth4.device='eth4'
+set network.AutoWANeth4.metric='34'
+
+set network.AutoUSBeth5=interface
+set network.AutoUSBeth5.proto='dhcp'
+set network.AutoUSBeth5.device='eth5'
+set network.AutoUSBeth5.metric='35'
+
 set network.AutoUSB0=interface
 set network.AutoUSB0.proto='dhcp'
 set network.AutoUSB0.device='usb0'
@@ -50,6 +65,9 @@ add_list firewall.cfg03dc81.network='AutoUSB0'
 add_list firewall.cfg03dc81.network='AutoUSB1'
 add_list firewall.cfg03dc81.network='AutoUSB2'
 add_list firewall.cfg03dc81.network='AutoUSB3'
+add_list firewall.cfg03dc81.network='AutoWANeth3'
+add_list firewall.cfg03dc81.network='AutoWANeth4'
+add_list firewall.cfg03dc81.network='AutoWANeth5'
 commit firewall
 
 del network.globals.ula_prefix
@@ -70,6 +88,9 @@ add_list pbr.config.supported_interface='AutoUSB0'
 add_list pbr.config.supported_interface='AutoUSB1'
 add_list pbr.config.supported_interface='AutoUSB2'
 add_list pbr.config.supported_interface='AutoUSB3'
+add_list pbr.config.supported_interface='AutoWANeth3'
+add_list pbr.config.supported_interface='AutoWANeth4'
+add_list pbr.config.supported_interface='AutoWANeth5'
 commit pbr
 
 set luci_statistics.collectd_sensors.enable='1'

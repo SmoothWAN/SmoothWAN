@@ -111,6 +111,10 @@ del system.ntp.server
 add_list system.ntp.server='162.159.200.123'
 commit system
 
+add_list pbr.config.supported_interface='AutoUSB0'
+add_list pbr.config.supported_interface='AutoUSB1'
+add_list pbr.config.supported_interface='AutoUSB2'
+add_list pbr.config.supported_interface='AutoUSB3'
 add_list pbr.config.supported_interface='AutoWANeth1'
 add_list pbr.config.supported_interface='AutoWANeth2'
 add_list pbr.config.supported_interface='AutoWANeth3'
