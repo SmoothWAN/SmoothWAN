@@ -9,4 +9,7 @@ iperf3 -s &
 #P2P logging
 sh /usr/lib/p2plog/p2p.sh &
 
+#Load USB ethernet module late (NanoPi)
+modprobe usbnet
+
 exit 0

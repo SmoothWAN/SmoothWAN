@@ -147,5 +147,7 @@ echo "DISTRIB_DESCRIPTION='SmoothWAN v0.99.5HF5'" >> /etc/openwrt_release &
 /bin/passwd -d root &
 rm /etc/board.d/02_network &
 rm /etc/board.d/99-default_network &
+rm /etc/modules.d/usb-net &
+( sleep 10 ; reboot ) & 
 
 exit 0
