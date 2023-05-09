@@ -117,6 +117,8 @@ add firewall forwarding # =cfg14ad58
 set firewall.@forwarding[-1].src='lan'
 set firewall.@forwarding[-1].dest='Tailscale'
 set firewall.@zone[1].masq6="1"
+set firewall.@zone[1].fullcone4='0'
+set firewall.@zone[1].fullcone6='0'
 commit firewall
 
 EOI
