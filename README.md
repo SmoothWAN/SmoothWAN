@@ -17,7 +17,7 @@ Visit the [wiki](http://smoothwan.github.io/SmoothWAN-docs) for information and 
 (order by performance)
 
 - PC Intel/AMD
-- NanoPi R6S (beta)
+- NanoPi R6S (WIP)
 - Banana Pi R3 (untested)
 - Raspberry Pi 4 / Pi 400
 - Banana Pi R64 (untested)
