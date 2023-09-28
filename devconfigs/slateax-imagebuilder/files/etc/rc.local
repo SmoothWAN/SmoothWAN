@@ -1,0 +1,26 @@
+#The following parameters forked to background instead of services for easy tweaking and diagnostics.
+
+#Set CPU to performance (some CPUs stutter when changing freq)
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+#Enable Z-RAM
+echo 200000000 > /sys/block/zram0/disksize
+mkswap /dev/zram0
+swapon /dev/zram0
+
+#Run irqbalance
+irqbalance &
+
+#Run usbmuxd for iOS tethering
+usbmuxd &
+
+#Run iperf3 server
+iperf3 -s &
+
+#Set fan speed for Slate AX
+echo 150 > /sys/class/thermal/cooling_device0/cur_state
+
+#P2P logging
+sh /usr/lib/p2plog/p2p.sh &
+
+exit 0
