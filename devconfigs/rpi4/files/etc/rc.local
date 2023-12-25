@@ -9,8 +9,8 @@ irqbalance &
 #Enable a scheduler for root disk for better LXC performance
 echo "bfq" > /sys/class/block/mmcblk0/queue/scheduler 
 
-#Run usbmuxd for iOS tethering
-usbmuxd &
+#Use lockdown watchdog script from https://openwrt.org/docs/guide-user/network/wan/smartphone.usb.tethering#iphone_automatic_watchdog
+sh /etc/lockdown/watchdog.sh &
 
 #Run iperf3 server
 iperf3 -s &
