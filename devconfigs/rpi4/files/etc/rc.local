@@ -33,6 +33,9 @@ echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
 #EXT4-fs: Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
 mount -o rw,remount,noatime,async,nobarrier,errors=continue / &
 
+#Check root on next reboot
+touch /forcefsck
+
 #P2P logging
 sh /usr/lib/p2plog/p2p.sh &
 
