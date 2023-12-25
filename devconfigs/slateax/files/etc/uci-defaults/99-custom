@@ -105,8 +105,7 @@ add_list vpn-policy-routing.config.supported_interface='AutoUSBeth5'
 add_list vpn-policy-routing.config.supported_interface='wan'
 commit vpn-policy-routing
 
-set luci_statistics.collectd_sensors.enable='1'
-set luci_statistics.collectd_sensors.IgnoreSelected='1'
+set luci_statistics.collectd_sensors.enable='0'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'

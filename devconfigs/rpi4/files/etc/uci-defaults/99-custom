@@ -112,8 +112,7 @@ add_list pbr.config.supported_interface='AutoUSB2'
 add_list pbr.config.supported_interface='AutoUSB3'
 commit pbr
 
-set luci_statistics.collectd_sensors.enable='1'
-set luci_statistics.collectd_sensors.IgnoreSelected='1'
+set luci_statistics.collectd_sensors.enable='0'
 set luci_statistics.collectd_ping.enable='1'
 del luci_statistics.collectd_ping.Hosts
 add_list luci_statistics.collectd_ping.Hosts='10.202.0.1'
