@@ -4,4 +4,5 @@ cp /etc/factoryconfig/wireless /etc/config/wireless
 wifi down
 sleep 1
 wifi up
+/etc/init.d/network restart
 exit 0

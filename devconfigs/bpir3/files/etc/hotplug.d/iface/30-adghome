@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/etc/init.d/adguardhome restart &
-
-exit 0
