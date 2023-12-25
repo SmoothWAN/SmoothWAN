@@ -31,7 +31,7 @@ echo c > /sys/class/net/eth0/queues/tx-4/xps_cpus
 /usr/sbin/ethtool -K eth0 tx-checksum-ipv4 on
 
 #EXT4-fs: Re-mount root overlay with options for resilience against power cuts (prefer data loss over corruption)
-mount -o rw,remount,noatime,async,barrier=1,commit=30,errors=continue / &
+mount -o rw,remount,noatime,async,nobarrier,errors=continue / &
 
 #P2P logging
 sh /usr/lib/p2plog/p2p.sh &
