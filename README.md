@@ -28,6 +28,8 @@ Visit the [wiki](https://smoothwan.com) for information and guides.
 
 Only supporting devices that are difficult to brick/damage with 3rd party firmware. (read-only bootloader from webpage upgrade)
 
+For running on other hardware or existing OpenWrt users you can use the unofficial installer [here](https://github.com/TalalMash/Unofficial-Speedify-Installer-For-OpenWrt)
+
 *Use cases*
 
 - Use [Speedify](https://speedify.com/) to build a reliable internet access with seamless failover, lossless and aggregated single-flow speeds by bonding two or more connections, preferably a combination of wired and wireless with baseline ISP plans as an affordable solution. e.g rural areas, developing countries...
