@@ -13,6 +13,8 @@
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify, with an emphasis on using an internet browser for easy configuration on the go. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
 
+As of Q4 2024, Speedify now requires a [license for routers](https://speedify.com/store/#routers).
+
 Also includes <a href="https://github.com/porech/engarde">Engarde</a> and <a href="https://github.com/wangyu-/tinyfecVPN">TinyFEC VPN</a> as alternative and self-hosting solutions.<br>
 
 
