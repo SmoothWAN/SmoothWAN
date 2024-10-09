@@ -1,9 +1,18 @@
-**[Donate to Parrot Rescue Lebanon 🦜](https://gofund.me/63163a6c)**  
+**Project sunset after 3 years for the following reasons**
+- [Speedify officially supports OpenWrt as of Q4 2024](https://support.speedify.com/article/918-openwrt)
+- GL.iNet auto build repos went private, certain patches for wlan-ap are missing.
+- OpenWrt official repos are unstable for GL.iNet devices when it comes to Wi-Fi.
+- Speedify now requires a [seperate subscription for routers](https://speedify.com/store/#routers) and the pricing is very steep for me.
 
-[![Discourse](https://user-images.githubusercontent.com/96490382/224407817-9e2cef2a-6c51-4a71-90c4-8a48633b51bf.png)](https://smoothwan.discourse.group/)
+Thank you contributors, Speedify support, and donors!
 
-[![Discord](https://badgen.net/discord/members/AxSSjpgwjx)](https://discord.gg/AxSSjpgwjx) 
+**[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://gofund.me/63163a6c)**  <sup><sub>psst my birds live there</sub></sup>
 
+[Discourse archive](https://smoothwan.discourse.group/)
+
+Wiki site address moved to [Github pages](https://smoothwan.github.io/SmoothWAN-docs/)
+
+Discord chat has not been archived for user privacy reasons.
 
 ***
 
@@ -31,8 +40,7 @@ Visit the [wiki](https://smoothwan.com) for information and guides.
 Only supporting devices that are difficult to brick/damage with 3rd party firmware. (read-only bootloader from webpage upgrade)
 
 ~For running on other hardware or existing OpenWrt users you can use the unofficial installer [here](https://github.com/TalalMash/Unofficial-Speedify-Installer-For-OpenWrt)~
-
-Update: [Speedify officially supports OpenWrt as of Q4 2024](https://support.speedify.com/article/918-openwrt)
+[Speedify officially supports OpenWrt as of Q4 2024](https://support.speedify.com/article/918-openwrt)
 
 ***
 
