@@ -6,7 +6,7 @@
 
 Thank you contributors, Speedify support, and donors!
 
-**[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://gofund.me/63163a6c)**  <sup><sub>psst my birds live there</sub></sup>
+**[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://www.parrotrescuelebanon.com/)**  <sup><sub>psst my birds live there</sub></sup>
 
 [Discourse archive](https://smoothwan.discourse.group/)
 
