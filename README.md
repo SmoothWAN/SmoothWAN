@@ -1,23 +1,25 @@
 **Project sunset after 3 years for the following reasons**
 - [Speedify officially supports OpenWrt as of Q4 2024](https://support.speedify.com/article/918-openwrt)
-- GL.iNet auto build repos went private, certain patches for wlan-ap are missing.
-- OpenWrt official repos are unstable for GL.iNet devices when it comes to Wi-Fi.
+- GL.iNet auto build repos went private, certain patches for [wlan-ap](https://github.com/gl-inet/wlan-ap) are missing.
+- Wi-Fi 6+ is unstable with OpenWrt official firmware for GL.iNet and most routers.
 - Speedify now requires a [seperate subscription for routers](https://speedify.com/store/#routers) and the pricing is very steep for me.
 
-Thank you contributors, Speedify support, and donors!
-
-**[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://www.parrotrescuelebanon.com/)**  <sup><sub>psst my birds live there</sub></sup>
+The firmware should work for a good while and the Speedify installer has a URL entry that can be updated.
 
 [Discourse archive](https://smoothwan.discourse.group/)
 
-Wiki site address moved to [Github pages](https://smoothwan.github.io/SmoothWAN-docs/)
+Wiki site address mirror to [Github pages](https://smoothwan.github.io/SmoothWAN-docs-mirror)
 
 Discord chat has not been archived for user privacy reasons.
+Thank you contributors, Speedify support, and donors!
+
+**[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://www.parrotrescuelebanon.com/)**
+
 
 ***
 
 <img src="https://user-images.githubusercontent.com/96490382/185179903-4cbac04d-d0f7-47e2-b81a-167803205d33.png" width="600"/>  
-<h2>Internet bonding router with seamless failover using Speedify</h2> 
+<h2>DIY Internet bonding router with seamless failover using Speedify</h2> 
 
 <i>SmoothWAN</i> is a custom [OpenWRT](https://openwrt.org/) router distribution for fixed internet bonding setup using Speedify, with an emphasis on using an internet browser for easy configuration on the go. <br>  
 This project is not affiliated with Speedify or Connectify.<br>
