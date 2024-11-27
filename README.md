@@ -1,8 +1,12 @@
 **Project sunset after 3 years for the following reasons**
+
+- Buying and testing routers is expensive.
 - [Speedify officially supports OpenWrt as of Q4 2024](https://support.speedify.com/article/918-openwrt)
 - GL.iNet auto build repos went private, certain patches for [wlan-ap](https://github.com/gl-inet/wlan-ap) are missing.
 - Wi-Fi 6+ is unstable with OpenWrt official firmware for GL.iNet and most routers.
-- Speedify now requires a [seperate subscription for routers](https://speedify.com/store/#routers) and the pricing is very steep for me.
+- ~Speedify now requires a [seperate subscription for routers](https://speedify.com/store/#routers) and the pricing is very steep for me.~
+
+Update: 3 years plan with occasional discounts is now on par with family plan 🎉
 
 The firmware should work for a good while and the Speedify installer has a URL entry that can be updated.
 
@@ -10,7 +14,8 @@ The firmware should work for a good while and the Speedify installer has a URL e
 
 Wiki site address mirror to [Github pages](https://smoothwan.github.io/SmoothWAN-docs-mirror)
 
-Discord chat has not been archived for user privacy reasons.
+Discord chat has not been archived for user privacy.
+
 Thank you contributors, Speedify support, and donors!
 
 **[Donate to Parrot Rescue Lebanon if you found this helpful 🦜](https://www.parrotrescuelebanon.com/)**
