@@ -10,7 +10,7 @@ Update: 3 years plan with occasional discounts is now on par with family plan ðŸ
 
 The firmware should work for a good while and the Speedify installer has a URL entry that can be updated.
 
-[Discourse archive](https://smoothwan.discourse.group/)
+[Discourse archive](https://smoothwan.github.io/SmoothWAN-forum-archive/smoothwan.discourse.group/)
 
 Wiki site address mirror to [Github pages](https://smoothwan.github.io/SmoothWAN-docs-mirror)
 
